@@ -2,59 +2,81 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LINE_LENGTH 1000
-#define MAX_NUMBERS_PER_LINE 100
+#define MAX_LINE_LENGTH 1024
+#define MAX_COLUMN_COUNT 24
+#define MAX_TITLE_LENGTH 128
+#define MAX_DATE_LENGTH 8
+#define MAX_MAGNITUDE_LENGTH 4
 
 int main() {
-	
-	int i;
-    FILE *input_file = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22.csv", "r");
-    if (input_file == NULL) {
-        printf("Error al abrir el archivo de entrada.\n");
-        exit(1);
-    }
-    
+    FILE *fp;
     char line[MAX_LINE_LENGTH];
-    int line_number = 0;
-    while (fgets(line, MAX_LINE_LENGTH, input_file) != NULL) {
-        line_number++;
-        
-        // Reemplazar comas por puntos
-        char *p = line;
-        while (*p) {
-            if (*p == ',') {
-                *p = '.';
+    char title[MAX_TITLE_LENGTH];
+    char system[MAX_TITLE_LENGTH];
+    char magnitude[MAX_MAGNITUDE_LENGTH];
+    char date[MAX_DATE_LENGTH];
+    double data[MAX_COLUMN_COUNT][MAX_COLUMN_COUNT];
+    int row = 0, col = 0;
+    int i, j;
+
+    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22.csv", "r");
+    if (fp == NULL) {
+        printf("Error al abrir el archivo.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Leer el título del archivo
+    fgets(line, MAX_LINE_LENGTH, fp);
+    sscanf(line, "%[^,],%[^,],%[^,]", title, system, magnitude);
+
+    // Saltar las siguientes dos líneas que no contienen datos
+    fgets(line, MAX_LINE_LENGTH, fp);
+    fgets(line, MAX_LINE_LENGTH, fp);
+
+    // Leer los datos de cada línea
+    while (fgets(line, MAX_LINE_LENGTH, fp)) {
+        // Leer la fecha
+        sscanf(line, "%[^,],", date);
+
+        // Leer los datos de cada mes
+        col = 0;
+        char *tok = strtok(line, ",");
+        while (tok != NULL) {
+            // Ignorar la primera columna que contiene las fechas
+            if (col > 0) {
+                sscanf(tok, "%lf", &data[row][col - 1]);
             }
-            p++;
+            tok = strtok(NULL, ",");
+            col++;
         }
-        
-        // Parsear números entre comillas
-        char *numbers[MAX_NUMBERS_PER_LINE];
-        int num_numbers = 0;
-        char *token = strtok(line, "\"");
-        while (token != NULL) {
-            if (strlen(token) > 0 && token[0] != ',' && token[0] != '\n') {
-                numbers[num_numbers] = token;
-                num_numbers++;
-            }
-            token = strtok(NULL, "\"");
-        }
-        
-        // Crear vector de números
-        double vector[MAX_NUMBERS_PER_LINE];
-        for (i = 0; i < num_numbers; i++) {
-            vector[i] = atof(numbers[i]);
-        }
-        
-        // Imprimir vector
-        printf("Vector %d: ", line_number);
-        for (i = 0; i < num_numbers; i++) {
-            printf("%f ", vector[i]);
+        row++;
+    }
+
+    // Imprimir los datos almacenados
+    printf("%s\n%s\n%s\n", title, system, magnitude);
+    printf("Fecha\t");
+    for (i = 0; i < col - 1; i++) {
+        printf("%d/%d\t", i % 12 + 1, i / 12 + 2021);
+    }
+    printf("\n");
+    for (i = 0; i < row; i++) {
+        printf("%s\t", date);
+        for (j = 0; j < col - 1; j++) {
+            printf("%.2f\t", data[i][j]);
         }
         printf("\n");
     }
-    
-    fclose(input_file);
+
+    fclose(fp);
     return 0;
 }
+
+
+
+
+
+
+   
+
+
 
