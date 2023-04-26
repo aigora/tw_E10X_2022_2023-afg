@@ -2,110 +2,59 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX 500
+#define MAX_LINE_LENGTH 1000
+#define MAX_NUMBERS_PER_LINE 100
 
 int main() {
-    FILE* fp;
-    char line[MAX];
-    char* token;
-    char* vect[MAX];
-    char** vectors[MAX];
-    int i = 0, j, k;
-    int num_vectors = 0;
-
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22.csv", "r");
-
-    if (fp == NULL) {
-        printf("No se pudo abrir el archivo.\n");
-        exit(EXIT_FAILURE);
+	
+	int i;
+    FILE *input_file = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22.csv", "r");
+    if (input_file == NULL) {
+        printf("Error al abrir el archivo de entrada.\n");
+        exit(1);
     }
-
-    while (fgets(line, MAX, fp) != NULL) {
-    	
+    
+    char line[MAX_LINE_LENGTH];
+    int line_number = 0;
+    while (fgets(line, MAX_LINE_LENGTH, input_file) != NULL) {
+        line_number++;
+        
         // Reemplazar comas por puntos
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == ',') {
-                line[j] = '.';
+        char *p = line;
+        while (*p) {
+            if (*p == ',') {
+                *p = '.';
             }
+            p++;
         }
         
-        
-        // reemplazar las vocales con tildes
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == 'á') {
-                line[j] = 'a';
-            }
-        }
-        
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == 'é') {
-                line[j] = 'e';
-            }
-        }
-        
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == 'í') {
-                line[j] = 'i';
-            }
-        }
-        
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == 'ó') {
-                line[j] = 'o';
-            }
-        }
-        
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == 'ú') {
-                line[j] = 'u';
-            }
-        }
-
-
-        // Eliminar comillas
-        for (j = 0; j < strlen(line); j++) {
-            if (line[j] == '\"') {
-                for (k = j; k < strlen(line); k++) {
-                    line[k] = line[k+1];
-                }
-            }
-        }
-
-        // Crear vector por cada fila
-        token = strtok(line, ".");
+        // Parsear números entre comillas
+        char *numbers[MAX_NUMBERS_PER_LINE];
+        int num_numbers = 0;
+        char *token = strtok(line, "\"");
         while (token != NULL) {
-            vect[i] = token;
-            i++;
-            token = strtok(NULL, ",");
+            if (strlen(token) > 0 && token[0] != ',' && token[0] != '\n') {
+                numbers[num_numbers] = token;
+                num_numbers++;
+            }
+            token = strtok(NULL, "\"");
         }
-
-        // Guardar vector en variable
-        vectors[num_vectors] = malloc(sizeof(char*) * i);
-        for (j = 0; j < i; j++) {
-            vectors[num_vectors][j] = vect[j];
+        
+        // Crear vector de números
+        double vector[MAX_NUMBERS_PER_LINE];
+        for (i = 0; i < num_numbers; i++) {
+            vector[i] = atof(numbers[i]);
         }
-        num_vectors++;
-
-        // Reiniciar contador
-        i = 0;
-    }
-  
-    fclose(fp); 
-
-    // Imprimir vectores guardados en variables
-    for (j = 0; j < num_vectors; j++) {
-        for (k = 0; k < i; k++) {
-            printf("%s  ", vectors[j][k]);
+        
+        // Imprimir vector
+        printf("Vector %d: ", line_number);
+        for (i = 0; i < num_numbers; i++) {
+            printf("%f ", vector[i]);
         }
         printf("\n");
     }
-
-    // Liberar memoria
-    for (j = 0; j < num_vectors; j++) {
-        free(vectors[j]);
-    }
     
-
+    fclose(input_file);
     return 0;
-} 
+}
 
