@@ -12,9 +12,11 @@ int main() {
     int num_residuos_norenovables = 0, num_residuos_renovables = 0, num_generacion_total = 0;
 
 	
+	char fichero1[] = "C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv";
+	
 	// VECTOR HIDRAULICA
    
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -40,17 +42,17 @@ int main() {
     
     fclose(fp);
 
-    // for (i = 0; i < num_hidraulica; i++) {
-	//      printf("%lf ", hidraulica[i]);
-	// }
+    for (i = 0; i < num_hidraulica; i++) {
+	    printf("%lf ", hidraulica[i]);
+	}
 
-    // printf("\n");
-    // printf("\n");
+    printf("\n");
+    printf("\n");
     
     
     // VECTOR TURBINACION BOMBEO
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -88,7 +90,7 @@ int main() {
     
     // VECTOR NUCLEAR
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -126,7 +128,7 @@ int main() {
     
     // VECTOR CARBON
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -164,7 +166,7 @@ int main() {
     
     // VECTOR FUEL + GAS
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -202,7 +204,7 @@ int main() {
     
     // VECTOR MOTOR DIESEL
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -240,7 +242,7 @@ int main() {
     
     // VECTOR TURBINA GAS
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -278,7 +280,7 @@ int main() {
     
     // VECTOR TURBINA VAPOR
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -316,7 +318,7 @@ int main() {
     
     // VECTOR CICLO COMBINADO
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -354,7 +356,7 @@ int main() {
     
     // VECTOR HIDROEOLICA
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -392,7 +394,7 @@ int main() {
     
     // VECTOR EOLICA
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -429,7 +431,7 @@ int main() {
     
     // VECTOR SOLAR FOTOVOLTAICA
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -467,7 +469,7 @@ int main() {
     
     // VECTOR SOLAR TERMICA
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -505,7 +507,7 @@ int main() {
     
     // VECTOR OTRAS RENOVABLES
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -543,7 +545,7 @@ int main() {
     
     // VECTOR COGENERACION
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -581,7 +583,7 @@ int main() {
     
     // VECTOR RESIDUOS NO RENOVABLES
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -619,7 +621,7 @@ int main() {
     
     // VECTOR RESIDUOS RENOVABLES
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
@@ -657,7 +659,7 @@ int main() {
     
     // VECTOR GENERACION TOTAL
     
-    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    fp = fopen(fichero1, "r");
     if (fp == NULL) {
         printf("Error al abrir el archivo");
         return 1;
