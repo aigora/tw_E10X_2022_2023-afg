@@ -4,7 +4,9 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Fernanda Basagoiti Olazabal : FernandaBasagoiti
+Arnold Campoverde Castro: arnoldcampoverde
+German Criado de la Morena: 
 
 ## Objetivos del trabajo
 
