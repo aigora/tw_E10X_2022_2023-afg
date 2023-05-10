@@ -2,13 +2,14 @@
 #include <string.h>
 
 int main() {
+	
     FILE *fp;
     char linea[500];
     double hidraulica[25], turbinacion_bombeo[25], nuclear[25], carbon[25], fuel_gas[25], motores_diesel[25], turbina_gas[25], turbina_vapor[25], ciclo_combinado[25], hidroeolica[25];
     double eolica[25], solar_fotovoltaica[25], solar_termica[25], otras_renovables[25], cogeneracion[25], residuos_norenovables[25], residuos_renovables[25], generacion_total[25];
     int i = 0, num_hidraulica = 0, num_turbinacion_bombeo = 0, num_nuclear = 0, num_carbon = 0, num_fuel_gas = 0, num_motores_diesel = 0, num_turbina_gas = 0, num_turbina_vapor = 0;
     int num_ciclo_combinado = 0, num_hidroeolica = 0, num_eolica = 0, num_solar_fotovoltaica = 0, num_solar_termica = 0, num_otras_renovables = 0, num_cogeneracion = 0;
-    int num_residuos_norenovables = 0;
+    int num_residuos_norenovables = 0, num_residuos_renovables = 0, num_generacion_total = 0;
 
 	
 	// VECTOR HIDRAULICA
@@ -343,12 +344,12 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_ciclo_combinado; i++) {
-        printf("%lf ", ciclo_combinado[i]);
-    }
+    // for (i = 0; i < num_ciclo_combinado; i++) {
+    //     printf("%lf ", ciclo_combinado[i]);
+    // }
 
-    printf("\n");
-    printf("\n");
+    // printf("\n");
+    // printf("\n");
     
     
     // VECTOR HIDROEOLICA
@@ -381,12 +382,12 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_hidroeolica; i++) {
-        printf("%lf ", hidroeolica[i]);
-    }
+    // for (i = 0; i < num_hidroeolica; i++) {
+    //    printf("%lf ", hidroeolica[i]);
+    //}
 
-    printf("\n");
-    printf("\n");
+    //printf("\n");
+    //printf("\n");
     
     
     // VECTOR EOLICA
@@ -419,12 +420,12 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_eolica; i++) {
-        printf("%lf ", eolica[i]);
-    }
+    // for (i = 0; i < num_eolica; i++) {
+	//     printf("%lf ", eolica[i]);
+    // }
 
-    printf("\n");
-    printf("\n");
+    // printf("\n");
+    // printf("\n");
     
     // VECTOR SOLAR FOTOVOLTAICA
     
@@ -456,12 +457,12 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_solar_fotovoltaica; i++) {
-        printf("%lf ", solar_fotovoltaica[i]);
-    }
+    // for (i = 0; i < num_solar_fotovoltaica; i++) {
+    //    printf("%lf ", solar_fotovoltaica[i]);
+    //}
 
-    printf("\n");
-    printf("\n");
+    // printf("\n");
+    // printf("\n");
     
     
     // VECTOR SOLAR TERMICA
@@ -615,7 +616,83 @@ int main() {
     printf("\n");
     printf("\n");
     
- 
+    
+    // VECTOR RESIDUOS RENOVABLES
+    
+    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    if (fp == NULL) {
+        printf("Error al abrir el archivo");
+        return 1;
+    }
+
+    i = 0;
+    
+    while (fgets(linea, sizeof(linea), fp)) {
+        i++;
+        if (i == 22) {
+            char *p;
+            p = strtok(linea, "\"");
+            int j = 0;
+            while (p != NULL) {
+                if (j % 2 == 1) {
+                    sscanf(p, "%lf", &residuos_renovables[num_residuos_renovables]);
+                    num_residuos_renovables++;
+                }
+                j++;
+                p = strtok(NULL, "\"");
+            }
+            break;
+        }
+    }
+    
+    fclose(fp);
+
+    for (i = 0; i < num_residuos_renovables; i++) {
+        printf("%lf ", residuos_renovables[i]);
+    }
+
+    printf("\n");
+    printf("\n");
+    
+    
+    // VECTOR GENERACION TOTAL
+    
+    fp = fopen("C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv", "r");
+    if (fp == NULL) {
+        printf("Error al abrir el archivo");
+        return 1;
+    }
+
+    i = 0;
+    
+    while (fgets(linea, sizeof(linea), fp)) {
+        i++;
+        if (i == 23) {
+            char *p;
+            p = strtok(linea, "\"");
+            int j = 0;
+            while (p != NULL) {
+                if (j % 2 == 1) {
+                    sscanf(p, "%lf", &generacion_total[num_generacion_total]);
+                    num_generacion_total++;
+                }
+                j++;
+                p = strtok(NULL, "\"");
+            }
+            break;
+        }
+    }
+    
+    fclose(fp);
+
+    for (i = 0; i < num_generacion_total; i++) {
+        printf("%lf ", generacion_total[i]);
+    }
+
+    printf("\n");
+    printf("\n");
+    
+
 
     return 0;
 }
