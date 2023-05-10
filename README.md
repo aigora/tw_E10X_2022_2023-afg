@@ -4,8 +4,8 @@
 
 ## Integrantes del equipo
 
-Fernanda Basagoiti Olazabal : FernandaBasagoiti
-Arnold Campoverde Castro: arnoldcampoverde
+Fernanda Basagoiti Olazabal : FernandaBasagoiti;
+Arnold Campoverde Castro: arnoldcampoverde;
 German Criado de la Morena: 
 
 ## Objetivos del trabajo
