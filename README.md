@@ -1,11 +1,13 @@
-# [Título del trabajo]
+# DATOS RED ELÉCTRICA ESPAÑOLA
 
 [Descripción breve del proyecto a realizar (2-3 frases).]
 
 ## Integrantes del equipo
 
-Fernanda Basagoiti Olazabal : FernandaBasagoiti;
-Arnold Campoverde Castro: arnoldcampoverde;
+Fernanda Basagoiti Olazabal : FernandaBasagoiti
+
+Arnold Campoverde Castro: arnoldcampoverde
+
 German Criado de la Morena: 
 
 ## Objetivos del trabajo
