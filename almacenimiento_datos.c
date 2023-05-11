@@ -574,7 +574,6 @@ int main() {
     
     // IMPRIMIR VECTORES
 
-    
     for (i = 0; i < num_hidraulica; i++) {
 	    printf("%lf ", hidraulica[i]);
 	}
@@ -582,6 +581,7 @@ int main() {
 	printf("\n");
 	
 	// IMPRIMIR FECHAS
+	
 	int num_fechas = sizeof(fechas) / sizeof(fechas[0]);
 
     for (i = 0; i < num_fechas; i++) {
