@@ -42,14 +42,7 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_hidraulica; i++) {
-	    printf("%lf ", hidraulica[i]);
-	}
 
-    printf("\n");
-    printf("\n");
-    
-    
     // VECTOR TURBINACION BOMBEO
     
     fp = fopen(fichero1, "r");
@@ -80,13 +73,6 @@ int main() {
     
     fclose(fp);
 
-    // for (i = 0; i < num_turbinacion_bombeo; i++) {
-    //    printf("%lf ", turbinacion_bombeo[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
-    
     
     // VECTOR NUCLEAR
     
@@ -117,13 +103,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_nuclear; i++) {
-    //    printf("%lf ", nuclear[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR CARBON
@@ -155,13 +134,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_carbon; i++) {
-    //     printf("%lf ", carbon[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR FUEL + GAS
@@ -193,13 +165,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_fuel_gas; i++) {
-    //     printf("%lf ", fuel_gas[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR MOTOR DIESEL
@@ -232,13 +197,6 @@ int main() {
     
     fclose(fp);
 
-    // for (i = 0; i < num_motores_diesel; i++) {
-    //    printf("%lf ", motores_diesel[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
-    
     
     // VECTOR TURBINA GAS
     
@@ -269,13 +227,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_turbina_gas; i++) {
-    //     printf("%lf ", turbina_gas[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR TURBINA VAPOR
@@ -307,13 +258,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_turbina_vapor; i++) {
-    //     printf("%lf ", turbina_vapor[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR CICLO COMBINADO
@@ -345,13 +289,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_ciclo_combinado; i++) {
-    //     printf("%lf ", ciclo_combinado[i]);
-    // }
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR HIDROEOLICA
@@ -384,13 +321,6 @@ int main() {
     
     fclose(fp);
 
-    // for (i = 0; i < num_hidroeolica; i++) {
-    //    printf("%lf ", hidroeolica[i]);
-    //}
-
-    //printf("\n");
-    //printf("\n");
-    
     
     // VECTOR EOLICA
     
@@ -422,13 +352,7 @@ int main() {
     
     fclose(fp);
 
-    // for (i = 0; i < num_eolica; i++) {
-	//     printf("%lf ", eolica[i]);
-    // }
 
-    // printf("\n");
-    // printf("\n");
-    
     // VECTOR SOLAR FOTOVOLTAICA
     
     fp = fopen(fichero1, "r");
@@ -458,13 +382,6 @@ int main() {
     }
     
     fclose(fp);
-
-    // for (i = 0; i < num_solar_fotovoltaica; i++) {
-    //    printf("%lf ", solar_fotovoltaica[i]);
-    //}
-
-    // printf("\n");
-    // printf("\n");
     
     
     // VECTOR SOLAR TERMICA
@@ -496,13 +413,6 @@ int main() {
     }
     
     fclose(fp);
-
-    for (i = 0; i < num_solar_termica; i++) {
-        printf("%lf ", solar_termica[i]);
-    }
-
-    printf("\n");
-    printf("\n");
     
     
     // VECTOR OTRAS RENOVABLES
@@ -534,13 +444,6 @@ int main() {
     }
     
     fclose(fp);
-
-    for (i = 0; i < num_otras_renovables; i++) {
-        printf("%lf ", otras_renovables[i]);
-    }
-
-    printf("\n");
-    printf("\n");
     
     
     // VECTOR COGENERACION
@@ -573,13 +476,6 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_cogeneracion; i++) {
-        printf("%lf ", cogeneracion[i]);
-    }
-
-    printf("\n");
-    printf("\n");
-    
     
     // VECTOR RESIDUOS NO RENOVABLES
     
@@ -610,13 +506,6 @@ int main() {
     }
     
     fclose(fp);
-
-    for (i = 0; i < num_residuos_norenovables; i++) {
-        printf("%lf ", residuos_norenovables[i]);
-    }
-
-    printf("\n");
-    printf("\n");
     
     
     // VECTOR RESIDUOS RENOVABLES
@@ -649,13 +538,6 @@ int main() {
     
     fclose(fp);
 
-    for (i = 0; i < num_residuos_renovables; i++) {
-        printf("%lf ", residuos_renovables[i]);
-    }
-
-    printf("\n");
-    printf("\n");
-    
     
     // VECTOR GENERACION TOTAL
     
@@ -686,9 +568,12 @@ int main() {
     }
     
     fclose(fp);
+    
+    
+    // IMPRIMIR VECTORES
 
-    for (i = 0; i < num_generacion_total; i++) {
-        printf("%lf ", generacion_total[i]);
+    for (i = 0; i < num_hidraulica; i++) {
+        printf("%lf ", hidraulica[i]);
     }
 
     printf("\n");
