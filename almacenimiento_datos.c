@@ -7,9 +7,11 @@ int main() {
     char linea[500];
     double hidraulica[25], turbinacion_bombeo[25], nuclear[25], carbon[25], fuel_gas[25], motores_diesel[25], turbina_gas[25], turbina_vapor[25], ciclo_combinado[25], hidroeolica[25];
     double eolica[25], solar_fotovoltaica[25], solar_termica[25], otras_renovables[25], cogeneracion[25], residuos_norenovables[25], residuos_renovables[25], generacion_total[25];
-    int i = 0, num_hidraulica = 0, num_turbinacion_bombeo = 0, num_nuclear = 0, num_carbon = 0, num_fuel_gas = 0, num_motores_diesel = 0, num_turbina_gas = 0, num_turbina_vapor = 0;
+    int num_hidraulica = 0, num_turbinacion_bombeo = 0, num_nuclear = 0, num_carbon = 0, num_fuel_gas = 0, num_motores_diesel = 0, num_turbina_gas = 0, num_turbina_vapor = 0;
     int num_ciclo_combinado = 0, num_hidroeolica = 0, num_eolica = 0, num_solar_fotovoltaica = 0, num_solar_termica = 0, num_otras_renovables = 0, num_cogeneracion = 0;
     int num_residuos_norenovables = 0, num_residuos_renovables = 0, num_generacion_total = 0;
+    char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", "08/2021", "09/2021", "10/2021", "11/2021", "12/2021", "01/2022", "02/2022", "03/2022", "04/2022", "05/2022", "06/2022", "07/2022", "08/2022", "09/2022", "10/2022", "11/2022", "12/2022" };
+    int i, k;
 
 	
 	char fichero1[] = "C:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos.csv";
@@ -41,7 +43,7 @@ int main() {
     }
     
     fclose(fp);
-
+    
 
     // VECTOR TURBINACION BOMBEO
     
@@ -572,15 +574,67 @@ int main() {
     
     // IMPRIMIR VECTORES
 
+    
     for (i = 0; i < num_hidraulica; i++) {
-        printf("%lf ", hidraulica[i]);
-    }
+	    printf("%lf ", hidraulica[i]);
+	}
+	printf("\n");
+	printf("\n");
+	
+	// IMPRIMIR FECHAS
+	int num_fechas = sizeof(fechas) / sizeof(fechas[0]);
 
+    for (i = 0; i < num_fechas; i++) {
+        printf("%s  ", fechas[i]);
+    }
     printf("\n");
     printf("\n");
     
-
+    // GRAFICO DE BARRAS HIDRAULICA
+    
+    double max_hidraulica = 0;
+    for (i = 0; i < num_hidraulica; i++) {
+        if (hidraulica[i] > max_hidraulica) {
+            max_hidraulica = hidraulica[i];
+        }
+    }
+  
+    for (i = 0; i < num_hidraulica; i++) {
+        printf("%s ", fechas[i]);
+        for (k = 0; k < 100; k++) {
+            if ((double) k / 100 <= hidraulica[i] / max_hidraulica) {
+                printf("|");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+    
+    
+    printf("\n");
+    printf("\n");
+    
+    // GRAFICO DE BARRAS NUCLEAR
+    
+    double max_nuclear = 0;
+    for (i = 0; i < num_nuclear; i++) {
+        if (nuclear[i] > max_nuclear) {
+            max_nuclear = nuclear[i];
+        }
+    }
+ 
+    for (i = 0; i < num_nuclear; i++) {
+        printf("%s ", fechas[i]);
+        for (k = 0; k < 100; k++) {
+            if ((double) k / 100 <= nuclear[i] / max_nuclear) {
+                printf("|");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
 
     return 0;
 }
-
