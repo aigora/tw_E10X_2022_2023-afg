@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main () {
+	
+	int fecha;
+	int mes [12];
+	int ano [2] = {2021, 2022};
+	float hidraulica [24];
+	float turbinacion [24];
+	float nuclear [24];
+	float carbon [24];
+	float motores [24];
+	float turbinagas [24];
+	float turbinavapor [24];
+	float ciclocombinado [24];
+	float hidroeolica [24];
+	float eolica [24];
+	float solarfotov [24];
+	float solartermica [24];
+	float renovables [24];
+	float cogeneracion [24];
+	float residuosNR [24];
+	float residuosR [24];
+	float generacionT [24];
+	int i = 0;
+	
+	FILE *pf;
+	pf = fopen ("c:/Users/Fernanda/OneDrive/Desktop/Informática/generacion_por_tecnologias_21_22_puntos_simplificado.csv","r");
+	if (pf == NULL){
+		printf ("No se ha podido abrir el fichero.\n");
+	}
+	
+	while (fscanf (pf, "%i", &fecha) != EOF) {
+		for (i = 0; i < 100; i + 5) {
+			fecha = mes [i];
+		}
+	}
+	
+	for (i = 0; i < 12; i++) {
+		printf ("%i, ", mes);
+	}
+	return 0;
+}
