@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+void imprimir_energia_mes(int mes, int ano);
+
 int main() {
 	
     float hidraulica[24], turbinacion[24], nuclaer[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
@@ -11,7 +13,7 @@ int main() {
     //Variables estadisticas
     float suma_hidraulica_1 = 0, suma_hidraulica_2 = 0, suma_hidraulica_t = 0;
     float suma_enero_21 = 0;
-    int a = 0;
+    int mes, ano;
     
        
     FILE *pf;
@@ -213,77 +215,77 @@ int main() {
     
     // Imprimir vectores
 
-    printf("Hidraulica: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", hidraulica[i]);
-    }
-    printf("\n\n");
+    //printf("Hidraulica: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", hidraulica[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Turbinacion: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", turbinacion[i]);
-    }
-    printf("\n\n");
+    //printf("Turbinacion: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", turbinacion[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Nuclaer: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", nuclaer[i]);
-    }
-    printf("\n\n");
+    //printf("Nuclaer: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", nuclaer[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Carbon: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", carbon[i]);
-    }
-    printf("\n\n");
+    //printf("Carbon: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", carbon[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Motor diesel: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", motor[i]);
-    }
-    printf("\n\n");
+    //printf("Motor diesel: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", motor[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Turbina gas: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", turbinag[i]);
-    }
-    printf("\n\n");
+    //printf("Turbina gas: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", turbinag[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Turbina vapor: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", turbinav[i]);
-    }
-    printf("\n\n");
+    //printf("Turbina vapor: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", turbinav[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Ciclo combinado: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", ciclo[i]);
-    }
-    printf("\n\n");
+    //printf("Ciclo combinado: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", ciclo[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Hidroelctrica: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", hidroelectrica[i]);
-    }
-    printf("\n\n");
+    //printf("Hidroelctrica: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", hidroelectrica[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Eolica: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", eolica[i]);
-    }
-    printf("\n\n");
+    //printf("Eolica: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", eolica[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Solar fotovoltaica: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", solarfoto[i]);
-    }
-    printf("\n\n");
+    //printf("Solar fotovoltaica: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", solarfoto[i]);
+    //}
+    //printf("\n\n");
     
-    printf("Solar termica: ");
-    for (i = 0; i < 24; i++) {
-        printf("%f ", solarter[i]);
-    }
-    printf("\n\n");
+    //printf("Solar termica: ");
+    //for (i = 0; i < 24; i++) {
+    //    printf("%f ", solarter[i]);
+    //}
+    //rintf("\n\n");
     
     printf("Otras renovables: ");
     for (i = 0; i < 24; i++) {
@@ -340,12 +342,73 @@ int main() {
 	suma_hidraulica_t = (1./12.0) * suma_hidraulica_t;
 	printf("Energia media hidraulica generada en 2021 y 2022: %f\n\n", suma_hidraulica_t);
 	
+	printf("Introduce mes:");
+	scanf("%i", &mes);
+	printf("Introduce ano:");
+	scanf("%i", &ano);
 	
-	// Energia en enero 2021
-	printf("Energia total generada en enero 2021: %f\n", generaciontotal[0]);
-	printf("Energia media generada en enero 2021: %f\n\n", (1./16.0)*generaciontotal[0]);
+	imprimir_energia_mes(mes, ano);
 	
 	
     return 0;
 }
+
+void imprimir_energia_mes(int mes, int ano) {
+    char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    float generaciontotal[24];
+    float energia_total, energia_media;
+    int i;
+
+    FILE *pf;
+    pf = fopen(fichero1, "r");
+    if (pf == NULL) {
+        printf("No se ha podido abrir el fichero.\n");
+        return;
+    }
+
+    for (i = 0; i < 21; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &generaciontotal[i]);
+        }
+    }
+
+    fclose(pf);
+
+    if (mes >= 1 && mes <= 12) {
+        energia_total = generaciontotal[mes - 1];
+        energia_media = (1.0 / 16.0) * energia_total;
+
+        if (mes == 1 && ano == 2021) {
+            printf("Energia total generada en enero de 2021: %f\n", energia_total);
+            printf("Energia media generada en enero de 2021: %f\n\n", energia_media);
+        }
+
+        if (mes == 2 && ano == 2021) {
+            printf("Energia total generada en febrero de 2021: %f\n", energia_total);
+            printf("Energia media generada en febrero de 2021: %f\n\n", energia_media);
+        }
+
+        if (mes == 12 && ano == 2022) {
+            printf("Energia total generada en diciembre de 2022: %f\n", energia_total);
+            printf("Energia media generada en diciembre de 2022: %f\n\n", energia_media);
+        }
+    } else {
+        printf("Fecha invalida.\n");
+    }
+}
+
+
+
+ 
+
+
+
+
+
+
+
 
