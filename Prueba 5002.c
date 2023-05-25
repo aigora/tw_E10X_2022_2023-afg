@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
 	
@@ -6,12 +7,17 @@ int main() {
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
+    
+    //Variables estadisticas
+    float suma_hidraulica_1 = 0, suma_hidraulica_2 = 0, suma_hidraulica_t = 0;
+    float suma_enero_21 = 0;
+    int a = 0;
+    
        
     FILE *pf;
     pf = fopen(fichero1, "r");
     if (pf == NULL) {
         printf("No se ha podido abrir el fichero.\n");
-        return 1;
     }
 
     // Hidraulica
@@ -24,8 +30,7 @@ int main() {
             fscanf(pf, "%f,", &hidraulica[i]);
         }
     }
-    
-    
+     
     // Turbinacion
     for (i = 0; i < 6; i++) {
         fscanf(pf, "%*[^\n]%*c");
@@ -36,8 +41,7 @@ int main() {
             fscanf(pf, "%f,", &turbinacion[i]);
         }
     }
-
-
+    
     // Nuclear
     for (i = 0; i < 7; i++) {
         fscanf(pf, "%*[^\n]%*c");
@@ -71,7 +75,6 @@ int main() {
         }
     }
     
-    
     // Turbina gas
     for (i = 0; i < 10; i++) {
         fscanf(pf, "%*[^\n]%*c");
@@ -82,7 +85,6 @@ int main() {
             fscanf(pf, "%f,", &turbinag[i]);
         }
     }
-
 
     // Turbina vapor
     for (i = 0; i < 11; i++) {
@@ -150,7 +152,6 @@ int main() {
         }
     }
 
-
     // Otras renovables
     for (i = 0; i < 16; i++) {
         fscanf(pf, "%*[^\n]%*c");
@@ -194,7 +195,6 @@ int main() {
             fscanf(pf, "%f,", &residuosr[i]);
         }
     }
-    
     
     // Generacion total
     for (i = 0; i < 20; i++) {
@@ -316,7 +316,40 @@ int main() {
     printf("\n\n");
     
     
-
+    // Media de una energia en años
+    
+    // Hidraulica 2021
+    for (i=0; i<12; i++){
+    	suma_hidraulica_1 = suma_hidraulica_1 + hidraulica[i];
+	}
+	printf("Energia hidraulica generada en 2021: %f\n", suma_hidraulica_1);
+	suma_hidraulica_1 = (1./12.0) * suma_hidraulica_1;
+	printf("Energia media hidraulica generada en 2021: %f\n\n", suma_hidraulica_1);
+	
+	// Media segundo año
+    for (i=12; i<24; i++){
+    	suma_hidraulica_2 = suma_hidraulica_2 + hidraulica[i];
+	}
+	printf("Energia hidraulica generada en 2022: %f\n", suma_hidraulica_2);
+	suma_hidraulica_2 = (1./12.0) * suma_hidraulica_2;
+	printf("Energia media hidraulica generada en 2022: %f\n\n", suma_hidraulica_2);
+	
+	// Media total
+	for (i=0; i<24; i++){
+    	suma_hidraulica_t = suma_hidraulica_t + hidraulica[i];
+	}
+	printf("Energia hidraulica generada en 2021 y 2022: %f\n", suma_hidraulica_t);
+	suma_hidraulica_t = (1./12.0) * suma_hidraulica_t;
+	printf("Energia media hidraulica generada en 2021 y 2022: %f\n\n", suma_hidraulica_t);
+	
+	
+	
+	// Media de las energias en un mes
+	printf("Energia total generada en enero 2021: %f\n", generaciontotal[0]);
+	printf("Energia media generada en enero 2021: %f\n\n", (1./16.0)*generaciontotal[0]);
+	
+	
+    
     return 0;
 }
 
