@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main() {
-	int i;
+	
     float hidraulica[24], turbinacion[24], nuclaer[24];
-
+    char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    int i;
+       
     FILE *pf;
-    pf = fopen("c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r");
+    pf = fopen(fichero1, "r");
     if (pf == NULL) {
         printf("No se ha podido abrir el fichero.\n");
         return 1;
