@@ -316,8 +316,6 @@ int main() {
     printf("\n\n");
     
     
-    // Media de una energia en años
-    
     // Hidraulica 2021
     for (i=0; i<12; i++){
     	suma_hidraulica_1 = suma_hidraulica_1 + hidraulica[i];
@@ -326,7 +324,7 @@ int main() {
 	suma_hidraulica_1 = (1./12.0) * suma_hidraulica_1;
 	printf("Energia media hidraulica generada en 2021: %f\n\n", suma_hidraulica_1);
 	
-	// Media segundo año
+	// Hidraulica 2021
     for (i=12; i<24; i++){
     	suma_hidraulica_2 = suma_hidraulica_2 + hidraulica[i];
 	}
@@ -334,7 +332,7 @@ int main() {
 	suma_hidraulica_2 = (1./12.0) * suma_hidraulica_2;
 	printf("Energia media hidraulica generada en 2022: %f\n\n", suma_hidraulica_2);
 	
-	// Media total
+	// Hidraulica 2021 y 2022
 	for (i=0; i<24; i++){
     	suma_hidraulica_t = suma_hidraulica_t + hidraulica[i];
 	}
@@ -343,13 +341,11 @@ int main() {
 	printf("Energia media hidraulica generada en 2021 y 2022: %f\n\n", suma_hidraulica_t);
 	
 	
-	
-	// Media de las energias en un mes
+	// Energia en enero 2021
 	printf("Energia total generada en enero 2021: %f\n", generaciontotal[0]);
 	printf("Energia media generada en enero 2021: %f\n\n", (1./16.0)*generaciontotal[0]);
 	
 	
-    
     return 0;
 }
 
