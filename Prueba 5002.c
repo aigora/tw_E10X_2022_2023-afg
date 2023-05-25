@@ -2,7 +2,7 @@
 
 int main() {
 	
-    float hidraulica[24], turbinacion[24], nuclaer[24];
+    float hidraulica[24], turbinacion[24], nuclaer[24], carbon[24];
     char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
        
@@ -47,6 +47,17 @@ int main() {
             fscanf(pf, "%f,", &nuclaer[i]);
         }
     }
+    
+    // Carbon
+    for (i = 0; i < 8; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &carbon[i]);
+        }
+    }
 
     fclose(pf);
 
@@ -65,6 +76,12 @@ int main() {
     printf("Nuclaer:\n");
     for (i = 0; i < 24; i++) {
         printf("%f ", nuclaer[i]);
+    }
+    printf("\n\n");
+    
+    printf("Carbon:\n");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", carbon[i]);
     }
     printf("\n\n");
 
