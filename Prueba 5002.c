@@ -3,7 +3,7 @@
 int main() {
 	
     float hidraulica[24], turbinacion[24], nuclaer[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
-    float solarfoto[24];
+    float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
        
@@ -117,6 +117,17 @@ int main() {
         }
     }
     
+    // Eolica
+    for (i = 0; i < 14; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &eolica[i]);
+        }
+    }
+    
     // Solarfotovoltaica
     for (i = 0; i < 14; i++) {
         fscanf(pf, "%*[^\n]%*c");
@@ -125,6 +136,74 @@ int main() {
     if (fscanf(pf, "%*[^,],") == 0) {
         for (i = 0; i < 24; i++) {
             fscanf(pf, "%f,", &solarfoto[i]);
+        }
+    }
+    
+    // Solar termica
+    for (i = 0; i < 15; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &solarter[i]);
+        }
+    }
+
+
+    // Otras renovables
+    for (i = 0; i < 16; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &renovables[i]);
+        }
+    }
+    
+    // Cogeneracion
+    for (i = 0; i < 17; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &cogeneracion[i]);
+        }
+    }
+    
+    // Resudios no renovales
+    for (i = 0; i < 18; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &residuosnor[i]);
+        }
+    }
+    
+    // Residuos renovables
+    for (i = 0; i < 19; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &residuosr[i]);
+        }
+    }
+    
+    
+    // Generacion total
+    for (i = 0; i < 20; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &generaciontotal[i]);
         }
     }
 
@@ -188,9 +267,51 @@ int main() {
     }
     printf("\n\n");
     
+    printf("Eolica: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", eolica[i]);
+    }
+    printf("\n\n");
+    
     printf("Solar fotovoltaica: ");
     for (i = 0; i < 24; i++) {
         printf("%f ", solarfoto[i]);
+    }
+    printf("\n\n");
+    
+    printf("Solar termica: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", solarter[i]);
+    }
+    printf("\n\n");
+    
+    printf("Otras renovables: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", renovables[i]);
+    }
+    printf("\n\n");
+    
+    printf("Cogeneracion: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", cogeneracion[i]);
+    }
+    printf("\n\n");
+    
+    printf("Residuos no renovables: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", residuosnor[i]);
+    }
+    printf("\n\n");
+    
+    printf("Residuos renovables: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", residuosr[i]);
+    }
+    printf("\n\n");
+    
+    printf("Generacion totatl: ");
+    for (i = 0; i < 24; i++) {
+        printf("%f ", generaciontotal[i]);
     }
     printf("\n\n");
     
