@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-void imprimir_vectores (float v[24]);
-void imprimir_energia (float v[24], int ano, int total);
-void imprimir_energia_mes (float v[24], int mes_ano);
+void imprimir_vectores(float v[24]);
+void imprimir_energia(float v[24], int ano, int total);
+void imprimir_energia_mes(float v[24], int mes_ano);
 
 int main() {
 	
@@ -272,7 +272,12 @@ int main() {
 	}
 
 	printf("Energia: ");
-	scanf("%i %i %i", &energia, &ano, &total);
+	scanf("%i", &energia);
+	printf("Ano: (2021 | 2022 | 2122): ");
+	scanf("%i", &ano);
+	printf("Total: (Total = 1, Media = 2) ");
+	scanf("%i", &total);
+	
 
 	switch (energia) {
     case 1:
@@ -327,11 +332,6 @@ int main() {
         printf("Energia incorrecta. \n\n");
         break;
 	}
-
-	
-
-	imprimir_energia_2022 (hidroelectrica);
-	imprimir_energia_2021_2022 (cogeneracion);
 	
 	imprimir_energia_mes(generaciontotal, 0);
 	imprimir_energia_mes(generaciontotal, 23);
@@ -364,7 +364,8 @@ void imprimir_vectores(float v[24]) {
             }
             if (total == 1) {
                 printf("Energia generada en 2021: %f\n", suma);
-            } else if (total == 2) {
+            } 
+			else if (total == 2) {
                 suma /= 12.0;
                 printf("Energia media generada en 2021: %f\n\n", suma);
             }
@@ -375,7 +376,8 @@ void imprimir_vectores(float v[24]) {
             }
             if (total == 1) {
                 printf("Energia generada en 2022: %f\n", suma);
-            } else if (total == 2) {
+            } 
+			else if (total == 2) {
                 suma /= 12.0;
                 printf("Energia media generada en 2022: %f\n\n", suma);
             }
@@ -387,7 +389,7 @@ void imprimir_vectores(float v[24]) {
             if (total == 1) {
                 printf("Energia generada en 2021 y 2022: %f\n", suma);
             }
-            if (total == 2) {
+            else if (total == 2) {
                 suma /= 24.0;
                 printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
             }
@@ -407,7 +409,8 @@ void imprimir_energia_mes (float v[24], int mes_ano) {
         printf("Energia total : %f\n", energia_total);
         printf("Energia media: %f\n\n", energia_media);
         
- 	} else {
+ 	}
+	else {
         printf("Fecha invalida.\n");
     }
 }
