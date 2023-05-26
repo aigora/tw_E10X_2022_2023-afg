@@ -11,6 +11,7 @@ int main () {
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i, a, m, dato;
+    int n = 4;
        
     FILE *pf;
     pf = fopen(fichero1, "r");
@@ -221,39 +222,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", hidraulica [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", hidraulica [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", hidraulica [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", hidraulica [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", hidraulica [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", hidraulica [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", hidraulica [m]);
+					printf ("%f\n", hidraulica [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", hidraulica [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", hidraulica [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", hidraulica [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", hidraulica [m]);
-						printf ("%f\n", hidraulica [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", hidraulica [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 2:
@@ -261,39 +260,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", turbinacion [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", turbinacion [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", turbinacion [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", turbinacion [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", turbinacion [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", turbinacion [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", turbinacion [m]);
+					printf ("%f\n", turbinacion [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", turbinacion [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", turbinacion [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", turbinacion [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", turbinacion [m]);
-						printf ("%f\n", turbinacion [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", turbinacion [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 3:
@@ -301,39 +298,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", nuclear [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", nuclear [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", nuclear [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", nuclear [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", nuclear [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", nuclear [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", nuclear [m]);
+					printf ("%f\n", nuclear [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", nuclear [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", nuclear [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", nuclear [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", nuclear [m]);
-						printf ("%f\n", nuclear [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", nuclear [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 4:
@@ -341,39 +336,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", carbon [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", carbon [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", carbon [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", carbon [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", carbon [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", carbon [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", carbon [m]);
+					printf ("%f\n", carbon [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", carbon [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", carbon [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", carbon [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", carbon [m]);
-						printf ("%f\n", carbon [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", carbon [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 5:
@@ -381,39 +374,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", motor [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", motor [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", motor [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", motor [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", motor [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", motor [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", motor [m]);
+					printf ("%f\n", motor [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", motor [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", motor [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", motor [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", motor [m]);
-						printf ("%f\n", motor [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", motor [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 6:
@@ -421,39 +412,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", turbinag [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", turbinag [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", turbinag [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", turbinag [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", turbinag [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", turbinag [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", turbinag [m]);
+					printf ("%f\n", turbinag [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", turbinag [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", turbinag [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", turbinag [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", turbinag [m]);
-						printf ("%f\n", turbinag [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", turbinag [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 7:
@@ -461,39 +450,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", turbinav [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", turbinav [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", turbinav [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", turbinav [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", turbinav [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", turbinav [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", turbinav [m]);
+					printf ("%f\n", turbinav [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", turbinav [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", turbinav [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", turbinav [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", turbinav [m]);
-						printf ("%f\n", turbinav [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", turbinav [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 8:
@@ -501,39 +488,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", ciclo [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", ciclo [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", ciclo [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", ciclo [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", ciclo [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", ciclo [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", ciclo [m]);
+					printf ("%f\n", ciclo [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", ciclo [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", ciclo [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", ciclo [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", ciclo [m]);
-						printf ("%f\n", ciclo [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", ciclo [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 9:
@@ -541,39 +526,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", hidroelectrica [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", hidroelectrica [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", hidroelectrica [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", hidroelectrica [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", hidroelectrica [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", hidroelectrica [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", hidroelectrica [m]);
+					printf ("%f\n", hidroelectrica [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", hidroelectrica [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", hidroelectrica [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", hidroelectrica [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", hidroelectrica [m]);
-						printf ("%f\n", turbinag [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", hidroelectrica [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 10:
@@ -581,39 +564,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", eolica [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", eolica [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", eolica [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", eolica [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", eolica [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", eolica [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", eolica [m]);
+					printf ("%f\n", eolica [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", eolica [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", eolica [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", eolica [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", eolica [m]);
-						printf ("%f\n", eolica [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", eolica [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 11:
@@ -621,80 +602,75 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", solarfoto [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", solarfoto [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", solarfoto [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", solarfoto [i]);
-						}
-					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", solarfoto [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", solarfoto [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", solarfoto [m]);
-						printf ("%f\n", solarfoto [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", solarfoto [i]);
-						}
-					}
-					break;
+				}
 			}
-			
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", solarfoto [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", solarfoto [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", solarfoto [m]);
+					printf ("%f\n", solarfoto [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", solarfoto [i]);
+					}
+				}
+			}
 			break;
 		case 12:
 			a = ano ();
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", solarter [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", solarter [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", solarter [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", solarter [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", solarter [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", solarter [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", solarter [m]);
+					printf ("%f\n", solarter [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", solarter [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", solarter [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", solarter [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", solarter [m]);
-						printf ("%f\n", solarter [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", solarter [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 13:
@@ -702,39 +678,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", renovables [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", renovables [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", renovables [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", renovables [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", renovables [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", renovables [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", renovables [m]);
+					printf ("%f\n", renovables [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", renovables [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", renovables [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", renovables [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", renovables [m]);
-						printf ("%f\n", renovables [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", renovables [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 14:
@@ -742,39 +716,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", cogeneracion [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", cogeneracion [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", cogeneracion [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", cogeneracion [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", cogeneracion [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", cogeneracion [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", cogeneracion [m]);
+					printf ("%f\n", cogeneracion [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", cogeneracion [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", cogeneracion [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", cogeneracion [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", cogeneracion [m]);
-						printf ("%f\n", turbinag [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", cogeneracion [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 15:
@@ -782,39 +754,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", residuosnor [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", residuosnor [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", residuosnor [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", residuosnor [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", residuosnor [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", residuosnor [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", residuosnor [m]);
+					printf ("%f\n", residuosnor [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", residuosnor [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", residuosnor [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", residuosnor [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", residuosnor [m]);
-						printf ("%f\n", turbinag [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", residuosnor [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 16:
@@ -822,39 +792,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", residuosr [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", residuosr [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", residuosr [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", residuosr [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", residuosr [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", residuosr [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", residuosr [m]);
+					printf ("%f\n", residuosr [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", residuosr [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", residuosr [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", residuosr [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", residuosr [m]);
-						printf ("%f\n", residuosr [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", residuosr [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;
 		case 17:
@@ -862,39 +830,37 @@ int main () {
 			m = mes ();
 			m = m - 1;
 			
-			switch (a) {
-				case 1:
-					if (m != 23) {
-						printf ("%f\n", generaciontotal [m]);
+			if (a == 1) {
+				if (m != 23) {
+					printf ("%f\n", generaciontotal [m]);
+				}
+				else if (m == 23) {
+					for (i = 0; i < 11; i++) {
+						printf ("%f  ", generaciontotal [i]);
 					}
-					else if (m == 23) {
-						for (i = 0; i < 11; i++) {
-							printf ("%f  ", generaciontotal [i]);
-						}
+				}
+			}
+			if (a == 2) {
+				if (m != 23) {
+					m = m + 12;
+					printf ("%f \n", generaciontotal [m]);
+				}
+				else if (m == 23) {
+					for (i = 12; i < m; i++) {
+						printf ("%f  ", generaciontotal [i]);
+					}	
+				}
+			}
+			if (a == 3) {
+				if (m != 23) {
+					printf ("%f\n", generaciontotal [m]);
+					printf ("%f\n", generaciontotal [m + 12]);
+				}
+				else if ( m == 23) {
+					for (i = 0; i < m; i++) {
+						printf ("%f  ", generaciontotal [i]);
 					}
-					break;
-				case 2: 
-					if (m != 23) {
-						m = m + 12;
-						printf ("%f \n", generaciontotal [m]);
-					}
-					else if (m == 23) {
-						for (i = 12; i < m; i++) {
-							printf ("%f  ", generaciontotal [i]);
-						}	
-					}
-					break;
-				case 3:
-					if (m != 23) {
-						printf ("%f\n", generaciontotal [m]);
-						printf ("%f\n", generaciontotal [m + 12]);
-					}
-					else if ( m == 23) {
-						for (i = 0; i < m; i++) {
-							printf ("%f  ", generaciontotal [i]);
-						}
-					}
-					break;
+				}
 			}
 			break;														
 	}
