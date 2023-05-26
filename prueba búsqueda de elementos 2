@@ -211,10 +211,10 @@ int main () {
     
     printf ("Elija que dato quiere consultar:\n");
     printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n (5) Motores diesel\n(6) Turbina de gas\n");
-	printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Eolica\n(12) Sola fotovoltaica\n(13) Solar termica\n");
-	printf ("(14) Otras renovables\n(15) Cogeneracion\n(16) Residuos no renovables\n(17) Residuos renovables\n(18) Generacion total\n");
+	printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
+	printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
 	printf ("Si quiere ver todos los datos pulse (0)");
-	scanf ("%i", %dato);
+	scanf ("%i", &dato);
 	
 	switch (dato) {
 		case 1:
@@ -235,7 +235,7 @@ int main () {
 					break;
 				case 2: 
 					if (m != 23) {
-						m = m + 12
+						m = m + 12;
 						printf ("%f \n", hidraulica [m]);
 					}
 					else if (m == 23) {
@@ -254,7 +254,7 @@ int main () {
 							printf ("%f  ", hidraulica [i]);
 						}
 					}
-					break
+					break;
 			}
 			break;
 		case 2:
@@ -294,7 +294,7 @@ int main () {
 							printf ("%f  ", turbinacion [i]);
 						}
 					}
-					break
+					break;
 			}
 			break;
 		case 3:
@@ -334,7 +334,7 @@ int main () {
 							printf ("%f  ", nuclear [i]);
 						}
 					}
-					break
+					break;
 			}
 			break;
 		case 4:
@@ -374,7 +374,7 @@ int main () {
 							printf ("%f  ", carbon [i]);
 						}
 					}
-					break
+					break;
 			}
 			break;
 		case 5:
@@ -414,61 +414,490 @@ int main () {
 							printf ("%f  ", motor [i]);
 						}
 					}
-					break
+					break;
 			}
 			break;
 		case 6:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", turbinag [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", turbinag [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", turbinag [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", turbinag [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", turbinag [m]);
+						printf ("%f\n", turbinag [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", turbinag [i]);
+						}
+					}
+					break;
+			}
 			break;
 		case 7:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", turbinav [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", turbinav [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", turbinav [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", turbinav [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", turbinav [m]);
+						printf ("%f\n", turbinav [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", turbinav [i]);
+						}
+					}
+					break;
+			}
 			break;
 		case 8:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", ciclo [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", ciclo [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", ciclo [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", ciclo [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", ciclo [m]);
+						printf ("%f\n", ciclo [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", ciclo [i]);
+						}
+					}
+					break;
+			}
 			break;
 		case 9:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", hidroelectrica [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", hidroelectrica [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", hidroelectrica [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", hidroelectrica [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", hidroelectrica [m]);
+						printf ("%f\n", turbinag [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", hidroelectrica [i]);
+						}
+					}
+					break;
+			}
 			break;
 		case 10:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", eolica [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", eolica [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", eolica [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", eolica [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", eolica [m]);
+						printf ("%f\n", eolica [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", eolica [i]);
+						}
+					}
+					break;
+			}
 			break;
 		case 11:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", solarfoto [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", solarfoto [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", solarfoto [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", solarfoto [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", solarfoto [m]);
+						printf ("%f\n", solarfoto [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", solarfoto [i]);
+						}
+					}
+					break;
+			}
+			
 			break;
 		case 12:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", solarter [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", solarter [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", solarter [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", solarter [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", solarter [m]);
+						printf ("%f\n", solarter [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", solarter [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 13:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", renovables [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", renovables [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", renovables [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", renovables [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", renovables [m]);
+						printf ("%f\n", renovables [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", renovables [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 14:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", cogeneracion [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", cogeneracion [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", cogeneracion [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", cogeneracion [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", cogeneracion [m]);
+						printf ("%f\n", turbinag [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", cogeneracion [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 15:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", residuosnr [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", residuosnr [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", residuosnr [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", residuosnr [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", residuosnr [m]);
+						printf ("%f\n", turbinag [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", residuosnr [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 16:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", residuosr [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", residuosr [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", residuosr [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", residuosr [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", residuosr [m]);
+						printf ("%f\n", residuosr [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", residuosr [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 17:
 			a = ano ();
 			m = mes ();
-			break;
-		case 18:
-			a = ano ();
-			m = mes ();
-			break;																
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", generaciontotal [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", generaciontotal [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", generaciontotal [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", generaciontotal [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", generaciontotal [m]);
+						printf ("%f\n", generaciontotal [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", generacion total [i]);
+						}
+					}
+					break
+			}
+			break;														
 	}
 	return 0;
 }
