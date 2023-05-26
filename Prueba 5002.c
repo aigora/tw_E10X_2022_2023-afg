@@ -18,206 +18,13 @@ int main() {
     // Variables menu
     int opcion;
     
-    
-    
-    
-    
-    // Menu
-    printf("=== Red Eléctrica Española ===\n\n");
-    
-    printf("Bienvenido a este programa acerca de la forma de generacio´n de energi´a ele´ctrica en Espan~a durante los an~os 2021 y 2022\n\n");
-    do {
-        // Imprimir el menú
-        
-        printf("A continuación, dispone del menu de opciones que ofrecemos:\n\n");
-        
-        printf("1. Información general \n");
-        printf("2. Datos del gasto energético\n");
-        printf("3. Cálculos estadísticos\n");
-        printf("4. Comparación con otros paises\n");
-        printf("5. \n");
-        printf("6. Salir\n");
-        printf("Ingrese una opción: \n\n");
-        scanf("%d", &opcion);
-
-        // Realizar acciones según la opción seleccionada
-        switch (opcion) {
-            case 1:
-                printf("Has seleccionado la opción 1: Información general\n\n");
-                
-                printf("Durante los años 2021 y 2022, España combinó fuentes convencionales y renovables en su generación de energía eléctrica. Destacaron la energía eólica y solar como principales fuentes renovables. Se instalaron nuevos parques eólicos y plantas solares, aprovechando los recursos naturales del país. Aunque las fuentes convencionales como la energía nuclear y los combustibles fósiles tuvieron un papel importante, se observó una disminución gradual en la generación de electricidad a partir del carbón. Se realizaron avances en infraestructuras de transporte y almacenamiento de energía, implementando tecnologías de almacenamiento para una gestión eficiente de la energía renovable. En resumen, España avanzó hacia una generación más sostenible, combinando fuentes renovables y convencionales para satisfacer la demanda eléctrica y reducir las emisiones de gases de efecto invernadero..\n\n");
-                
-                break;
-            case 2:
-                printf("Has seleccionado la opción 2: \n");
-               //gasto energético
-                break;
-            case 3:
-                printf("Has seleccionado la opción 3: \n");
-                
-                		printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7)\n");
-						printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13)\n");
-						printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)\n\n");
-						printf("Lista de energia: ");
-						scanf("%i", &energia);
-	
-						switch (energia) {
-								case 1:
-									imprimir_vectores(hidraulica);
-									break;
-								case 2:
-									imprimir_vectores(turbinacion);
-									break;
-								case 3:
-									imprimir_vectores(nuclear);
-									break;
-								case 4:
-									imprimir_vectores(carbon);
-									break;
-								case 5:
-									imprimir_vectores(motor);
-									break;
-								case 6:
-									imprimir_vectores(turbinag);
-									break;
-								case 7:
-									imprimir_vectores(turbinav);
-									break;
-								case 8:
-									imprimir_vectores(ciclo);
-									break;
-								case 9:
-									imprimir_vectores(hidroelectrica);
-									break;
-								case 10:
-									imprimir_vectores(eolica);
-									break;
-								case 11:
-									imprimir_vectores(solarfoto);
-									break;
-								case 12:
-									imprimir_vectores(solarter);
-									break;
-								case 13:
-									imprimir_vectores(renovables);
-									break;
-								case 14:
-									imprimir_vectores(cogeneracion);
-									break;
-								case 15:
-									imprimir_vectores(residuosnor);
-									break;
-								case 16:
-									imprimir_vectores(residuosr);
-									break;
-								default:
-									printf("Energia icnorrecta. \n\n");
-									break;
-								}
-
-	printf("Tipo de energia: ");
-	scanf("%i", &energia);
-	printf("Insertar ano: ");
-	scanf("%i", &ano);
-	printf("Total (1) Media (2) Ambas (3): ");
-	scanf("%i", &total);
-	printf("\n");
-	
-
-	switch (energia) {
-    case 1:
-        imprimir_energia(hidraulica, ano, total);
-        break;
-    case 2:
-        imprimir_energia(turbinacion, ano, total);
-        break;
-    case 3:
-        imprimir_energia(nuclear, ano, total);
-        break;
-    case 4:
-        imprimir_energia(carbon, ano, total);
-        break;
-    case 5:
-        imprimir_energia(motor, ano, total);
-        break;
-    case 6:
-        imprimir_energia(turbinag, ano, total);
-        break;
-    case 7:
-        imprimir_energia(turbinav, ano, total);
-        break;
-    case 8:
-        imprimir_energia(ciclo, ano, total);
-        break;
-    case 9:
-        imprimir_energia(hidroelectrica, ano, total);
-        break;
-    case 10:
-        imprimir_energia(eolica, ano, total);
-        break;
-    case 11:
-        imprimir_energia(solarfoto, ano, total);
-        break;
-    case 12:
-        imprimir_energia(solarter, ano, total);
-        break;
-    case 13:
-        imprimir_energia(renovables, ano, total);
-        break;
-    case 14:
-        imprimir_energia(cogeneracion, ano, total);
-        break;
-    case 15:
-        imprimir_energia(residuosnor, ano, total);
-        break;
-    case 16:
-        imprimir_energia(residuosr, ano, total);
-        break;
-    default:
-        printf("Energia incorrecta. \n\n");
-        break;
-	}
-	
-	printf("\n\n");
-	
-	printf("Insertar mes: ");
-	scanf("%i", &mes);
-	printf("Insertar ano: ");
-	scanf("%i", &ano);
-	printf("Total (1)  Media (2) Ambas (3): ");
-	scanf("%i", &total);
-	imprimir_energia_mes(generaciontotal, mes, ano, total);
-                
-                //cálculos estadísticos
-                break;
-            case 4:
-                printf("Has seleccionado la opción 4: \n");
-                //comparación con otros paises
-                break;
-            case 5:
-                printf("Has seleccionado la opción 5: \n");
-                
-                break;
-            case 6:
-                printf("Saliendo del programa...\n");
-                break;
-            default:
-                printf("Opción inválida. Por favor, seleccione una opción válida.\n");
-                break;
-        }
-
-        printf("\n");
-    } while (opcion != 6);
-    
+    // Lectura fichero   
        
     FILE *pf;
     pf = fopen(fichero1, "r");
     if (pf == NULL) {
         printf("No se ha podido abrir el fichero.\n");
     }
-    
-    
-    
     
     // Datos en vectores
 
@@ -409,6 +216,223 @@ int main() {
     }
 
     fclose(pf);
+    
+    
+    
+    // Menu
+    printf("=== Red Electrica Espanola ===\n\n");
+    
+    printf("Bienvenido a este programa acerca de la forma de generacio´n de energi´a ele´ctrica en Espan~a durante los an~os 2021 y 2022\n\n");
+    do {
+        // Imprimir el menú
+        
+        printf("A continuacion, dispone del menu de opciones que ofrecemos:\n\n");
+        
+        printf("1. Informacion general \n");
+        printf("2. Datos del gasto energetico\n");
+        printf("3. Calculos estadisticos\n");
+        printf("4. Comparacion con otros paises\n");
+        printf("5. \n");
+        printf("6. Salir\n");
+        printf("Ingrese una opcion: \n\n");
+        scanf("%d", &opcion);
+
+        // Realizar acciones según la opción seleccionada
+        switch (opcion) {
+            case 1:
+                printf("Has seleccionado la opcion 1: Informacion general\n\n");
+                
+                printf("Durante los años 2021 y 2022, España combino fuentes convencionales y renovables en su generación de energía eléctrica. Destacaron la energía eólica y solar como principales fuentes renovables. Se instalaron nuevos parques eólicos y plantas solares, aprovechando los recursos naturales del país. Aunque las fuentes convencionales como la energía nuclear y los combustibles fósiles tuvieron un papel importante, se observó una disminución gradual en la generación de electricidad a partir del carbón. Se realizaron avances en infraestructuras de transporte y almacenamiento de energía, implementando tecnologías de almacenamiento para una gestión eficiente de la energía renovable. En resumen, España avanzó hacia una generación más sostenible, combinando fuentes renovables y convencionales para satisfacer la demanda eléctrica y reducir las emisiones de gases de efecto invernadero..\n\n");
+                
+                break;
+            case 2: //gasto energético
+                printf("Has seleccionado la opción 2: \n"); 
+                printf("Elegir tipo de energia: \n\n");
+                
+                printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7)\n");
+						printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13)\n");
+						printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
+						printf("Lista de energia: ");
+						scanf("%i", &energia);
+	
+						switch (energia) {
+								case 1:
+									imprimir_vectores(hidraulica);
+									break;
+								case 2:
+									imprimir_vectores(turbinacion);
+									break;
+								case 3:
+									imprimir_vectores(nuclear);
+									break;
+								case 4:
+									imprimir_vectores(carbon);
+									break;
+								case 5:
+									imprimir_vectores(motor);
+									break;
+								case 6:
+									imprimir_vectores(turbinag);
+									break;
+								case 7:
+									imprimir_vectores(turbinav);
+									break;
+								case 8:
+									imprimir_vectores(ciclo);
+									break;
+								case 9:
+									imprimir_vectores(hidroelectrica);
+									break;
+								case 10:
+									imprimir_vectores(eolica);
+									break;
+								case 11:
+									imprimir_vectores(solarfoto);
+									break;
+								case 12:
+									imprimir_vectores(solarter);
+									break;
+								case 13:
+									imprimir_vectores(renovables);
+									break;
+								case 14:
+									imprimir_vectores(cogeneracion);
+									break;
+								case 15:
+									imprimir_vectores(residuosnor);
+									break;
+								case 16:
+									imprimir_vectores(residuosr);
+									break;
+								case 17:
+									imprimir_vectores(hidraulica);
+									imprimir_vectores(turbinacion);
+									imprimir_vectores(nuclear);
+									imprimir_vectores(carbon);
+									imprimir_vectores(motor);
+									imprimir_vectores(turbinag);
+									imprimir_vectores(turbinav);
+									imprimir_vectores(ciclo);
+									imprimir_vectores(hidroelectrica);
+									imprimir_vectores(eolica);
+									imprimir_vectores(solarfoto);
+									imprimir_vectores(solarter);
+									imprimir_vectores(renovables);
+									imprimir_vectores(cogeneracion);
+									imprimir_vectores(residuosnor);
+									imprimir_vectores(residuosr);
+									break;
+								default:
+									printf("Energia icnorrecta. \n\n");
+									break;
+								}
+                break;
+  			case 3:
+				printf("Has seleccionado la opción 3: \n");
+				
+				printf("Elegir opcion\n\n");
+				printf("1 - Calcular media en un año\n");
+				printf("2 - Calcular media en un mes\n");
+				scanf("%i", &opcion);
+				
+				switch (opcion){
+					case 1:
+						printf("Tipo de energia: ");
+						scanf("%i", &energia);
+						printf("Insertar ano: ");
+						scanf("%i", &ano);
+						printf("Total (1) Media (2) Ambas (3): ");
+						scanf("%i", &total);
+						printf("\n");
+						
+						switch (energia) {
+    						case 1:
+        						imprimir_energia(hidraulica, ano, total);
+        					break;
+    						case 2:
+        						imprimir_energia(turbinacion, ano, total);
+       						break;
+   							case 3:
+        						imprimir_energia(nuclear, ano, total);
+      						break;
+   							case 4:
+        						imprimir_energia(carbon, ano, total);
+        					break;
+    						case 5:
+        						imprimir_energia(motor, ano, total);
+        					break;
+    						case 6:
+        						imprimir_energia(turbinag, ano, total);
+        					break;
+    						case 7:
+        						imprimir_energia(turbinav, ano, total);
+        					break;
+    						case 8:
+        						imprimir_energia(ciclo, ano, total);
+        					break;
+    						case 9:
+        						imprimir_energia(hidroelectrica, ano, total);
+       						break;
+    						case 10:
+        						imprimir_energia(eolica, ano, total);
+        					break;
+    						case 11:
+     						   imprimir_energia(solarfoto, ano, total);
+      						break;
+    						case 12:
+        						imprimir_energia(solarter, ano, total);
+        					break;
+    						case 13:
+       							imprimir_energia(renovables, ano, total);
+        					break;
+    						case 14:
+        						imprimir_energia(cogeneracion, ano, total);
+        					break;
+    						case 15:
+        						imprimir_energia(residuosnor, ano, total);
+        					break;
+    						case 16:
+        						imprimir_energia(residuosr, ano, total);
+        					break;
+    						default:
+        						printf("Energia incorrecta. \n\n");
+        					break;	
+						}
+						printf("\n\n");				
+				}
+                
+                		
+
+
+	
+	printf("Insertar mes: ");
+	scanf("%i", &mes);
+	printf("Insertar ano: ");
+	scanf("%i", &ano);
+	printf("Total (1)  Media (2) Ambas (3): ");
+	scanf("%i", &total);
+	imprimir_energia_mes(generaciontotal, mes, ano, total);
+                
+                //cálculos estadísticos
+                break;
+            case 4:
+                printf("Has seleccionado la opción 4: \n");
+                //comparación con otros paises
+                break;
+            case 5:
+                printf("Has seleccionado la opción 5: \n");
+                
+                break;
+            case 6:
+                printf("Saliendo del programa...\n");
+                break;
+            default:
+                printf("Opción inválida. Por favor, seleccione una opción válida.\n");
+                break;
+        }
+
+        printf("\n");
+    } while (opcion != 6);
 	
     return 0;
 }
