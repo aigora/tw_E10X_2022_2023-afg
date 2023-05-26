@@ -360,7 +360,7 @@ void imprimir_vectores(float v[24]) {
     switch (ano) {
         case 2021:
             for (i = 0; i < 24; i++) {
-                suma += v[i];
+                suma = suma + v[i];
             }
             if (total == 1) {
                 printf("Energia generada en 2021: %f\n", suma);
