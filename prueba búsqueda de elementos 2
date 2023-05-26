@@ -217,32 +217,205 @@ int main () {
 	scanf ("%i", %dato);
 	
 	switch (dato) {
-		case 0:
-			a = ano ();
-			m = mes ();
-			
-			if (a == 1) {
-			}
-			break;
 		case 1:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", hidraulica [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", hidraulica [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", hidraulica [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", hidraulica [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", hidraulica [m]);
+						printf ("%f\n", hidraulica [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", hidraulica [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 2:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", turbinacion [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", turbinacion [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", turbinacion [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", turbinacion [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", turbinacion [m]);
+						printf ("%f\n", turbinacion [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", turbinacion [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 3:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", nuclear [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", nuclear [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", nuclear [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", nuclear [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", nuclear [m]);
+						printf ("%f\n", nuclear [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", nuclear [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 4:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", carbon [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", carbon [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", carbon [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", carbon [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", carbon [m]);
+						printf ("%f\n", carbon [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", carbon [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 5:
 			a = ano ();
 			m = mes ();
+			m = m - 1;
+			
+			switch (a) {
+				case 1:
+					if (m != 23) {
+						printf ("%f\n", motor [m]);
+					}
+					else if (m == 23) {
+						for (i = 0; i < 11; i++) {
+							printf ("%f  ", motor [i]);
+						}
+					}
+					break;
+				case 2: 
+					if (m != 23) {
+						m = m + 12
+						printf ("%f \n", motor [m]);
+					}
+					else if (m == 23) {
+						for (i = 12; i < m; i++) {
+							printf ("%f  ", motor [i]);
+						}	
+					}
+					break;
+				case 3:
+					if (m != 23) {
+						printf ("%f\n", motor [m]);
+						printf ("%f\n", motor [m + 12]);
+					}
+					else if ( m == 23) {
+						for (i = 0; i < m; i++) {
+							printf ("%f  ", motor [i]);
+						}
+					}
+					break
+			}
 			break;
 		case 6:
 			a = ano ();
@@ -291,6 +464,10 @@ int main () {
 		case 17:
 			a = ano ();
 			m = mes ();
+			break;
+		case 18:
+			a = ano ();
+			m = mes ();
 			break;																
 	}
 	return 0;
@@ -322,7 +499,7 @@ int mes {
 	int s;
 	
 	printf ("Mes:\n");
-	printf ("Si quiere ver los datos de todos los meses pulse (0)");
+	printf ("Si quiere ver los datos de todos los meses pulse (24)");
 	scanf ("%i", &s);
 	
 	return s;
