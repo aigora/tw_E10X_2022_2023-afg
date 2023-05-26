@@ -222,7 +222,7 @@ int main() {
     // Menu
     printf("=== Red Electrica Espanola ===\n\n");
     
-    printf("Bienvenido a este programa acerca de la forma de generacio´n de energi´a ele´ctrica en Espan~a durante los an~os 2021 y 2022\n\n");
+    printf("Bienvenido a este programa acerca de la forma de generacion de energia electrica en Espana durante los anos 2021 y 2022\n\n");
     do {
         // Imprimir el menú
         
@@ -234,44 +234,52 @@ int main() {
         printf("4. Comparacion con otros paises\n");
         printf("5. \n");
         printf("6. Salir\n");
-        printf("Ingrese una opcion: \n\n");
+        printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
+        printf("\n");
 
         // Realizar acciones según la opción seleccionada
         switch (opcion) {
             case 1:
                 printf("Has seleccionado la opcion 1: Informacion general\n\n");
                 
-                printf("Durante los años 2021 y 2022, España combino fuentes convencionales y renovables en su generación de energía eléctrica. Destacaron la energía eólica y solar como principales fuentes renovables. Se instalaron nuevos parques eólicos y plantas solares, aprovechando los recursos naturales del país. Aunque las fuentes convencionales como la energía nuclear y los combustibles fósiles tuvieron un papel importante, se observó una disminución gradual en la generación de electricidad a partir del carbón. Se realizaron avances en infraestructuras de transporte y almacenamiento de energía, implementando tecnologías de almacenamiento para una gestión eficiente de la energía renovable. En resumen, España avanzó hacia una generación más sostenible, combinando fuentes renovables y convencionales para satisfacer la demanda eléctrica y reducir las emisiones de gases de efecto invernadero..\n\n");
+                printf("Durante los anos 2021 y 2022, España combino fuentes convencionales y renovables en su generacion de energia electrica. Destacaron la energia eolica y solar como principales fuentes renovables. Se instalaron nuevos parques eólicos y plantas solares, aprovechando los recursos naturales del país. Aunque las fuentes convencionales como la energía nuclear y los combustibles fósiles tuvieron un papel importante, se observó una disminución gradual en la generación de electricidad a partir del carbón. Se realizaron avances en infraestructuras de transporte y almacenamiento de energía, implementando tecnologías de almacenamiento para una gestión eficiente de la energía renovable. En resumen, España avanzó hacia una generación más sostenible, combinando fuentes renovables y convencionales para satisfacer la demanda eléctrica y reducir las emisiones de gases de efecto invernadero..\n\n");
                 
                 break;
             case 2: //gasto energético
-                printf("Has seleccionado la opción 2: \n"); 
-                printf("Elegir tipo de energia: \n\n");
+                printf("Has seleccionado la opcion 2: \n"); 
                 
-                printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7)\n");
-						printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13)\n");
-						printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
-						printf("Lista de energia: ");
-						scanf("%i", &energia);
+                printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
+				printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
+				printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
+
+				printf("Elegir tipo de energia: ");
+				scanf("%i", &energia);
+				printf("\n");
 	
 						switch (energia) {
 								case 1:
+									printf ("(1)  ");
 									imprimir_vectores(hidraulica);
 									break;
 								case 2:
+									printf ("(2)  ");
 									imprimir_vectores(turbinacion);
 									break;
 								case 3:
+									printf ("(3)  ");
 									imprimir_vectores(nuclear);
 									break;
 								case 4:
+									printf ("(4)  ");
 									imprimir_vectores(carbon);
 									break;
 								case 5:
+									printf ("(5)  ");
 									imprimir_vectores(motor);
 									break;
 								case 6:
+									printf ("(6)  ");
 									imprimir_vectores(turbinag);
 									break;
 								case 7:
@@ -305,21 +313,37 @@ int main() {
 									imprimir_vectores(residuosr);
 									break;
 								case 17:
+									printf ("(1)  ");
 									imprimir_vectores(hidraulica);
+									printf ("(2)  ");
 									imprimir_vectores(turbinacion);
+									printf ("(3)  ");
 									imprimir_vectores(nuclear);
+									printf ("(4)  ");
 									imprimir_vectores(carbon);
+									printf ("(5)  ");
 									imprimir_vectores(motor);
+									printf ("(6)  ");
 									imprimir_vectores(turbinag);
+									printf ("(7)  ");
 									imprimir_vectores(turbinav);
+									printf ("(8)  ");
 									imprimir_vectores(ciclo);
+									printf ("(9)  ");
 									imprimir_vectores(hidroelectrica);
+									printf ("(10)  ");
 									imprimir_vectores(eolica);
+									printf ("(11)  ");
 									imprimir_vectores(solarfoto);
+									printf ("(12)  ");
 									imprimir_vectores(solarter);
+									printf ("(13)  ");
 									imprimir_vectores(renovables);
+									printf ("(14)  ");
 									imprimir_vectores(cogeneracion);
+									printf ("(15)  ");
 									imprimir_vectores(residuosnor);
+									printf ("(16)  ");
 									imprimir_vectores(residuosr);
 									break;
 								default:
@@ -328,7 +352,7 @@ int main() {
 								}
                 break;
   			case 3:
-				printf("Has seleccionado la opción 3: \n");
+				printf("Has seleccionado la opción 3: \n"); //cálculos estadísticos
 				
 				printf("Elegir opcion\n\n");
 				printf("1 - Calcular media en un año\n");
@@ -396,25 +420,18 @@ int main() {
         					break;
     						default:
         						printf("Energia incorrecta. \n\n");
-        					break;	
+        					break;			
 						}
-						printf("\n\n");				
-				}
-                
-                		
-
-
-	
-	printf("Insertar mes: ");
-	scanf("%i", &mes);
-	printf("Insertar ano: ");
-	scanf("%i", &ano);
-	printf("Total (1)  Media (2) Ambas (3): ");
-	scanf("%i", &total);
-	imprimir_energia_mes(generaciontotal, mes, ano, total);
-                
-                //cálculos estadísticos
-                break;
+					break;	
+					case 2:
+					printf("Insertar mes: ");
+					scanf("%i", &mes);
+					printf("Insertar ano: ");
+					scanf("%i", &ano);
+					printf("Total (1)  Media (2) Ambas (3): ");
+					scanf("%i", &total);
+					imprimir_energia_mes(generaciontotal, mes, ano, total);
+                	break;
             case 4:
                 printf("Has seleccionado la opción 4: \n");
                 //comparación con otros paises
@@ -429,11 +446,11 @@ int main() {
             default:
                 printf("Opción inválida. Por favor, seleccione una opción válida.\n");
                 break;
-        }
-
-        printf("\n");
+    		}
+        	printf("\n");
+		}
     } while (opcion != 6);
-	
+    
     return 0;
 }
 
