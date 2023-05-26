@@ -1,43 +1,227 @@
 #include <stdio.h>
 
-int main() {
-    float hidraulica[24], nuclear[24];
-    // Otros vectores para almacenar los valores correspondientes a diferentes tecnologías
-    
-    int i;
-    char c;
-    int nLineas = 0;
+void vectores(float v[24]);
 
+int main(){
+	
+		
+    float hidraulica[24], turbinacion[24], nuclaer[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
+    float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
+    char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    int i;    
+       
     FILE *pf;
-    pf = fopen("c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv", "r");
+    pf = fopen(fichero1, "r");
     if (pf == NULL) {
         printf("No se ha podido abrir el fichero.\n");
-        return 1;
     }
 
-    // Saltar las líneas de encabezado y las primeras 5 líneas
-    while (nLineas < 5 && fscanf(pf, "%*[^\n]%*c") != EOF) {
-        nLineas++;
+    // Hidraulica
+    for (i = 0; i < 5; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &hidraulica[i]);
+        }
+    }
+     
+    // Turbinacion
+    for (i = 0; i < 6; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &turbinacion[i]);
+        }
     }
     
-    // Leer los valores del archivo y guardarlos en los vectores correspondientes
-    if (nLineas == 6) {
-        fscanf(pf, "%*[^,],%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f", &hidraulica[0], &hidraulica[1], &hidraulica[2], 
-		&hidraulica[3], &hidraulica[4], &hidraulica[5], &hidraulica[6], &hidraulica[7], &hidraulica[8], &hidraulica[9], &hidraulica[10], &hidraulica[11], 
-		&hidraulica[12], &hidraulica[13], &hidraulica[14], &hidraulica[15], &hidraulica[16], &hidraulica[17], &hidraulica[18], &hidraulica[19], 
-		&hidraulica[20], &hidraulica[21], &hidraulica[22] , &hidraulica[23], &hidraulica[24]);
+    // Nuclear
+    for (i = 0; i < 7; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &nuclaer[i]);
+        }
     }
     
+    // Carbon
+    for (i = 0; i < 8; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &carbon[i]);
+        }
+    }
+    
+    // Motor diesel
+    for (i = 0; i < 9; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &motor[i]);
+        }
+    }
+    
+    // Turbina gas
+    for (i = 0; i < 10; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &turbinag[i]);
+        }
+    }
+
+    // Turbina vapor
+    for (i = 0; i < 11; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &turbinav[i]);
+        }
+    }
+    
+    // Ciclo combinado
+    for (i = 0; i < 12; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &ciclo[i]);
+        }
+    }
+    
+    // Hidroelectrica
+    for (i = 0; i < 13; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &hidroelectrica[i]);
+        }
+    }
+    
+    // Eolica
+    for (i = 0; i < 14; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &eolica[i]);
+        }
+    }
+    
+    // Solarfotovoltaica
+    for (i = 0; i < 14; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &solarfoto[i]);
+        }
+    }
+    
+    // Solar termica
+    for (i = 0; i < 15; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &solarter[i]);
+        }
+    }
+
+    // Otras renovables
+    for (i = 0; i < 16; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &renovables[i]);
+        }
+    }
+    
+    // Cogeneracion
+    for (i = 0; i < 17; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &cogeneracion[i]);
+        }
+    }
+    
+    // Resudios no renovales
+    for (i = 0; i < 18; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &residuosnor[i]);
+        }
+    }
+    
+    // Residuos renovables
+    for (i = 0; i < 19; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &residuosr[i]);
+        }
+    }
+    
+    // Generacion total
+    for (i = 0; i < 20; i++) {
+        fscanf(pf, "%*[^\n]%*c");
+    }
+
+    if (fscanf(pf, "%*[^,],") == 0) {
+        for (i = 0; i < 24; i++) {
+            fscanf(pf, "%f,", &generaciontotal[i]);
+        }
+    }
+
     fclose(pf);
+	
+	vectores(hidraulica);
+	vectores(residuosr);
+	
+	
+	return 0;
+}
 
-    printf("Generación por tecnologia (Hidráulica):\n");
+void vectores(float v[24]) {
+    
+    int i;
+    
     for (i = 0; i < 24; i++) {
-        printf("%f ", hidraulica[i]);
-        // Imprimir los valores de los otros vectores también
+        printf("%f ", v[i]);
     }
     printf("\n\n");
+    
 
-    return 0;
 }
 
 
