@@ -222,7 +222,7 @@ int main() {
 	imprimir_energia_2021_2022 (cogeneracion);
 	
 	imprimir_energia_mes(generaciontotal, 0);
-	imprimir_energia_mes(generaciontotal, 24);
+	imprimir_energia_mes(generaciontotal, 23);
 
 	
     return 0;
@@ -288,7 +288,7 @@ void imprimir_energia_mes (float v[24], int mes_ano) {
     energia_total = v[mes_ano];
     energia_media = (1.0 / 16.0) * energia_total;
 
-	if (mes_ano >= 0 && mes_ano <= 24) {
+	if (mes_ano >= 0 && mes_ano <= 23) {
         printf("Energia total : %f\n", energia_total);
         printf("Energia media: %f\n\n", energia_media);
         
