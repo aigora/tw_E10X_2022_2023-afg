@@ -9,7 +9,7 @@ int main () {
 	
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
-    char fichero1[] = "C:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i, a, m, dato;
        
     FILE *pf;
@@ -210,10 +210,9 @@ int main () {
     fclose(pf);
     
     printf ("Elija que dato quiere consultar:\n");
-    printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n (5) Motores diesel\n(6) Turbina de gas\n");
+    printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 	printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
 	printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
-	printf ("Si quiere ver todos los datos pulse (0)");
 	scanf ("%i", &dato);
 	
 	switch (dato) {
@@ -906,8 +905,8 @@ int ano () {
 	
 	int f, g;
 	
-	printf ("Fecha del dato que quiere consultar:\nAño:\n2021\n2022\n");
-	printf ("Si quiere ver los datos de los dos años escriba 2122");
+	printf ("Fecha del dato que quiere consultar:\nAno:\n2021\n2022\n");
+	printf ("Si quiere ver los datos de los dos años escriba 2122\n");
 	scanf ("%f", &f);
 	
 	switch (f) {
@@ -928,7 +927,7 @@ int mes () {
 	int s;
 	
 	printf ("Mes:\n");
-	printf ("Si quiere ver los datos de todos los meses pulse (24)");
+	printf ("Si quiere ver los datos de todos los meses pulse (24)\n");
 	scanf ("%i", &s);
 	
 	return s;
