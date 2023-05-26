@@ -8,7 +8,7 @@ Fernanda Basagoiti Olazabal : FernandaBasagoiti
 
 Arnold Campoverde Castro: arnoldcampoverde
 
-German Criado de la Morena: 
+German Criado de la Morena: germancriado
 
 ## Objetivos del trabajo
 
