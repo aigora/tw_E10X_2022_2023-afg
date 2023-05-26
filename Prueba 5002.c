@@ -5,7 +5,7 @@ void imprimir_vectores(float v[24]);
 void imprimir_energia_2021 (float v[24]);
 void imprimir_energia_2022 (float v[24]);
 void imprimir_energia_2021_2022 (float v[24]);
-void imprimir_energia_mes(int mes, int ano);
+void imprimir_energia_mes(float v[24], int mes_ano);
 
 int main() {
 	
@@ -215,13 +215,14 @@ int main() {
 	
 	imprimir_vectores(hidraulica);
 	imprimir_vectores(residuosr);
+	imprimir_vectores(generaciontotal);
 	
 	imprimir_energia_2021 (hidraulica);
 	imprimir_energia_2022 (hidroelectrica);
 	imprimir_energia_2021_2022 (cogeneracion);
 	
-	imprimir_energia_mes(1, 2021);
-	imprimir_energia_mes(1, 2022);
+	imprimir_energia_mes(generaciontotal, 0);
+	imprimir_energia_mes(generaciontotal, 24);
 
 	
     return 0;
@@ -280,57 +281,20 @@ void imprimir_energia_2021_2022 (float v[24]){
 	
 }
 
-void imprimir_energia_mes (int mes, int ano) {
+void imprimir_energia_mes (float v[24], int mes_ano) {
 	
-    char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
-    float generaciontotal[24];
-    float energia_total, energia_media;
-    int i;
+	float energia_total, energia_media;
+	
+    energia_total = v[mes_ano];
+    energia_media = (1.0 / 16.0) * energia_total;
 
-    FILE *pf;
-    pf = fopen(fichero1, "r");
-    if (pf == NULL) {
-        printf("No se ha podido abrir el fichero.\n");
-        return;
-    }
-
-    for (i = 0; i < 21; i++) {
-        fscanf(pf, "%*[^\n]%*c");
-    }
-
-    if (fscanf(pf, "%*[^,],") == 0) {
-        for (i = 0; i < 24; i++) {
-            fscanf(pf, "%f,", &generaciontotal[i]);
-        }
-    }
-
-    fclose(pf);
-
-    if (mes >= 1 && mes <= 12) {
-        energia_total = generaciontotal[mes - 1];
-        energia_media = (1.0 / 16.0) * energia_total;
-
-        if (mes == 1 && ano == 2021) {
-            printf("Energia total generada en enero de 2021: %f\n", energia_total);
-            printf("Energia media generada en enero de 2021: %f\n\n", energia_media);
-        }
-
-        if (mes == 2 && ano == 2021) {
-            printf("Energia total generada en febrero de 2021: %f\n", energia_total);
-            printf("Energia media generada en febrero de 2021: %f\n\n", energia_media);
-        }
+	if (mes_ano >= 0 && mes_ano <= 24) {
+        printf("Energia total : %f\n", energia_total);
+        printf("Energia media: %f\n\n", energia_media);
         
-        if (mes == 1 && ano == 2022) {
-            printf("Energia total generada en enero de 2021: %f\n", energia_total);
-            printf("Energia media generada en enero de 2021: %f\n\n", energia_media);
-        }
-
-        if (mes == 12 && ano == 2022) {
-            printf("Energia total generada en diciembre de 2022: %f\n", energia_total);
-            printf("Energia media generada en diciembre de 2022: %f\n\n", energia_media);
-        }
-    } else {
+ 	} else {
         printf("Fecha invalida.\n");
     }
 }
+
 
