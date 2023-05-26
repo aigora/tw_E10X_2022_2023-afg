@@ -237,10 +237,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (turbinacion [i] > turbinacion [j]) {
+							k = turbinacion [i];
+							turbinacion [i] = turbinacion [j];
+							turbinacion [j] = k;
 						}
 					}
 				}
@@ -252,10 +252,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (nuclear [i] > nuclear [j]) {
+							k = nuclear [i];
+							nuclear [i] = nuclear [j];
+							nuclear [j] = k;
 						}
 					}
 				}
@@ -267,10 +267,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (carbon [i] > carbon [j]) {
+							k = carbon [i];
+							carbon [i] = carbon [j];
+							carbon [j] = k;
 						}
 					}
 				}
@@ -282,10 +282,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (motor [i] > motor [j]) {
+							k = motor [i];
+							motor [i] = motor [j];
+							motor [j] = k;
 						}
 					}
 				}
@@ -297,10 +297,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (turbinag [i] > turbinag [j]) {
+							k = turbinag [i];
+							turbinag [i] = turbinag [j];
+							turbinag [j] = k;
 						}
 					}
 				}
@@ -312,10 +312,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (turbinav [i] > turbinav [j]) {
+							k = turbinav [i];
+							turbinav [i] = turbinav [j];
+							turbinav [j] = k;
 						}
 					}
 				}
@@ -327,10 +327,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (ciclo [i] > ciclo [j]) {
+							k = ciclo [i];
+							ciclo [i] = ciclo [j];
+							ciclo [j] = k;
 						}
 					}
 				}
@@ -342,10 +342,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (hidroelectrica [i] > hidroelectrica [j]) {
+							k = hidroelectrica [i];
+							hidroelectrica [i] = hidroelectrica [j];
+							hidroelectrica [j] = k;
 						}
 					}
 				}
@@ -357,10 +357,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (eolica [i] > eolica [j]) {
+							k = eolica [i];
+							eolica [i] = eolica [j];
+							eolica [j] = k;
 						}
 					}
 				}
@@ -372,10 +372,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (solarfoto [i] > solarfoto [j]) {
+							k = solarfoto [i];
+							solarfoto [i] = solarfoto [j];
+							solarfoto [j] = k;
 						}
 					}
 				}
@@ -387,10 +387,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (solarter [i] > solarter [j]) {
+							k = solarter [i];
+							solarter [i] = solarter [j];
+							solarter [j] = k;
 						}
 					}
 				}
@@ -402,10 +402,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (renovables [i] > renovables [j]) {
+							k = renovables [i];
+							renovables [i] = renovables [j];
+							renovables [j] = k;
 						}
 					}
 				}
@@ -417,10 +417,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (cogeneracion [i] > cogeneracion [j]) {
+							k = cogeneracion [i];
+							cogeneracion [i] = cogeneracion [j];
+							cogeneracion [j] = k;
 						}
 					}
 				}
@@ -432,10 +432,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (residuosnor [i] > residuosnor [j]) {
+							k = residuosnor [i];
+							residuosnor [i] = residuosnor [j];
+							residuosnor [j] = k;
 						}
 					}
 				}
@@ -447,10 +447,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (residuosr [i] > residuosr [j]) {
+							k = residuosr [i];
+							residuosr [i] = residuosr [j];
+							residuosr [j] = k;
 						}
 					}
 				}
@@ -462,10 +462,10 @@ int main () {
 			if (y == 1) {
 				for (i = 0; i < 24; i++) {
 					for (j = i + 1; j < 24; j++) {
-						if (hidraulica [i] > hidraulica [j]) {
-							k = hidraulica [i];
-							hidraulica [i] = hidraulica [j];
-							hidraulica [j] = k;
+						if (generaciontotal [i] > generaciontotal [j]) {
+							k = generaciontotal [i];
+							generaciontotal [i] = generaciontotal [j];
+							generaciontotal [j] = k;
 						}
 					}
 				}
