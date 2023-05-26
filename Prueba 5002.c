@@ -231,9 +231,10 @@ int main() {
         printf("1. Informacion general \n");
         printf("2. Datos del gasto energetico\n");
         printf("3. Calculos estadisticos\n");
-        printf("4. Comparacion con otros paises\n");
-        printf("5. \n");
-        printf("6. Salir\n");
+        printf("4. Buscar elementos\n");
+        printf("5. Ordenar elementos\n");
+        printf("6. Diagrama de barras\n");
+        printf("7. Salir\n");
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
         printf("\n");
@@ -283,21 +284,27 @@ int main() {
 									imprimir_vectores(turbinag);
 									break;
 								case 7:
+									printf ("(7)  ");
 									imprimir_vectores(turbinav);
 									break;
 								case 8:
+									printf ("(8)  ");
 									imprimir_vectores(ciclo);
 									break;
 								case 9:
+									printf ("(9)  ");
 									imprimir_vectores(hidroelectrica);
 									break;
 								case 10:
+									printf ("(10)  ");
 									imprimir_vectores(eolica);
 									break;
 								case 11:
+									printf ("(11)  ");
 									imprimir_vectores(solarfoto);
 									break;
 								case 12:
+									printf ("(12)  ");
 									imprimir_vectores(solarter);
 									break;
 								case 13:
@@ -449,7 +456,7 @@ int main() {
     		}
         	printf("\n");
 		}
-    } while (opcion != 6);
+    } while (opcion != 7);
     
     return 0;
 }
