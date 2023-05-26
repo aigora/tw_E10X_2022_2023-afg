@@ -7,7 +7,7 @@ int main () {
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
-    int i, f, a, m, m1, dato;
+    int i, j, x, y;
     int n = 4;
        
     FILE *pf;
@@ -212,4 +212,78 @@ int main () {
     printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 	printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
 	printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
-	scanf ("%i", &dato);
+	scanf ("%i", &x);
+	
+	switch (x) {
+		case 1:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 2:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 3:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 4:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 5:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 6:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 7:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 8:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 9:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 10:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 11:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 12:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 13:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 14:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 15:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 16:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+		case 17:
+			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
+			scanf ("%i", &y);
+			break;
+	}
+	
+	return 0;
+}
