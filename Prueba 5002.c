@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 void imprimir_vectores(float v[24]);
 void imprimir_energia(float v[24], int ano, int total);
@@ -234,7 +233,7 @@ int main() {
         printf("4. Buscar elementos\n");
         printf("5. Ordenar elementos\n");
         printf("6. Diagrama de barras\n");
-        printf("7. Salir\n");
+        printf("7. Salir\n\n");
         printf("Ingrese una opcion: ");
         scanf("%d", &opcion);
         printf("\n");
@@ -464,10 +463,7 @@ int main() {
                 break;
             case 5:
                 printf("Has seleccionado la opcion 5: \n");
-                
-                break;
-            case 6:
-                printf("Saliendo del programa...\n");
+    
                 break;
             default:
                 printf("Opcion invalida. Por favor, seleccione una opcion valida.\n");
@@ -476,6 +472,7 @@ int main() {
         	printf("\n");
 		}
     } while (opcion != 7);
+    printf("Saliendo del programa...\n");
     
     return 0;
 }
