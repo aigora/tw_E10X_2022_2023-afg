@@ -273,10 +273,11 @@ int main() {
 
 	printf("Energia: ");
 	scanf("%i", &energia);
-	printf("Ano: (2021 | 2022 | 2122): ");
+	printf("Ano: (2021 = 1 , 2022 = 2 , 2122 = 3): ");
 	scanf("%i", &ano);
 	printf("Total: (Total = 1, Media = 2) ");
 	scanf("%i", &total);
+	printf("\n");
 	
 
 	switch (energia) {
@@ -335,7 +336,6 @@ int main() {
 	
 	imprimir_energia_mes(generaciontotal, 0);
 	imprimir_energia_mes(generaciontotal, 23);
-
 	
     return 0;
 }
@@ -350,50 +350,31 @@ void imprimir_vectores(float v[24]) {
     }
     printf("\n\n");
     
-
 }
 
- void imprimir_energia(float v[24], int ano, int total) {
+void imprimir_energia(float v[24], int ano, int total) {
     float suma = 0;
     int i;
 
-    switch (ano) {
-        case 2021:
-            for (i = 0; i < 24; i++) {
-                suma = suma + v[i];
-            }
-            if (total == 1) {
-                printf("Energia generada en 2021: %f\n", suma);
-            } 
-			else if (total == 2) {
-                suma /= 12.0;
-                printf("Energia media generada en 2021: %f\n\n", suma);
-            }
-            break;
-        case 2022:
-            for (i = 0; i < 24; i++) {
-                suma += v[i];
-            }
-            if (total == 1) {
-                printf("Energia generada en 2022: %f\n", suma);
-            } 
-			else if (total == 2) {
-                suma /= 12.0;
-                printf("Energia media generada en 2022: %f\n\n", suma);
-            }
-            break;
-        case 2122:
-            for (i = 0; i < 24; i++) {
-                suma += v[i];
-            }
-            if (total == 1) {
-                printf("Energia generada en 2021 y 2022: %f\n", suma);
-            }
-            else if (total == 2) {
-                suma /= 24.0;
-                printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
-            }
-            break;
+    for (i = 0; i < 24; i++) {
+        suma += v[i];
+    }
+
+    if (total == 1 && ano == 1) {
+        printf("Energia generada en 2021: %f\n", suma);
+    } else if (total == 2 && ano == 1) {
+        suma /= 12.0;
+        printf("Energia media generada en 2021: %f\n\n", suma);
+    } else if (total == 1 && ano == 2) {
+        printf("Energia generada en 2022: %f\n", suma);
+    } else if (total == 2 && ano == 2) {
+        suma /= 12.0;
+        printf("Energia media generada en 2022: %f\n\n", suma);
+    } else if (total == 1 && ano == 3) {
+        printf("Energia generada en 2021 y 2022: %f\n", suma);
+    } else if (total == 2 && ano == 3) {
+        suma /= 24.0;
+        printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
     }
 }
 
