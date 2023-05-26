@@ -7,7 +7,7 @@ int main () {
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
-    int i, j, x, y;
+    int i, j, k, x, y;
     int n = 4;
        
     FILE *pf;
@@ -218,70 +218,258 @@ int main () {
 		case 1:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}	
 			break;
 		case 2:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 3:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 4:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 5:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 6:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 7:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 8:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 9:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 10:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 11:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 12:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 13:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 14:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 15:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 16:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 		case 17:
 			printf ("(1) De menor a mayor\n(2) De mayor a menor\n")
 			scanf ("%i", &y);
+			if (y == 1) {
+				for (i = 0; i < 24; i++) {
+					for (j = i + 1; j < 24; j++) {
+						if (hidraulica [i] > hidraulica [j]) {
+							k = hidraulica [i];
+							hidraulica [i] = hidraulica [j];
+							hidraulica [j] = k;
+						}
+					}
+				}
+			}
 			break;
 	}
 	
