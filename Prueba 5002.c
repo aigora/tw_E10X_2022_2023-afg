@@ -226,7 +226,7 @@ int main() {
     do {
         // Imprimir el menú
         
-        printf("A continuacion, dispone del menu de opciones que ofrecemos:\n\n");
+        printf("\nA continuacion, dispone del menu de opciones que ofrecemos:\n\n");
         
         printf("1. Informacion general \n");
         printf("2. Datos del gasto energetico\n");
@@ -242,13 +242,18 @@ int main() {
         // Realizar acciones según la opción seleccionada
         switch (opcion) {
             case 1:
-                printf("Has seleccionado la opcion 1: Informacion general\n\n");
+                printf("Has seleccionado la opcion 1 (Informacion general.\n\n");
                 
-                printf("Durante los anos 2021 y 2022, España combino fuentes convencionales y renovables en su generacion de energia electrica. Destacaron la energia eolica y solar como principales fuentes renovables. Se instalaron nuevos parques eólicos y plantas solares, aprovechando los recursos naturales del país. Aunque las fuentes convencionales como la energía nuclear y los combustibles fósiles tuvieron un papel importante, se observó una disminución gradual en la generación de electricidad a partir del carbón. Se realizaron avances en infraestructuras de transporte y almacenamiento de energía, implementando tecnologías de almacenamiento para una gestión eficiente de la energía renovable. En resumen, España avanzó hacia una generación más sostenible, combinando fuentes renovables y convencionales para satisfacer la demanda eléctrica y reducir las emisiones de gases de efecto invernadero..\n\n");
+                printf("Durante los anos 2021 y 2022, Espana combino fuentes convencionales y renovables en su generacion de energia electrica. Destacaron la energia"); 
+				printf("eolica y solar como principales fuentes renovables. Se instalaron nuevos parques eolicos y plantas solares, aprovechando los recursos naturales del pais."); 
+				printf("Aunque las fuentes convencionales como la energia nuclear y los combustibles fosiles tuvieron un papel importante, se observo una disminucion gradual en la"); 
+				printf("generacion de electricidad a partir del carbon. Se realizaron avances en infraestructuras de transporte y almacenamiento de energia, implementando tecnologías de");
+				printf("almacenamiento para una gestion eficiente de la energia renovable. En resumen, Espana avanzo hacia una generacion mas sostenible, combinando fuentes renovables y");
+				printf("convencionales para satisfacer la demanda electrica y reducir las emisiones de gases de efecto invernadero.\n\n");
                 
                 break;
             case 2: //gasto energético
-                printf("Has seleccionado la opcion 2: \n"); 
+                printf("Has seleccionado la opcion 2 (Datos del gasto energetico). \n"); 
                 
                 printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
 				printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
@@ -308,15 +313,19 @@ int main() {
 									imprimir_vectores(solarter);
 									break;
 								case 13:
+									printf ("(13)  ");
 									imprimir_vectores(renovables);
 									break;
 								case 14:
+									printf ("(14)  ");
 									imprimir_vectores(cogeneracion);
 									break;
 								case 15:
+									printf ("(15)  ");
 									imprimir_vectores(residuosnor);
 									break;
 								case 16:
+									printf ("(16)  ");
 									imprimir_vectores(residuosr);
 									break;
 								case 17:
@@ -359,20 +368,26 @@ int main() {
 								}
                 break;
   			case 3:
-				printf("Has seleccionado la opción 3: \n"); //cálculos estadísticos
+				printf("Has seleccionado la opcion 3 (Calculos estadisticos). \n\n"); //cálculos estadísticos
 				
-				printf("Elegir opcion\n\n");
-				printf("1 - Calcular media en un año\n");
-				printf("2 - Calcular media en un mes\n");
+				printf("1 - Calcular media en un ano   2 - Calcular media en un mes\n");
+				printf("Elegir opcion: ");
 				scanf("%i", &opcion);
+				printf("\n");
 				
 				switch (opcion){
 					case 1:
+						printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
+						printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
+						printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)\n\n");
 						printf("Tipo de energia: ");
 						scanf("%i", &energia);
-						printf("Insertar ano: ");
+						printf("\n");
+						printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
 						scanf("%i", &ano);
-						printf("Total (1) Media (2) Ambas (3): ");
+						printf("\n");
+						printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
+						printf("Elegir opcion: ");
 						scanf("%i", &total);
 						printf("\n");
 						
@@ -433,25 +448,29 @@ int main() {
 					case 2:
 					printf("Insertar mes: ");
 					scanf("%i", &mes);
+					printf("\n");
 					printf("Insertar ano: ");
 					scanf("%i", &ano);
-					printf("Total (1)  Media (2) Ambas (3): ");
+					printf("\n");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
+					printf("Elegir opcion: ");
 					scanf("%i", &total);
+					printf("\n");
 					imprimir_energia_mes(generaciontotal, mes, ano, total);
                 	break;
             case 4:
-                printf("Has seleccionado la opción 4: \n");
+                printf("Has seleccionado la opcion 4: \n");
                 //comparación con otros paises
                 break;
             case 5:
-                printf("Has seleccionado la opción 5: \n");
+                printf("Has seleccionado la opcion 5: \n");
                 
                 break;
             case 6:
                 printf("Saliendo del programa...\n");
                 break;
             default:
-                printf("Opción inválida. Por favor, seleccione una opción válida.\n");
+                printf("Opcion invalida. Por favor, seleccione una opcion valida.\n");
                 break;
     		}
         	printf("\n");
@@ -551,5 +570,4 @@ void imprimir_energia_mes (float v[24], int mes, int ano, int total) {
         printf("Fecha invalida.\n");
     }
 }
-
 
