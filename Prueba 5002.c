@@ -334,6 +334,8 @@ int main() {
         break;
 	}
 	
+	printf("\n\n");
+	
 	imprimir_energia_mes(generaciontotal, 0);
 	imprimir_energia_mes(generaciontotal, 23);
 	
