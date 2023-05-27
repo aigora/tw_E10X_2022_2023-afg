@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void vectores_energia(char* fichero, float v[24], int x);
-void imprimir_vectores(float v[24]);
+void imprimir_vectores(float v[24], int exp, char* fichero2);
 void imprimir_energia(float v[24], int ano, int total);
 void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2);
 void diagrama(float v[24], int exp, char* fichero2);
@@ -81,105 +81,108 @@ int main() {
 				printf("Elegir tipo de energia: ");
 				scanf("%i", &energia);
 				printf("\n");
+				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+				scanf("%i", &exp);
+				printf("\n");
 	
 					switch (energia) {
 								case 1:
 									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
+									imprimir_vectores(hidraulica, exp, fichero2);
 									break;
 								case 2:
 									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
+									imprimir_vectores(turbinacion, exp, fichero2);
 									break;
 								case 3:
 									printf ("(3)  ");
-									imprimir_vectores(nuclear);
+									imprimir_vectores(nuclear, exp, fichero2);
 									break;
 								case 4:
 									printf ("(4)  ");
-									imprimir_vectores(carbon);
+									imprimir_vectores(carbon, exp, fichero2);
 									break;
 								case 5:
 									printf ("(5)  ");
-									imprimir_vectores(motor);
+									imprimir_vectores(motor, exp, fichero2);
 									break;
 								case 6:
 									printf ("(6)  ");
-									imprimir_vectores(turbinag);
+									imprimir_vectores(turbinag, exp, fichero2);
 									break;
 								case 7:
 									printf ("(7)  ");
-									imprimir_vectores(turbinav);
+									imprimir_vectores(turbinav, exp, fichero2);
 									break;
 								case 8:
 									printf ("(8)  ");
-									imprimir_vectores(ciclo);
+									imprimir_vectores(ciclo, exp, fichero2);
 									break;
 								case 9:
 									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
+									imprimir_vectores(hidroelectrica, exp, fichero2);
 									break;
 								case 10:
 									printf ("(10)  ");
-									imprimir_vectores(eolica);
+									imprimir_vectores(eolica, exp, fichero2);
 									break;
 								case 11:
 									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
+									imprimir_vectores(solarfoto, exp, fichero2);
 									break;
 								case 12:
 									printf ("(12)  ");
-									imprimir_vectores(solarter);
+									imprimir_vectores(solarter, exp, fichero2);
 									break;
 								case 13:
 									printf ("(13)  ");
-									imprimir_vectores(renovables);
+									imprimir_vectores(renovables, exp, fichero2);
 									break;
 								case 14:
 									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
+									imprimir_vectores(cogeneracion, exp, fichero2);
 									break;
 								case 15:
 									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
+									imprimir_vectores(residuosnor, exp, fichero2);
 									break;
 								case 16:
 									printf ("(16)  ");
-									imprimir_vectores(residuosr);
+									imprimir_vectores(residuosr, exp, fichero2);
 									break;
 								case 17:
 									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
+									imprimir_vectores(hidraulica, exp, fichero2);
 									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
+									imprimir_vectores(turbinacion, exp, fichero2);
 									printf ("(3)  ");
-									imprimir_vectores(nuclear);
+									imprimir_vectores(nuclear, exp, fichero2);
 									printf ("(4)  ");
-									imprimir_vectores(carbon);
+									imprimir_vectores(carbon, exp, fichero2);
 									printf ("(5)  ");
-									imprimir_vectores(motor);
+									imprimir_vectores(motor, exp, fichero2);
 									printf ("(6)  ");
-									imprimir_vectores(turbinag);
+									imprimir_vectores(turbinag, exp, fichero2);
 									printf ("(7)  ");
-									imprimir_vectores(turbinav);
+									imprimir_vectores(turbinav, exp, fichero2);
 									printf ("(8)  ");
-									imprimir_vectores(ciclo);
+									imprimir_vectores(ciclo, exp, fichero2);
 									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
+									imprimir_vectores(hidroelectrica, exp, fichero2);
 									printf ("(10)  ");
-									imprimir_vectores(eolica);
+									imprimir_vectores(eolica, exp, fichero2);
 									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
+									imprimir_vectores(solarfoto, exp, fichero2);
 									printf ("(12)  ");
-									imprimir_vectores(solarter);
+									imprimir_vectores(solarter, exp, fichero2);
 									printf ("(13)  ");
-									imprimir_vectores(renovables);
+									imprimir_vectores(renovables, exp, fichero2);
 									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
+									imprimir_vectores(cogeneracion, exp, fichero2);
 									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
+									imprimir_vectores(residuosnor, exp, fichero2);
 									printf ("(16)  ");
-									imprimir_vectores(residuosr);
+									imprimir_vectores(residuosr, exp, fichero2);
 									break;
 								default:
 									printf("Energia icnorrecta. \n\n");
@@ -399,16 +402,34 @@ void vectores_energia(char* fichero, float v[24], int x) {
     
 }
 
-void imprimir_vectores(float v[24]) {
-    
+void imprimir_vectores(float v[24], int exp, char* fichero2) {
     int i;
     
-    for (i = 0; i < 24; i++) {
-        printf("%f ", v[i]);
+	if (exp == 1) {
+        FILE* fp = fopen(fichero2, "w");
+        if (fp == NULL) {
+            printf("Error al abrir el archivo.\n");
+            return;
+        }
+        
+        for (i = 0; i < 24; i++) {
+            fprintf(fp, "%f ", v[i]);
+        }
+        fclose(fp);
+        
+        printf("Vector exportado correctamente al archivo: Exportacion_datos\n");
+    } 
+	else if (exp == 2) {
+        for (i = 0; i < 24; i++) {
+            printf("%f ", v[i]);
+        }
+        printf("\n\n");
     }
-    printf("\n\n");
-    
+	else {
+        printf("Opcion invalida.\n");
+    }
 }
+
 
 void imprimir_energia(float v[24], int ano, int total) {
     float suma = 0;
@@ -485,7 +506,7 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
                 }
 
                 fclose(fp); 
-                printf("Datos exportado correctamente al archivo: Exportacion de datos\n");
+                printf("Datos exportado correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
