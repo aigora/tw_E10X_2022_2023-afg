@@ -263,7 +263,7 @@ int main() {
 				scanf("%i", &energia);
 				printf("\n");
 	
-						switch (energia) {
+					switch (energia) {
 								case 1:
 									printf ("(1)  ");
 									imprimir_vectores(hidraulica);
@@ -377,19 +377,19 @@ int main() {
 				
 				switch (opcion){
 					case 1:
-						printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
-						printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
-						printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)\n\n");
-						printf("Tipo de energia: ");
-						scanf("%i", &energia);
-						printf("\n");
-						printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
-						scanf("%i", &ano);
-						printf("\n");
-						printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
-						printf("Elegir opcion: ");
-						scanf("%i", &total);
-						printf("\n");
+					printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
+					printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
+					printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)\n\n");
+					printf("Tipo de energia: ");
+					scanf("%i", &energia);
+					printf("\n");
+					printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
+					scanf("%i", &ano);
+					printf("\n");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
+					printf("Elegir opcion: ");
+					scanf("%i", &total);
+					printf("\n");
 						
 						switch (energia) {
     						case 1:
@@ -477,74 +477,74 @@ int main() {
 				scanf("%i", &energia);
 				printf("\n");
 	
-						switch (energia) {
-							case 1:
-								printf ("(1) \n");
-								diagrama(hidraulica);
-								break;
-							case 2:
-								printf ("(2) \n");
-								diagrama(turbinacion);
-								break;
-							case 3:
-								printf ("(3) \n");
-								diagrama(nuclear);
-								break;
-							case 4:
-								printf ("(4) \n");
-								diagrama(carbon);
-								break;
-							case 5:
-								printf ("(5)  ");
-								diagrama(motor);
-								break;
-							case 6:
-									printf ("(6)  ");
-									diagrama(turbinag);
-									break;
-								case 7:
-									printf ("(7)  ");
-									diagrama(turbinav);
-									break;
-								case 8:
-									printf ("(8)  ");
-									diagrama(ciclo);
-									break;
-								case 9:
-									printf ("(9)  ");
-									diagrama(hidroelectrica);
-									break;
-								case 10:
-									printf ("(10)  ");
-									diagrama(eolica);
-									break;
-								case 11:
-									printf ("(11)  ");
-									diagrama(solarfoto);
-									break;
-								case 12:
-									printf ("(12)  ");
-									diagrama(solarter);
-									break;
-								case 13:
-									printf ("(13)  ");
-									diagrama(renovables);
-									break;
-								case 14:
-									printf ("(14)  ");
-									diagrama(cogeneracion);
-									break;
-								case 15:
-									printf ("(15)  ");
-									diagrama(residuosnor);
-									break;
-								case 16:
-									printf ("(16)  ");
-									diagrama(residuosr);
-									break;
-								default:
-									printf("Energia icnorrecta. \n\n");
-									break;
+					switch (energia) {
+						case 1:
+							printf ("(1) \n");
+							diagrama(hidraulica);
+							break;
+						case 2:
+							printf ("(2) \n");
+							diagrama(turbinacion);
+							break;
+						case 3:
+							printf ("(3) \n");
+							diagrama(nuclear);
+							break;
+						case 4:
+							printf ("(4) \n");
+							diagrama(carbon);
+							break;
+						case 5:
+							printf ("(5)  ");
+							diagrama(motor);
+							break;
+						case 6:
+							printf ("(6)  ");
+							diagrama(turbinag);
+							break;
+						case 7:
+							printf ("(7)  ");
+							diagrama(turbinav);
+							break;
+						case 8:
+							printf ("(8)  ");
+							diagrama(ciclo);
+							break;
+						case 9:
+							printf ("(9)  ");
+							diagrama(hidroelectrica);
+							break;
+						case 10:
+							printf ("(10)  ");
+							diagrama(eolica);
+							break;
+						case 11:
+							printf ("(11)  ");
+							diagrama(solarfoto);
+							break;
+						case 12:
+							printf ("(12)  ");
+							diagrama(solarter);
+							break;
+						case 13:
+							printf ("(13)  ");
+							diagrama(renovables);
+							break;
+						case 14:
+							printf ("(14)  ");
+							diagrama(cogeneracion);
+							break;
+						case 15:
+							printf ("(15)  ");
+							diagrama(residuosnor);
+							break;
+						case 16:
+							printf ("(16)  ");
+							diagrama(residuosr);
+							break;
+						default:
+							printf("Energia icnorrecta. \n\n");
+							break;
 						}
     		}
         	printf("\n");
