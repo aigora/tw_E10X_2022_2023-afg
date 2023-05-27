@@ -1,6 +1,7 @@
 #include <stdio.h> 
 
 void informacion_general ();
+void imprimir_vectores (float v[24]);
 
 int main() {
 	
@@ -241,7 +242,124 @@ int main() {
         	case 1: //Informacion general
         		informacion_general ();
         		break;
-        	
+        	case 2:
+        	printf("Has seleccionado la opcion 2 (Datos del gasto energetico). \n"); 
+                
+                printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
+				printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
+				printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
+
+				printf("Elegir tipo de energia: ");
+				scanf("%i", &energia);
+				printf("\n");
+	
+						switch (energia) {
+								case 1:
+									printf ("(1)  ");
+									imprimir_vectores(hidraulica);
+									break;
+								case 2:
+									printf ("(2)  ");
+									imprimir_vectores(turbinacion);
+									break;
+								case 3:
+									printf ("(3)  ");
+									imprimir_vectores(nuclear);
+									break;
+								case 4:
+									printf ("(4)  ");
+									imprimir_vectores(carbon);
+									break;
+								case 5:
+									printf ("(5)  ");
+									imprimir_vectores(motor);
+									break;
+								case 6:
+									printf ("(6)  ");
+									imprimir_vectores(turbinag);
+									break;
+								case 7:
+									printf ("(7)  ");
+									imprimir_vectores(turbinav);
+									break;
+								case 8:
+									printf ("(8)  ");
+									imprimir_vectores(ciclo);
+									break;
+								case 9:
+									printf ("(9)  ");
+									imprimir_vectores(hidroelectrica);
+									break;
+								case 10:
+									printf ("(10)  ");
+									imprimir_vectores(eolica);
+									break;
+								case 11:
+									printf ("(11)  ");
+									imprimir_vectores(solarfoto);
+									break;
+								case 12:
+									printf ("(12)  ");
+									imprimir_vectores(solarter);
+									break;
+								case 13:
+									printf ("(13)  ");
+									imprimir_vectores(renovables);
+									break;
+								case 14:
+									printf ("(14)  ");
+									imprimir_vectores(cogeneracion);
+									break;
+								case 15:
+									printf ("(15)  ");
+									imprimir_vectores(residuosnor);
+									break;
+								case 16:
+									printf ("(16)  ");
+									imprimir_vectores(residuosr);
+									break;
+								case 17:
+									printf ("(1)  ");
+									imprimir_vectores(hidraulica);
+									printf ("(2)  ");
+									imprimir_vectores(turbinacion);
+									printf ("(3)  ");
+									imprimir_vectores(nuclear);
+									printf ("(4)  ");
+									imprimir_vectores(carbon);
+									printf ("(5)  ");
+									imprimir_vectores(motor);
+									printf ("(6)  ");
+									imprimir_vectores(turbinag);
+									printf ("(7)  ");
+									imprimir_vectores(turbinav);
+									printf ("(8)  ");
+									imprimir_vectores(ciclo);
+									printf ("(9)  ");
+									imprimir_vectores(hidroelectrica);
+									printf ("(10)  ");
+									imprimir_vectores(eolica);
+									printf ("(11)  ");
+									imprimir_vectores(solarfoto);
+									printf ("(12)  ");
+									imprimir_vectores(solarter);
+									printf ("(13)  ");
+									imprimir_vectores(renovables);
+									printf ("(14)  ");
+									imprimir_vectores(cogeneracion);
+									printf ("(15)  ");
+									imprimir_vectores(residuosnor);
+									printf ("(16)  ");
+									imprimir_vectores(residuosr);
+									break;
+								default:
+									printf("Energia icnorrecta. \n\n");
+									break;
+								}
+				break;
+			case 3:
+				
+				break;
 		}
 	} while (opcion != 7);
 		
@@ -257,4 +375,16 @@ void informacion_general () {
 	printf("generacion de electricidad a partir del carbon.\nSe realizaron avances en infraestructuras de transporte y almacenamiento de energia, implementando tecnologias de ");
 	printf("almacenamiento\npara una gestion eficiente de la energia renovable.\n\nEn resumen, Espana avanzo hacia una generacion mas sostenible, combinando fuentes renovables y");
 	printf("convencionales para satisfacer la demanda\nelectrica y reducir las emisiones de gases de efecto invernadero.\n\n");
+}
+
+
+void imprimir_vectores(float v[24]) {
+    
+    int i;
+    
+    for (i = 0; i < 24; i++) {
+        printf("%f ", v[i]);
+    }
+    printf("\n\n");
+    
 }
