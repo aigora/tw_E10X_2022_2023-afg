@@ -4,7 +4,7 @@ void vectores_energia(char* fichero, float v[24], int x);
 void imprimir_vectores(float v[24]);
 void imprimir_energia(float v[24], int ano, int total);
 void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2);
-void diagrama(float v[24]);
+void diagrama(float v[24], int exp, char* fichero2);
 
 int main() {
 	
@@ -297,71 +297,73 @@ int main() {
 				printf("Elegir tipo de energia: ");
 				scanf("%i", &energia);
 				printf("\n");
+				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+				scanf("%i", &exp);
 	
 					switch (energia) {
 						case 1:
 							printf ("Hidraulica (1) \n\n");
-							diagrama(hidraulica);
+							diagrama(hidraulica, exp, fichero2);
 							break;
 						case 2:
 							printf ("Turbinacion Bombeo (2) \n\n");
-							diagrama(turbinacion);
+							diagrama(turbinacion, exp, fichero2);
 							break;
 						case 3:
 							printf ("Nuclear (3) \n\n");
-							diagrama(nuclear);
+							diagrama(nuclear, exp, fichero2);
 							break;
 						case 4:
 							printf ("Carbon (4) \n\n");
-							diagrama(carbon);
+							diagrama(carbon, exp, fichero2);
 							break;
 						case 5:
 							printf ("Motores Diesel (5) \n\n");
-							diagrama(motor);
+							diagrama(motor, exp, fichero2);
 							break;
 						case 6:
 							printf ("Turbina Gas (6) \n\n");
-							diagrama(turbinag);
+							diagrama(turbinag, exp, fichero2);
 							break;
 						case 7:
 							printf ("Turbina Vapor (7) \n\n");
-							diagrama(turbinav);
+							diagrama(turbinav, exp, fichero2);
 							break;
 						case 8:
 							printf ("Ciclo Combinado (8) \n\n");
-							diagrama(ciclo);
+							diagrama(ciclo, exp, fichero2);
 							break;
 						case 9:
 							printf ("Hidroelectrica (9) \n\n");
-							diagrama(hidroelectrica);
+							diagrama(hidroelectrica, exp, fichero2);
 							break;
 						case 10:
 							printf ("Eolica (10) \n\n");
-							diagrama(eolica);
+							diagrama(eolica, exp, fichero2);
 							break;
 						case 11:
 							printf ("Solar Fotovoltaica (11) \n\n");
-							diagrama(solarfoto);
+							diagrama(solarfoto, exp, fichero2);
 							break;
 						case 12:
 							printf ("Solar Termica (12) \n\n");
-							diagrama(solarter);
+							diagrama(solarter, exp, fichero2);
 							break;
 						case 13:
 							printf ("Otras renovables (13) \n\n");
-							diagrama(renovables);
+							diagrama(renovables, exp, fichero2);
 							break;
 						case 14:
 							printf ("Cogeneracion (14) \n\n");
-							diagrama(cogeneracion);
+							diagrama(cogeneracion, exp, fichero2);
 							break;
 						case 15:
 							printf ("Residuos no Renovables (15) \n\n");
-							diagrama(residuosnor);
+							diagrama(residuosnor, exp, fichero2);
 							break;
 						case 16:
 							printf ("Residuos Renovables (16) \n\n");
-							diagrama(residuosr);
+							diagrama(residuosr, exp, fichero2);
 							break;
 						default:
 							printf("Energia icnorrecta. \n\n");
@@ -470,20 +472,20 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
 
     if (mes >= 1 && mes <= 24) {
         if (exp = 1) {
-            FILE *archivo = fopen(fichero2, "w"); 
+            FILE *fp = fopen(fichero2, "w"); 
 
-            if (archivo != NULL) {
+            if (fp != NULL) {
                 if (total == 1) {
-                    fprintf(archivo, "Energia total : %f\n", energia_total);
+                    fprintf(fp, "Energia total : %f\n", energia_total);
                 } else if (total == 2) {
-                    fprintf(archivo, "Energia media: %f\n\n", energia_media);
+                    fprintf(fp, "Energia media: %f\n\n", energia_media);
                 } else if (total == 3) {
-                    fprintf(archivo, "Energia total : %f\n", energia_total);
-                    fprintf(archivo, "Energia media: %f\n\n", energia_media);
+                    fprintf(fp, "Energia total : %f\n", energia_total);
+                    fprintf(fp, "Energia media: %f\n\n", energia_media);
                 }
 
-                fclose(archivo); 
-                printf("Se ha exportado el fichero correctamente.\n\n");
+                fclose(fp); 
+                printf("Datos exportado correctamente al archivo: Exportacion de datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
@@ -503,7 +505,7 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
     }
 }
 
-void diagrama(float v[24]) {
+void diagrama(float v[24], int exp, char* fichero2) {
     int i, j;
     float max_v = 0;
     char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", 
@@ -517,13 +519,36 @@ void diagrama(float v[24]) {
         }
     }
  
-    for (i = 0; i < 24; i++) {
-        printf("%s ", fechas[i]);
-        for (j = 0; j < (v[i] / max_v) * 100; j++) {
-            printf("|");
+	if (exp == 1) {
+        FILE* fp = fopen(fichero2, "w");
+        if (fp == NULL) {
+            printf("Error al abrir el archivo.\n");
+            return;
         }
-        printf("\n");
+        
+        for (i = 0; i < 24; i++) {
+            fprintf(fp, "%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                fprintf(fp, "|");
+            }
+            fprintf(fp, "\n");
+        }
+        fclose(fp);
+        
+        printf("Diagrama exportado correctamente al archivo: Exportacion_datos\n");
+    } 
+	else if (exp == 2) {
+        for (i = 0; i < 24; i++) {
+            printf("%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                printf("|");
+            }
+            printf("\n");
+        }
     }
-    printf("\n");
+	else {
+        printf("Opcion invalida.\n");
+    }
 }
+
 
