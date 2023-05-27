@@ -3,7 +3,7 @@
 void vectores_energia(char* fichero, float v[24], int x);
 void imprimir_vectores(float v[24]);
 void imprimir_energia(float v[24], int ano, int total);
-void imprimir_energia_mes (float v[24], int mes, int ano, int total);
+void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2);
 void diagrama(float v[24]);
 
 int main() {
@@ -11,10 +11,11 @@ int main() {
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    char fichero2[] = "C:/Users/arnol/Downloads/Exportacion_datos.txt";
     int i;
     
     // variables estadisticas 
-    int ano, mes, energia, total;
+    int ano, mes, energia, total, exp;
     
     // Variables menu
     int opcion;
@@ -188,8 +189,7 @@ int main() {
   			case 3:
 				printf("Has seleccionado la opcion 3 (Calculos estadisticos). \n\n"); //cálculos estadísticos
 				
-				printf("1 - Calcular energia generada en un ano   2 - Calcular energia generada en un mes\n");
-				printf("Elegir opcion: ");
+				printf("1 - Calcular energia generada en un ano   2 - Calcular energia generada en un mes   Elegir opcion: ");
 				scanf("%i", &opcion);
 				printf("\n");
 				
@@ -204,8 +204,7 @@ int main() {
 					printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
 					scanf("%i", &ano);
 					printf("\n");
-					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
-					printf("Elegir opcion: ");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media   Elegir opcion: ");
 					scanf("%i", &total);
 					printf("\n");
 						
@@ -270,19 +269,22 @@ int main() {
 					printf("Insertar ano: ");
 					scanf("%i", &ano);
 					printf("\n");
-					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
-					printf("Elegir opcion: ");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total   Elegir opcion: ");
 					scanf("%i", &total);
 					printf("\n");
-					imprimir_energia_mes(generaciontotal, mes, ano, total);
+					printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+					scanf("%i", &exp);
+					printf("\n");
+					imprimir_energia_mes(generaciontotal, mes, ano, total, exp, fichero2);
                 	break;
                 }
             case 4:
                 printf("Has seleccionado la opcion 4: \n");
-                //comparación con otros paises
+                
                 break;
             case 5:
                 printf("Has seleccionado la opcion 5: \n");
+                
                 break;
                 
             case 6:
@@ -450,39 +452,54 @@ void imprimir_energia(float v[24], int ano, int total) {
         printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
 	}
 	else {
-        printf("Fecha invalida.\n");
+        printf("Fecha invalida.\n\n");
     }
 }
 
-void imprimir_energia_mes (float v[24], int mes, int ano, int total) {
-	
-	float energia_total, energia_media;
-	
-	if (ano == 2021) {
-		ano = 0;
-	}
-	else if (ano == 2022) {
-		ano = 12;
-	}
-	
+void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2) {
+    float energia_total, energia_media;
+
+    if (ano == 2021) {
+        ano = 0;
+    } else if (ano == 2022) {
+        ano = 12;
+    }
+
     energia_total = v[mes + ano - 1];
     energia_media = (1.0 / 16.0) * energia_total;
 
-	if (mes>= 1 && mes <= 24) {
-		if (total == 1){
-			printf("Energia total : %f\n", energia_total);
-		}
-		else if (total == 2) {
-			printf("Energia media: %f\n\n", energia_media);
-		}
-		else if (total == 3){
-			printf("Energia total : %f\n", energia_total);
-			printf("Energia media: %f\n\n", energia_media);
-		}
-      
- 	}
-	else {
-        printf("Fecha invalida.\n");
+    if (mes >= 1 && mes <= 24) {
+        if (exp = 1) {
+            FILE *archivo = fopen(fichero2, "w"); 
+
+            if (archivo != NULL) {
+                if (total == 1) {
+                    fprintf(archivo, "Energia total : %f\n", energia_total);
+                } else if (total == 2) {
+                    fprintf(archivo, "Energia media: %f\n\n", energia_media);
+                } else if (total == 3) {
+                    fprintf(archivo, "Energia total : %f\n", energia_total);
+                    fprintf(archivo, "Energia media: %f\n\n", energia_media);
+                }
+
+                fclose(archivo); 
+                printf("Se ha exportado el fichero correctamente.\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp = 2) {
+            if (total == 1) {
+                printf("Energia total : %f\n", energia_total);
+            } else if (total == 2) {
+                printf("Energia media: %f\n\n", energia_media);
+            } else if (total == 3) {
+                printf("Energia total : %f\n", energia_total);
+                printf("Energia media: %f\n\n", energia_media);
+            }
+        }
+    } else {
+        printf("Fecha invalida.\n\n");
     }
 }
 
@@ -509,3 +526,4 @@ void diagrama(float v[24]) {
     }
     printf("\n");
 }
+
