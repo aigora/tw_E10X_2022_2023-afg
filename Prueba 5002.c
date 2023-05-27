@@ -478,27 +478,27 @@ int main() {
 				printf("\n");
 	
 						switch (energia) {
-								case 1:
-									printf ("(1) \n");
-									diagrama(hidraulica);
-									break;
-								case 2:
-									printf ("(2) \n");
-									diagrama(turbinacion);
-									break;
-								case 3:
-									printf ("(3) \n");
-									diagrama(nuclear);
-									break;
-								case 4:
-									printf ("(4) \n");
-									diagrama(carbon);
-									break;
-								case 5:
-									printf ("(5)  ");
-									diagrama(motor);
-									break;
-								case 6:
+							case 1:
+								printf ("(1) \n");
+								diagrama(hidraulica);
+								break;
+							case 2:
+								printf ("(2) \n");
+								diagrama(turbinacion);
+								break;
+							case 3:
+								printf ("(3) \n");
+								diagrama(nuclear);
+								break;
+							case 4:
+								printf ("(4) \n");
+								diagrama(carbon);
+								break;
+							case 5:
+								printf ("(5)  ");
+								diagrama(motor);
+								break;
+							case 6:
 									printf ("(6)  ");
 									diagrama(turbinag);
 									break;
@@ -545,9 +545,11 @@ int main() {
 								default:
 									printf("Energia icnorrecta. \n\n");
 									break;
-								}
+						}
     		}
         	printf("\n");
+        	default:
+        		printf("Opcion incorrecta\n\n");
 		}
     } while (opcion != 7);
     printf("Saliendo del programa...\n");
