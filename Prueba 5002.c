@@ -480,77 +480,74 @@ int main() {
 	
 					switch (energia) {
 						case 1:
-							printf ("(1) \n");
+							printf ("Hidraulica (1) \n\n");
 							diagrama(hidraulica);
 							break;
 						case 2:
-							printf ("(2) \n");
+							printf ("Turbinacion Bombeo (2) \n\n");
 							diagrama(turbinacion);
 							break;
 						case 3:
-							printf ("(3) \n");
+							printf ("Nuclear (3) \n\n");
 							diagrama(nuclear);
 							break;
 						case 4:
-							printf ("(4) \n\n");
+							printf ("Carbon (4) \n\n");
 							diagrama(carbon);
 							break;
 						case 5:
-							printf ("(5)  ");
+							printf ("Motores Diesel (5) \n\n");
 							diagrama(motor);
 							break;
 						case 6:
-							printf ("(6)  ");
+							printf ("Turbina Gas (6) \n\n");
 							diagrama(turbinag);
 							break;
 						case 7:
-							printf ("(7)  ");
+							printf ("Turbina Vapor (7) \n\n");
 							diagrama(turbinav);
 							break;
 						case 8:
-							printf ("(8)  ");
+							printf ("Ciclo Combinado (8) \n\n");
 							diagrama(ciclo);
 							break;
 						case 9:
-							printf ("(9)  ");
+							printf ("Hidroelectrica (9) \n\n");
 							diagrama(hidroelectrica);
 							break;
 						case 10:
-							printf ("(10)  ");
+							printf ("Eolica (10) \n\n");
 							diagrama(eolica);
 							break;
 						case 11:
-							printf ("(11)  ");
+							printf ("Solar Fotovoltaica (11) \n\n");
 							diagrama(solarfoto);
 							break;
 						case 12:
-							printf ("(12)  ");
+							printf ("Solar Termica (12) \n\n");
 							diagrama(solarter);
 							break;
 						case 13:
-							printf ("(13)  ");
+							printf ("Otras renovables (13) \n\n");
 							diagrama(renovables);
 							break;
 						case 14:
-							printf ("(14)  ");
+							printf ("Cogeneracion (14) \n\n");
 							diagrama(cogeneracion);
 							break;
 						case 15:
-							printf ("(15)  ");
+							printf ("Residuos no Renovables (15) \n\n");
 							diagrama(residuosnor);
 							break;
 						case 16:
-							printf ("(16)  ");
+							printf ("Residuos Renovables (16) \n\n");
 							diagrama(residuosr);
 							break;
 						default:
 							printf("Energia icnorrecta. \n\n");
 							break;
 					}
-        	default:
-        		printf("Opcion incorrecta\n\n");
-        }	
-        		
+        }	        		
     } while (opcion != 7);
     printf("Saliendo del programa...\n");
     
