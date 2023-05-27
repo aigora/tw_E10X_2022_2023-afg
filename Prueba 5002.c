@@ -458,6 +458,7 @@ int main() {
 					printf("\n");
 					imprimir_energia_mes(generaciontotal, mes, ano, total);
                 	break;
+                }
             case 4:
                 printf("Has seleccionado la opcion 4: \n");
                 //comparación con otros paises
@@ -491,7 +492,7 @@ int main() {
 							diagrama(nuclear);
 							break;
 						case 4:
-							printf ("(4) \n");
+							printf ("(4) \n\n");
 							diagrama(carbon);
 							break;
 						case 5:
@@ -545,12 +546,11 @@ int main() {
 						default:
 							printf("Energia icnorrecta. \n\n");
 							break;
-						}
-    		}
-        	printf("\n");
+					}
         	default:
         		printf("Opcion incorrecta\n\n");
-		}
+        }	
+        		
     } while (opcion != 7);
     printf("Saliendo del programa...\n");
     
