@@ -2,15 +2,12 @@
 
 #include <stdio.h>
 
-int ano ();
-int mes ();
-
 int main () {
 	
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
-    int i, f, a, m, dato;
+    int i, f, a, m, m1, dato;
     int n = 4;
        
     FILE *pf;
@@ -261,8 +258,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", hidraulica [m]);
-					printf ("%f\n", hidraulica [m + 12]);
+					printf ("%f\n", hidraulica [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -315,8 +313,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", turbinacion [m]);
-					printf ("%f\n", turbinacion [m + 12]);
+					printf ("%f\n", turbinacion [m]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -369,8 +368,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", nuclear [m]);
-					printf ("%f\n", nuclear [m + 12]);
+					printf ("%f\n", nuclear [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -423,8 +423,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", carbon [m]);
-					printf ("%f\n", carbon [m + 12]);
+					printf ("%f\n", carbon [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -477,8 +478,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m = m1 + 12;
 					printf ("%f\n", motor [m]);
-					printf ("%f\n", motor [m + 12]);
+					printf ("%f\n", motor [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -531,8 +533,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", turbinag [m]);
-					printf ("%f\n", turbinag [m + 12]);
+					printf ("%f\n", turbinag [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -585,8 +588,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", turbinav [m]);
-					printf ("%f\n", turbinav [m + 12]);
+					printf ("%f\n", turbinav [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -639,8 +643,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", ciclo [m]);
-					printf ("%f\n", ciclo [m + 12]);
+					printf ("%f\n", ciclo [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -693,8 +698,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", hidroelectrica [m]);
-					printf ("%f\n", hidroelectrica [m + 12]);
+					printf ("%f\n", hidroelectrica [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -747,8 +753,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", eolica [m]);
-					printf ("%f\n", eolica [m + 12]);
+					printf ("%f\n", eolica [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -801,8 +808,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", solarfoto [m]);
-					printf ("%f\n", solarfoto [m + 12]);
+					printf ("%f\n", solarfoto [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -855,8 +863,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", solarter [m]);
-					printf ("%f\n", solarter [m + 12]);
+					printf ("%f\n", solarter [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -909,8 +918,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", renovables [m]);
-					printf ("%f\n", renovables [m + 12]);
+					printf ("%f\n", renovables [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -963,8 +973,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", cogeneracion [m]);
-					printf ("%f\n", cogeneracion [m + 12]);
+					printf ("%f\n", cogeneracion [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -1017,8 +1028,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", residuosnor [m]);
-					printf ("%f\n", residuosnor [m + 12]);
+					printf ("%f\n", residuosnor [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -1071,8 +1083,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", residuosr [m]);
-					printf ("%f\n", residuosr [m + 12]);
+					printf ("%f\n", residuosr [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
@@ -1125,8 +1138,9 @@ int main () {
 			}
 			if (a == 3) {
 				if (m != 23) {
+					m1 = m + 12;
 					printf ("%f\n", generaciontotal [m]);
-					printf ("%f\n", generaciontotal [m + 12]);
+					printf ("%f\n", generaciontotal [m1]);
 				}
 				else if ( m == 23) {
 					for (i = 0; i < m; i++) {
