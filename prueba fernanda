@@ -6,6 +6,7 @@ void imprimir_energia_mes (float v[24], int mes, int ano, int total);
 void diagrama(float v[24]);
 void ordenar_de_menor_a_mayor (float v [24]);
 void ordenar_de_mayor_a_menor (float v [24]);
+void buscar_datos (float v[24]);
 
 int main() {
 	
@@ -14,10 +15,13 @@ int main() {
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
     
-    // variables ordenar datos
-    int x, y;
+    //Variables busqueda de datos
+    int dato;
     
-    // variables estadisticas 
+    // Variables ordenar datos
+    int eleccion, orden;
+    
+    // Variables estadisticas 
     int ano, mes, energia, total;
     
     // Variables menu
@@ -465,8 +469,66 @@ int main() {
                 	break;
                 }
             case 4:
-                printf("Has seleccionado la opcion 4: \n");
-                //comparación con otros paises
+                printf("Has seleccionado la opcion 4: (Busqueda de datos\n"); //Busqueda de datos
+                printf ("Elija que dato quiere consultar:\n");
+    			printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
+				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
+				printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
+				scanf ("%i", &dato);
+	
+				switch (dato) {
+					case 1:
+						buscar_datos (hidraulica);
+						break;
+					case 2:
+						buscar_datos (turbinacion);
+						break;
+					case 3:
+						buscar_datos (nuclear);
+						break;
+					case 4:
+						buscar_datos(carbon);
+						break;
+					case 5:
+						buscar_datos (motor);
+						break;
+					case 6:
+						buscar_datos (turbinag);
+						break;
+					case 7:
+						buscar_datos (turbinav);
+						break;
+					case 8:
+						buscar_datos (ciclo);
+						break;
+					case 9:
+						buscar_datos (hidroelectrica);
+						break;
+					case 10:
+						buscar_datos (eolica);
+						break;
+					case 11:
+						buscar_datos (solarfoto);
+						break;
+					case 12:
+						buscar_datos (solarter);
+						break;
+					case 13:
+						buscar_datos (renovables);
+						break;
+					case 14:
+						buscar_datos (cogeneracion);
+						break;
+					case 15:
+						buscar_datos (residuosnor);
+						break;
+					case 16:
+						buscar_datos (residuosr);
+						break;
+					case 17:
+						buscar_datos (generaciontotal);
+						break;														
+				}
                 break;
             case 5:
             	printf ("Has seleccionado la opcion 5: (Ordenar datos)\n"); //Ordenar datos
@@ -474,193 +536,193 @@ int main() {
     			printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
 				printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
-				scanf ("%i", &x);
+				scanf ("%i", &eleccion);
 				
-				switch (x) {
+				switch (eleccion) {
 					case 1:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 			
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (hidraulica);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (hidraulica);
 						}
 						break;
 					case 2:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (turbinacion);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (turbinacion);
 						}
 						break;
 					case 3:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (nuclear);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (nuclear);
 						}
 						break;
 					case 4:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (carbon);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (carbon);
 						}
 						break;
 					case 5:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (motor);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (motor);
 						}
 						break;
 					case 6:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (turbinag);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (turbinag);
 						}
 						break;
 					case 7:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (turbinav);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (turbinav);
 						}
 						break;
 					case 8:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (ciclo);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (ciclo);
 						}
 						break;
 					case 9:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (hidroelectrica);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (hidroelectrica);
 						}
 						break;
 					case 10:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (eolica);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (eolica);
 						}
 						break;
 					case 11:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (solarfoto);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (solarfoto);
 						}
 						break;
 					case 12:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (solarter);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (solarter);
 						}
 						break;
 					case 13:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (renovables);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (renovables);
 						}
 						break;
 					case 14:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (cogeneracion);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (cogeneracion);
 						}
 						break;
 					case 15:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (residuosnor);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (residuosnor);
 						}
 						break;
 					case 16:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (residuosr);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (residuosr);
 						}
 						break;
 					case 17:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &y);
+						scanf ("%i", &orden);
 						
-						if (y == 1) {
+						if (orden == 1) {
 							ordenar_de_menor_a_mayor (generaciontotal);
 						}
-						else if (y == 2) {
+						else if (orden == 2) {
 							ordenar_de_mayor_a_menor (generaciontotal);
 						}
 						break;
@@ -904,4 +966,63 @@ void ordenar_de_mayor_a_menor (float v[24]) {
 		printf ("%f  ", v [i]);
 	}
 	printf ("\n\n");
+}
+
+void buscar_datos (float v[24]) {
+	
+	int fecha, a, m, m1, i;
+	
+	printf ("Fecha del dato que quiere consultar:\nAno:\n2021\n2022\n");
+	printf ("Si quiere ver los datos de los dos anos escriba 2122\n");
+	scanf ("%i", &fecha);
+	
+	switch (fecha) {
+		case 2021:
+			a = 1;
+			break;
+		case 2022:
+			a = 2;
+			break;
+		case 2122:
+			a = 3;
+			break;
+	}
+	printf ("Mes:\n");
+	printf ("Si quiere ver los datos de todos los meses pulse (24)\n");
+	scanf ("%i", &m);
+	m = m - 1;
+			
+	if (a == 1) {
+		if (m != 23) {
+			printf ("%f\n", v [m]);
+		}
+		else if (m == 23) {
+			for (i = 0; i < 11; i++) {
+				printf ("%f  ", v [i]);
+			}
+		}
+	}
+	if (a == 2) {
+		if (m != 23) {
+			m = m + 12;
+			printf ("%f \n", v [m]);
+		}
+		else if (m == 23) {
+			for (i = 12; i < m; i++) {
+				printf ("%f  ", v [i]);
+			}	
+		}
+	}
+	if (a == 3) {
+		if (m != 23) {
+			m1 = m + 12;
+			printf ("%f\n", v [m]);
+			printf ("%f\n", v [m1]);
+		}
+		else if (m == 23) {
+			for (i = 0; i < m; i++) {
+				printf ("%f  ", v [i]);
+			}
+		}
+	}
 }
