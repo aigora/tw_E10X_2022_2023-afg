@@ -305,6 +305,7 @@ int main() {
 				printf("\n");
 				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
 				scanf("%i", &exp);
+				printf("\n");
 	
 					switch (energia) {
 						case 1:
@@ -506,7 +507,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             }
         } 
 		else if (exp == 2){
-            printf("Energia total generada en 2022: %f\n", suma);
+            printf("Energia total generada en 2022: %f\n\n", suma);
         }
     } else if (total == 2 && ano == 2022) {
         if (exp == 1) {
