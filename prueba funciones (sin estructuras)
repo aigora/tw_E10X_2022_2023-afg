@@ -1,5 +1,9 @@
 #include <stdio.h> 
 
+typedef struct {
+	float v [24];
+}vector;
+
 void informacion_general ();
 void imprimir_vectores (float v[24]);
 
@@ -357,7 +361,7 @@ int main() {
 									break;
 								}
 				break;
-			case 3:
+			case 3: //Calculos estadisticos
 				
 				break;
 		}
