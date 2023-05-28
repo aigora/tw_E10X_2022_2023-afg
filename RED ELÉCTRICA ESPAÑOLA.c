@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 
-void vectores_energia(char* fichero, float v[24], int x); //Esta funcion coge los datos del fichero y los guarda vectores.
+void vectores_energia (char* fichero, float v[24], int x); //Esta funcion coge los datos del fichero y los guarda vectores.
 void informacion_general (); //En esta funcion esta el texto de la informacion general, para que no ocupe espacio en el main.
-void imprimir_vectores(float v[24], int exp, char* fichero2); //Hace lo que dice el nombre, imprimir un vector.
-void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2); //Imprime un calculo estadistico u otro en funcion de lo que haya elegido el usuario.
-void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2); //Hace lo mismo, pero hace los calculos con todas las energias.
+void imprimir_vectores (float v[24], int exp, char* fichero2); //Hace lo que dice el nombre, imprimir un vector.
+void imprimir_energia (float v[24], int ano, int total, int exp, char* fichero2); //Imprime un calculo estadistico u otro en funcion de lo que haya elegido el usuario.
+void imprimir_energia_mes (float v[24], int mes, int ano, int total, int exp, char* fichero2); //Hace lo mismo, pero hace los calculos con todas las energias.
 void buscar_datos (float v[24]); //La funcion imprime el dato que haya elgido el usuario
 void ordenar_de_menor_a_mayor (float v [24]); //Al usuario se le da la opcion de ordenar los datos de menor a mayor o viceversa.
 void ordenar_de_mayor_a_menor (float v [24]); 
-void diagrama(float v[24], int exp, char* fichero2); //Imprime el diagrama de barras de la energia que haya elegido el usuario.
+void diagrama (float v[24], int exp, char* fichero2); //Imprime el diagrama de barras de la energia que haya elegido el usuario.
 
 typedef struct {
 	int ano;
@@ -976,6 +976,7 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
         printf ("Fecha invalida.\n\n");
     }
 }
+
 void buscar_datos (float v[24]) {
 	
 	variables funcion;
