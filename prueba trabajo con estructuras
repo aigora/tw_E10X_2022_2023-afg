@@ -294,9 +294,9 @@ int main() {
     			printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
 				printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
-				scanf ("%i", &dato);
+				scanf ("%i", &bd.energia);
 	
-				switch (dato) {
+				switch (bd.energia) {
 					case 1:
 						buscar_datos (hidraulica);
 						break;
@@ -356,193 +356,193 @@ int main() {
     			printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
 				printf ("(13) Otras renovables\n(14) Cogeneracion\n(15) Residuos no renovables\n(16) Residuos renovables\n(17) Generacion total\n");
-				scanf ("%i", &eleccion);
+				scanf ("%i", &od.energia);
 				
-				switch (eleccion) {
+				switch (od.energia) {
 					case 1:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 			
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (hidraulica);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (hidraulica);
 						}
 						break;
 					case 2:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (turbinacion);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (turbinacion);
 						}
 						break;
 					case 3:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (nuclear);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (nuclear);
 						}
 						break;
 					case 4:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (carbon);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (carbon);
 						}
 						break;
 					case 5:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (motor);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (motor);
 						}
 						break;
 					case 6:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (turbinag);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (turbinag);
 						}
 						break;
 					case 7:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (turbinav);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (turbinav);
 						}
 						break;
 					case 8:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (ciclo);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (ciclo);
 						}
 						break;
 					case 9:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (hidroelectrica);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (hidroelectrica);
 						}
 						break;
 					case 10:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (eolica);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (eolica);
 						}
 						break;
 					case 11:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (solarfoto);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (solarfoto);
 						}
 						break;
 					case 12:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (solarter);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (solarter);
 						}
 						break;
 					case 13:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (renovables);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (renovables);
 						}
 						break;
 					case 14:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (cogeneracion);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (cogeneracion);
 						}
 						break;
 					case 15:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (residuosnor);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (residuosnor);
 						}
 						break;
 					case 16:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (residuosr);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (residuosr);
 						}
 						break;
 					case 17:
 						printf ("(1) De menor a mayor\n(2) De mayor a menor\n");
-						scanf ("%i", &orden);
+						scanf ("%i", &od.eleccion);
 						
-						if (orden == 1) {
+						if (od.eleccion == 1) {
 							ordenar_de_menor_a_mayor (generaciontotal);
 						}
-						else if (orden == 2) {
+						else if (od.eleccion == 2) {
 							ordenar_de_mayor_a_menor (generaciontotal);
 						}
 						break;
@@ -556,10 +556,10 @@ int main() {
 				printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
 
 				printf("Elegir tipo de energia: ");
-				scanf("%i", &energia);
+				scanf("%i", &db.energia);
 				printf("\n");
 	
-					switch (energia) {
+					switch (db.energia) {
 						case 1:
 							printf ("Hidraulica (1) \n\n");
 							diagrama(hidraulica);
@@ -629,7 +629,7 @@ int main() {
 							break;
 					}
         }	        		
-    } while (opcion != 7);
+    } while (m.eleccion != 7);
     printf("Saliendo del programa...\n");
     
     return 0;
@@ -762,7 +762,9 @@ void imprimir_energia_mes (float v[24], int mes, int ano, int total) {
 
 void buscar_datos (float v[24]) {
 	
-	int fecha, a, m, m1, i;
+	variables funcion;
+	
+	int fecha, m1, i;
 	
 	printf ("Fecha del dato que quiere consultar:\nAno:\n2021\n2022\n");
 	printf ("Si quiere ver los datos de los dos anos escriba 2122\n");
@@ -770,49 +772,49 @@ void buscar_datos (float v[24]) {
 	
 	switch (fecha) {
 		case 2021:
-			a = 1;
+			funcion.b.ano = 1;
 			break;
 		case 2022:
-			a = 2;
+			funcion.b.ano = 2;
 			break;
 		case 2122:
-			a = 3;
+			funcion.b.ano = 3;
 			break;
 	}
 	printf ("Mes:\n");
 	printf ("Si quiere ver los datos de todos los meses pulse (24)\n");
-	scanf ("%i", &m);
-	m = m - 1;
+	scanf ("%i", &funcion.b.mes);
+	funcion.b.mes = funcion.b.mes - 1;
 			
-	if (a == 1) {
-		if (m != 23) {
-			printf ("%f\n", v [m]);
+	if (funcion.b.ano == 1) {
+		if (funcion.b.mes != 23) {
+			printf ("%f\n", v [funcion.b.mes]);
 		}
-		else if (m == 23) {
+		else if (funcion.b.mes == 23) {
 			for (i = 0; i < 11; i++) {
 				printf ("%f  ", v [i]);
 			}
 		}
 	}
-	if (a == 2) {
-		if (m != 23) {
-			m = m + 12;
-			printf ("%f \n", v [m]);
+	if (funcion.b.ano == 2) {
+		if (funcion.b.mes != 23) {
+			funcion.b.mes = funcion.b.mes + 12;
+			printf ("%f \n", v [funcion.b.mes]);
 		}
-		else if (m == 23) {
-			for (i = 12; i < m; i++) {
+		else if (funcion.b.mes == 23) {
+			for (i = 12; i < funcion.b.mes; i++) {
 				printf ("%f  ", v [i]);
 			}	
 		}
 	}
-	if (a == 3) {
-		if (m != 23) {
-			m1 = m + 12;
-			printf ("%f\n", v [m]);
+	if (funcion.b.ano == 3) {
+		if (funcion.b.mes != 23) {
+			m1 = funcion.b.mes + 12;
+			printf ("%f\n", v [funcion.b.mes]);
 			printf ("%f\n", v [m1]);
 		}
-		else if (m == 23) {
-			for (i = 0; i < m; i++) {
+		else if (funcion.b.mes == 23) {
+			for (i = 0; i < funcion.b.mes; i++) {
 				printf ("%f  ", v [i]);
 			}
 		}
