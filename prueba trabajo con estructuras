@@ -8,7 +8,7 @@ void imprimir_energia_mes (float v[24], int mes, int ano, int total);
 void buscar_datos (float v[24]);
 void ordenar_de_menor_a_mayor (float v [24]);
 void ordenar_de_mayor_a_menor (float v [24]);
-void diagrama(float v[24]);
+void diagrama(float v[24], int exp, char* fichero2);
 
 typedef struct {
 	int ano;
@@ -40,7 +40,8 @@ int main() {
 	//Cada elemento correspode a cada tipo de energia del fichero, en el mismo orden.
 	
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
-    int i;
+    char fichero2[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/Exportacion_datos.txt";
+    int i, exp;
     
     // Vectores  
     vectores_energia (fichero1, energias[0].datos, 5);
@@ -567,67 +568,67 @@ int main() {
 					switch (db.energia) {
 						case 1:
 							printf ("Hidraulica (1) \n\n");
-							diagrama (energias[0].datos);
+							diagrama (energias[0].datos, exp, fichero2);
 							break;
 						case 2:
 							printf ("Turbinacion Bombeo (2) \n\n");
-							diagrama (energias[1].datos);
+							diagrama (energias[1].datos, exp, fichero2);
 							break;
 						case 3:
 							printf ("Nuclear (3) \n\n");
-							diagrama (energias[2].datos);
+							diagrama (energias[2].datos, exp, fichero2);
 							break;
 						case 4:
 							printf ("Carbon (4) \n\n");
-							diagrama (energias[3].datos);
+							diagrama (energias[3].datos, exp, fichero2);
 							break;
 						case 5:
 							printf ("Motores Diesel (5) \n\n");
-							diagrama (energias[4].datos);
+							diagrama (energias[4].datos, exp, fichero2);
 							break;
 						case 6:
 							printf ("Turbina Gas (6) \n\n");
-							diagrama (energias[5].datos);
+							diagrama (energias[5].datos, exp, fichero2);
 							break;
 						case 7:
 							printf ("Turbina Vapor (7) \n\n");
-							diagrama (energias[6].datos);
+							diagrama (energias[6].datos, exp, fichero2);
 							break;
 						case 8:
 							printf ("Ciclo Combinado (8) \n\n");
-							diagrama (energias[7].datos);
+							diagrama (energias[7].datos, exp, fichero2);
 							break;
 						case 9:
 							printf ("Hidroelectrica (9) \n\n");
-							diagrama (energias[8].datos);
+							diagrama (energias[8].datos, exp, fichero2);
 							break;
 						case 10:
 							printf ("Eolica (10) \n\n");
-							diagrama (energias[9].datos);
+							diagrama (energias[9].datos, exp, fichero2);
 							break;
 						case 11:
 							printf ("Solar Fotovoltaica (11) \n\n");
-							diagrama (energias[10].datos);
+							diagrama (energias[10].datos, exp, fichero2);
 							break;
 						case 12:
 							printf ("Solar Termica (12) \n\n");
-							diagrama (energias[11].datos);
+							diagrama (energias[11].datos, exp, fichero2);
 							break;
 						case 13:
 							printf ("Otras renovables (13) \n\n");
-							diagrama (energias[12].datos);
+							diagrama (energias[12].datos, exp, fichero2);
 							break;
 						case 14:
 							printf ("Cogeneracion (14) \n\n");
-							diagrama (energias[13].datos);
+							diagrama (energias[13].datos, exp, fichero2);
 							break;
 						case 15:
 							printf ("Residuos no Renovables (15) \n\n");
-							diagrama (energias[14].datos);
+							diagrama (energias[14].datos, exp, fichero2);
 							break;
 						case 16:
 							printf ("Residuos Renovables (16) \n\n");
-							diagrama (energias[15].datos);
+							diagrama (energias[15].datos, exp, fichero2);
 							break;
 						default:
 							printf("Energia icnorrecta. \n\n");
@@ -864,13 +865,11 @@ void ordenar_de_mayor_a_menor (float v[24]) {
 	printf ("\n\n");
 }
 
-void diagrama(float v[24]) {
+void diagrama(float v[24], int exp, char* fichero2) {
     int i, j;
     float max_v = 0;
-    char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", 
-                        "08/2021", "09/2021", "10/2021", "11/2021", "12/2021", "01/2022", "02/2022", 
-                        "03/2022", "04/2022", "05/2022", "06/2022", "07/2022", "08/2022", "09/2022", 
-                        "10/2022", "11/2022", "12/2022" };
+    char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", "08/2021", "09/2021", "10/2021", "11/2021", "12/2021", "01/2022", "02/2022", 
+                        "03/2022", "04/2022", "05/2022", "06/2022", "07/2022", "08/2022", "09/2022", "10/2022", "11/2022", "12/2022" };
 
     for (i = 0; i < 24; i++) {
         if (v[i] > max_v) {
@@ -878,12 +877,34 @@ void diagrama(float v[24]) {
         }
     }
  
-    for (i = 0; i < 24; i++) {
-        printf("%s ", fechas[i]);
-        for (j = 0; j < (v[i] / max_v) * 100; j++) {
-            printf("|");
+	if (exp == 1) {
+        FILE* fp = fopen(fichero2, "w");
+        if (fp == NULL) {
+            printf("Error al abrir el archivo.\n");
+            return;
         }
-        printf("\n");
+        
+        for (i = 0; i < 24; i++) {
+            fprintf(fp, "%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                fprintf(fp, "|");
+            }
+            fprintf(fp, "\n");
+        }
+        fclose(fp);
+        
+        printf("Diagrama exportado correctamente al archivo: Exportacion_datos\n");
+    } 
+	else if (exp == 2) {
+        for (i = 0; i < 24; i++) {
+            printf("%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                printf("|");
+            }
+            printf("\n");
+        }
     }
-    printf("\n");
+	else {
+        printf("Opcion invalida.\n");
+    }
 }
