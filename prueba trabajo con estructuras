@@ -22,6 +22,10 @@ typedef struct {
 	fecha e, b;  //e: Calculos estadisticos; b: Busqueda de datos
 }variables;
 
+typedef struct {
+	float datos [24];
+}fichero;
+
 int main() {
 	
 	variables m, ge, ce, bd, od, db; 
@@ -32,8 +36,9 @@ int main() {
 	//od: Ordenar datos
 	//db: Diagrama de barras
 	
-    float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
-    float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
+	fichero energias[17];
+	//Cada elemento correspoden a cada tipo de energia del fichero; en el mismo orden que en el mismo fichero.
+	
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
     
