@@ -37,29 +37,29 @@ int main() {
 	//db: Diagrama de barras
 	
 	fichero energias[17];
-	//Cada elemento correspoden a cada tipo de energia del fichero; en el mismo orden que en el mismo fichero.
+	//Cada elemento correspode a cada tipo de energia del fichero, en el mismo orden.
 	
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
     
     // Vectores 
-    vectores_energia(fichero1, hidraulica, 5);
-    vectores_energia(fichero1, turbinacion, 6);
-    vectores_energia(fichero1, nuclear, 7);
-    vectores_energia(fichero1, carbon, 8);
-    vectores_energia(fichero1, motor, 9);
-    vectores_energia(fichero1, turbinag, 10);
-    vectores_energia(fichero1, turbinav, 11);
-    vectores_energia(fichero1, ciclo, 12);
-    vectores_energia(fichero1, hidroelectrica, 13);
-    vectores_energia(fichero1, eolica, 14);
-    vectores_energia(fichero1, solarfoto, 15);
-    vectores_energia(fichero1, solarter, 16);
-    vectores_energia(fichero1, renovables, 17);
-    vectores_energia(fichero1, cogeneracion, 18);
-    vectores_energia(fichero1, residuosnor, 19);
-    vectores_energia(fichero1, residuosr, 20);
-    vectores_energia(fichero1, generaciontotal, 21);
+    vectores_energia(fichero1, energias[0].datos, 5);
+    vectores_energia(fichero1, energias[1].datos, 6);
+    vectores_energia(fichero1, energias[2].datos, 7);
+    vectores_energia(fichero1, energias[3].datos, 8);
+    vectores_energia(fichero1, energias[4].datos, 9);
+    vectores_energia(fichero1, energias[5].datos, 10);
+    vectores_energia(fichero1, energias[6].datos, 11);
+    vectores_energia(fichero1, energias[7].datos, 12);
+    vectores_energia(fichero1, energias[8].datos, 13);
+    vectores_energia(fichero1, energias[9].datos, 14);
+    vectores_energia(fichero1, energias[10].datos, 15);
+    vectores_energia(fichero1, energias[11].datos, 16);
+    vectores_energia(fichero1, energias[12].datos, 17);
+    vectores_energia(fichero1, energias[13].datos, 18);
+    vectores_energia(fichero1, energias[14].datos, 19);
+    vectores_energia(fichero1, energias[15].datos, 20);
+    vectores_energia(fichero1, energias[16].datos, 21);
     
     // Menu
     printf("=== Red Electrica Espanola ===\n\n");
@@ -100,101 +100,101 @@ int main() {
 					switch (ge.energia) {
 								case 1:
 									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
+									imprimir_vectores(energias[0].datos);
 									break;
 								case 2:
 									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
+									imprimir_vectores(energias[1].datos);
 									break;
 								case 3:
 									printf ("(3)  ");
-									imprimir_vectores(nuclear);
+									imprimir_vectores(energias[2].datos);
 									break;
 								case 4:
 									printf ("(4)  ");
-									imprimir_vectores(carbon);
+									imprimir_vectores(energias[3].datos);
 									break;
 								case 5:
 									printf ("(5)  ");
-									imprimir_vectores(motor);
+									imprimir_vectores(energias[4].datos);
 									break;
 								case 6:
 									printf ("(6)  ");
-									imprimir_vectores(turbinag);
+									imprimir_vectores(energias[5].datos);
 									break;
 								case 7:
 									printf ("(7)  ");
-									imprimir_vectores(turbinav);
+									imprimir_vectores(energias[6].datos);
 									break;
 								case 8:
 									printf ("(8)  ");
-									imprimir_vectores(ciclo);
+									imprimir_vectores(energias[7].datos);
 									break;
 								case 9:
 									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
+									imprimir_vectores(energias[8].datos);
 									break;
 								case 10:
 									printf ("(10)  ");
-									imprimir_vectores(eolica);
+									imprimir_vectores(energias[9].datos);
 									break;
 								case 11:
 									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
+									imprimir_vectores(energias[10].datos);
 									break;
 								case 12:
 									printf ("(12)  ");
-									imprimir_vectores(solarter);
+									imprimir_vectores(energias[11].datos);
 									break;
 								case 13:
 									printf ("(13)  ");
-									imprimir_vectores(renovables);
+									imprimir_vectores(energias[12].datos);
 									break;
 								case 14:
 									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
+									imprimir_vectores(energias[13].datos);
 									break;
 								case 15:
 									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
+									imprimir_vectores(energias[14].datos);
 									break;
 								case 16:
 									printf ("(16)  ");
-									imprimir_vectores(residuosr);
+									imprimir_vectores(energias[15].datos);
 									break;
 								case 17:
 									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
+									imprimir_vectores(energias[0].datos);
 									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
+									imprimir_vectores(energias[1].datos);
 									printf ("(3)  ");
-									imprimir_vectores(nuclear);
+									imprimir_vectores(energias[2].datos);
 									printf ("(4)  ");
-									imprimir_vectores(carbon);
+									imprimir_vectores(energias[3].datos);
 									printf ("(5)  ");
-									imprimir_vectores(motor);
+									imprimir_vectores(energias[4].datos);
 									printf ("(6)  ");
-									imprimir_vectores(turbinag);
+									imprimir_vectores(energias[5].datos);
 									printf ("(7)  ");
-									imprimir_vectores(turbinav);
+									imprimir_vectores(energias[6].datos);
 									printf ("(8)  ");
-									imprimir_vectores(ciclo);
+									imprimir_vectores(energias[7].datos);
 									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
+									imprimir_vectores(energias[8].datos);
 									printf ("(10)  ");
-									imprimir_vectores(eolica);
+									imprimir_vectores(energias[9].datos);
 									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
+									imprimir_vectores(energias[10].datos);
 									printf ("(12)  ");
-									imprimir_vectores(solarter);
+									imprimir_vectores(energias[11].datos);
 									printf ("(13)  ");
-									imprimir_vectores(renovables);
+									imprimir_vectores(energias[12].datos);
 									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
+									imprimir_vectores(energias[13].datos);
 									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
+									imprimir_vectores(energias[14].datos);
 									printf ("(16)  ");
-									imprimir_vectores(residuosr);
+									imprimir_vectores(energias[15].datos);
 									break;
 								default: 
 									printf("Energia icnorrecta. \n\n");
@@ -227,7 +227,7 @@ int main() {
 						
 						switch (ce.eleccion2) {
     						case 1:
-        						imprimir_energia(hidraulica, ce.e.ano, ce.eleccion2);
+        						imprimir_energia(energias[0].datos, ce.e.ano, ce.eleccion2);
         					break;
     						case 2:
         						imprimir_energia(turbinacion, ce.e.ano, ce.eleccion2);
