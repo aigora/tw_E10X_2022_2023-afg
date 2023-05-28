@@ -46,7 +46,7 @@ int main() {
     char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     //El fichero con los datos usados en el trabajo.
     char fichero2[] = "c:/Users/arnol/Downloads/Exportacion_datos.txt";
-    //En la opcion del diagrama de barras el usuario puede elegir exportar el diagrama a este fichero.
+    //En algunas opciones el usuario puede elegir exportar los datos a este fichero.
     int i, exp;
     
     // Vectores  
@@ -92,8 +92,8 @@ int main() {
             case 1:
                 informacion_general ();
                 break;
-            case 2: //gasto energético
-                printf("Ha seleccionado la opcion 2: Datos del gasto energetico\n\n"); 
+            case 2: 
+                printf("Ha seleccionado la opcion 2: Datos del gasto energetico\n\n");  //Gasto energético
                 
                 printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
@@ -234,8 +234,8 @@ int main() {
 									break;
 								}
                 break;
-  			case 3:
-				printf ("Has seleccionado la opcion 3: Calculos estadisticos\n\n"); //cálculos estadísticos
+  			case 3: 
+				printf ("Has seleccionado la opcion 3: Calculos estadisticos\n\n"); //Cálculos estadísticos
 				
 				printf ("1 - Calcular energia generada en un ano\n2 - Calcular energia generada en un mes\n");
 				printf ("Elegir opcion: ");
@@ -607,7 +607,7 @@ int main() {
 						break;
                 break;
             case 6:
-            	printf ("Ha seleccionado la opcion 6:Diagrama de barras\n\n"); 
+            	printf ("Ha seleccionado la opcion 6:Diagrama de barras\n\n"); //Diagrma de barras
                 
                 printf ("(1) Hidraulica\n(2) Turbinacion bombeo\n(3) Nuclear\n(4) Carbon\n(5) Motores diesel\n(6) Turbina de gas\n");
 				printf ("(7) Turbina de vapor\n(8) Ciclo combinado\n(9) Hidroeolica\n(10) Eolica\n(11) Solar fotovoltaica\n(12) Solar termica\n");
