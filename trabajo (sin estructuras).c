@@ -88,7 +88,6 @@ int main() {
 				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
 				scanf("%i", &exp);
 				printf("\n");
-	
 					switch (energia) {
 						case 1:
 							printf ("(1)  ");
@@ -288,6 +287,8 @@ int main() {
 					imprimir_energia_mes(generaciontotal, mes, ano, total, exp, fichero2);
                 	break;
                 }
+                default :
+                		printf("Opcion invalida\n\n");
                 break;
             case 4:
                 printf("Has seleccionado la opcion 4: (Busqueda de datos\n"); //Busqueda de datos
@@ -872,7 +873,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
 }
 
 void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2) {
-    float energia_total, energia_media;
+    float suma, media;
 
     if (ano == 2021) {
         ano = 0;
@@ -880,8 +881,8 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
         ano = 12;
     }
 
-    energia_total = v[mes + ano - 1];
-    energia_media = (1.0 / 16.0) * energia_total;
+    suma = v[mes + ano - 1];
+    media = suma / 16.0;
 
     if (mes >= 1 && mes <= 24) {
         if (exp == 1) {
@@ -889,12 +890,12 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
 
             if (fp != NULL) {
                 if (total == 1) {
-                    fprintf(fp, "Energia total : %f\n", energia_total);
+                    fprintf(fp, "Energia total : %f\n", suma);
                 } else if (total == 2) {
-                    fprintf(fp, "Energia media: %f\n\n", energia_media);
+                    fprintf(fp, "Energia media: %f\n\n", media);
                 } else if (total == 3) {
-                    fprintf(fp, "Energia total : %f\n", energia_total);
-                    fprintf(fp, "Energia media: %f\n\n", energia_media);
+                    fprintf(fp, "Energia total : %f\n", suma);
+                    fprintf(fp, "Energia media: %f\n\n", media);
                 }
 
                 fclose(fp); 
@@ -905,12 +906,12 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
         } 
 		else if (exp == 2) {
             if (total == 1) {
-                printf("Energia total : %f\n", energia_total);
+                printf("Energia total : %f\n", suma);
             } else if (total == 2) {
-                printf("Energia media: %f\n\n", energia_media);
+                printf("Energia media: %f\n\n", media);
             } else if (total == 3) {
-                printf("Energia total : %f\n", energia_total);
-                printf("Energia media: %f\n\n", energia_media);
+                printf("Energia total : %f\n", suma);
+                printf("Energia media: %f\n\n", media);
             }
         }
     } else {
