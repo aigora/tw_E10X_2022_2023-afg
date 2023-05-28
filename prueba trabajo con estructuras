@@ -10,24 +10,32 @@ void ordenar_de_menor_a_mayor (float v [24]);
 void ordenar_de_mayor_a_menor (float v [24]);
 void diagrama(float v[24]);
 
+typedef struct {
+	int ano;
+	int mes;
+}fecha;
+
+typedef struct {
+	int energia;
+	int eleccion;
+	int eleccion2;
+	fecha e, b;  //e: Calculos estadisticos; b: Busqueda de datos
+}variables;
+
 int main() {
+	
+	variables m, ge, ce, bd, od, db; 
+	//m: Menu
+	//ge: Gasto energetico
+	//ce: Calculos estadisticos
+	//bd: Busqueda de datos
+	//od: Ordenar datos
+	//db: Diagrama de barras
 	
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
     char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
     int i;
-    
-    //Variables busqueda de datos
-    int dato;
-    
-    // Variables ordenar datos
-    int eleccion, orden;
-    
-    // Variables estadisticas 
-    int ano, mes, energia, total;
-    
-    // Variables menu
-    int opcion;
     
     // Vectores 
     vectores_energia(fichero1, hidraulica, 5);
@@ -65,11 +73,11 @@ int main() {
         printf("6. Diagrama de barras\n");
         printf("7. Salir\n\n");
         printf("Ingrese una opcion: ");
-        scanf("%d", &opcion);
+        scanf("%d", &m.eleccion);
         printf("\n");
 
         // Realizar acciones según la opción seleccionada
-        switch (opcion) {
+        switch (m.eleccion) {
             case 1:
                 informacion_general ();
                 break;
@@ -81,10 +89,10 @@ int main() {
 				printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)  Todas (17)\n\n");
 
 				printf("Elegir tipo de energia: ");
-				scanf("%i", &energia);
+				scanf("%i", &ge.energia);
 				printf("\n");
 	
-					switch (energia) {
+					switch (ge.energia) {
 								case 1:
 									printf ("(1)  ");
 									imprimir_vectores(hidraulica);
@@ -193,73 +201,73 @@ int main() {
 				
 				printf("1 - Calcular energia generada en un ano   2 - Calcular energia generada en un mes\n");
 				printf("Elegir opcion: ");
-				scanf("%i", &opcion);
+				scanf("%i", &ce.eleccion);
 				printf("\n");
 				
-				switch (opcion){
+				switch (ce.eleccion){
 					case 1:
 					printf ("Hidraulica (1)  Turbinacion Bombeo (2)  Nucelar (3)  Carbon (4)  Motores Diesel (5)  Turbina Gas (6)  Turbina Vapor (7) ");
 					printf ("Ciclo combinado (8)  Hidroelectrica (9)  Eolica (10)  Solar Fotovoltaica (11)  Solar Térmica (12)  Otras renovables (13) ");
 					printf ("Cogeneracion (14)  Residuos no Renovables (15)  Residuos Renovables (16)\n\n");
 					printf("Tipo de energia: ");
-					scanf("%i", &energia);
+					scanf("%i", &ce.energia);
 					printf("\n");
 					printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
-					scanf("%i", &ano);
+					scanf("%i", &ce.e.ano);
 					printf("\n");
 					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
 					printf("Elegir opcion: ");
-					scanf("%i", &total);
+					scanf("%i", &ce.eleccion2);
 					printf("\n");
 						
-						switch (energia) {
+						switch (ce.eleccion2) {
     						case 1:
-        						imprimir_energia(hidraulica, ano, total);
+        						imprimir_energia(hidraulica, ce.e.ano, ce.eleccion2);
         					break;
     						case 2:
-        						imprimir_energia(turbinacion, ano, total);
+        						imprimir_energia(turbinacion, ce.e.ano, ce.eleccion2);
        						break;
    							case 3:
-        						imprimir_energia(nuclear, ano, total);
+        						imprimir_energia(nuclear, ce.e.ano, ce.eleccion2);
       						break;
    							case 4:
-        						imprimir_energia(carbon, ano, total);
+        						imprimir_energia(carbon, ce.e.ano, ce.eleccion2);
         					break;
     						case 5:
-        						imprimir_energia(motor, ano, total);
+        						imprimir_energia(motor, ce.e.ano, ce.eleccion2);
         					break;
     						case 6:
-        						imprimir_energia(turbinag, ano, total);
+        						imprimir_energia(turbinag, ce.e.ano, ce.eleccion2);
         					break;
     						case 7:
-        						imprimir_energia(turbinav, ano, total);
+        						imprimir_energia(turbinav, ce.e.ano, ce.eleccion2);
         					break;
     						case 8:
-        						imprimir_energia(ciclo, ano, total);
+        						imprimir_energia(ciclo, ce.e.ano, ce.eleccion2);
         					break;
     						case 9:
-        						imprimir_energia(hidroelectrica, ano, total);
+        						imprimir_energia(hidroelectrica, ce.e.ano, ce.eleccion2);
        						break;
     						case 10:
-        						imprimir_energia(eolica, ano, total);
+        						imprimir_energia(eolica, ce.e.ano, ce.eleccion2);
         					break;
     						case 11:
-     						   imprimir_energia(solarfoto, ano, total);
+     						   imprimir_energia(solarfoto, ce.e.ano, ce.eleccion2);
       						break;
     						case 12:
-        						imprimir_energia(solarter, ano, total);
+        						imprimir_energia(solarter, ce.e.ano, ce.eleccion2);
         					break;
     						case 13:
-       							imprimir_energia(renovables, ano, total);
+       							imprimir_energia(renovables, ce.e.ano, ce.eleccion2);
         					break;
     						case 14:
-        						imprimir_energia(cogeneracion, ano, total);
+        						imprimir_energia(cogeneracion, ce.e.ano, ce.eleccion2);
         					break;
     						case 15:
-        						imprimir_energia(residuosnor, ano, total);
+        						imprimir_energia(residuosnor, ce.e.ano, ce.eleccion2);
         					break;
     						case 16:
-        						imprimir_energia(residuosr, ano, total);
+        						imprimir_energia(residuosr, ce.e.ano, ce.eleccion2);
         					break;
     						default:
         						printf("Energia incorrecta. \n\n");
@@ -268,16 +276,16 @@ int main() {
 					break;	
 					case 2:
 					printf("Insertar mes: ");
-					scanf("%i", &mes);
+					scanf("%i", &ce.e.mes);
 					printf("\n");
 					printf("Insertar ano: ");
-					scanf("%i", &ano);
+					scanf("%i", &ce.e.ano);
 					printf("\n");
 					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
 					printf("Elegir opcion: ");
-					scanf("%i", &total);
+					scanf("%i", &ce.eleccion2);
 					printf("\n");
-					imprimir_energia_mes(generaciontotal, mes, ano, total);
+					imprimir_energia_mes(generaciontotal, ce.e.mes, ce.e.ano, ce.eleccion2);
                 	break;
                 }
             case 4:
