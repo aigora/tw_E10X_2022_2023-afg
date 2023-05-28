@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void vectores_energia(char* fichero, float v[24], int x);
 void informacion_general ();
@@ -195,8 +196,7 @@ int main() {
   			case 3:
 				printf("Has seleccionado la opcion 3 (Calculos estadisticos). \n\n"); //cálculos estadísticos
 				
-				printf("1 - Calcular energia generada en un ano   2 - Calcular energia generada en un mes\n");
-				printf("Elegir opcion: ");
+				printf("1 - Calcular energia generada en un ano   2 - Calcular energia generada en un mes   Elegir opcion: ");
 				scanf("%i", &opcion);
 				printf("\n");
 				
@@ -662,6 +662,7 @@ void vectores_energia(char* fichero, float v[24], int x) {
     
 }
 
+// FUNCION INFORMACION GENRAL 
 void informacion_general () {
 	 printf("Has seleccionado la opcion 1 (Informacion general.\n\n");
                 
@@ -673,6 +674,8 @@ void informacion_general () {
 	printf("convencionales para satisfacer la demanda\nelectrica y reducir las emisiones de gases de efecto invernadero.\n\n");
 }
 
+
+// FUNCION IMPRIMIR VECTORES DEL FICHERO 
 void imprimir_vectores(float v[24], int exp, char* fichero2) {
     int i;
     
@@ -701,13 +704,23 @@ void imprimir_vectores(float v[24], int exp, char* fichero2) {
     }
 }
 
+
+// FUNCIONES CALCULOS ESTADÍSTICOS
 void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) {
-    float suma = 0;
+    float suma = 0, desviacion = 0, media;
     int i;
 
     for (i = 0; i < 24; i++) {
         suma = suma + v[i];
     }
+
+    media = suma / 24;
+
+    for (i = 0; i < 24; i++) {
+        desviacion = desviacion + pow(v[i] - media, 2);
+    }
+    
+    desviacion = sqrt(desviacion / 24);
 
     if (total == 1 && ano == 2021) {
         if (exp == 1) {
@@ -720,8 +733,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2){
+        } else if (exp == 2) {
             printf("Energia total generada en 2021: %f\n", suma);
         }
     } else if (total == 2 && ano == 2021) {
@@ -729,17 +741,16 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             FILE *fp = fopen(fichero2, "w"); 
 
             if (fp != NULL) {
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2021: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2021: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2021: %f\n", desviacion);
                 fclose(fp);
                 printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2){
-            suma = suma / 12.0;
-            printf("Energia media generada en 2021: %f\n\n", suma);
+        } else if (exp == 2) {
+            printf("Energia media generada en 2021: %f\n", media);
+            printf("Desviacion tipica en 2021: %f\n", desviacion);
         }
     } else if (total == 3 && ano == 2021) {
         if (exp == 1) {
@@ -747,18 +758,17 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
 
             if (fp != NULL) {
                 fprintf(fp, "Energia total generada en 2021: %f\n", suma);
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2021: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2021: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2021: %f\n", desviacion);
                 fclose(fp);
                 printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2){
+        } else if (exp == 2) {
             printf("Energia total generada en 2021: %f\n", suma);
-            suma = suma / 12.0;
-            printf("Energia media generada en 2021: %f\n\n", suma);
+            printf("Energia media generada en 2021: %f\n", media);
+            printf("Desviacion tipica en 2021: %f\n", desviacion);
         }
     } else if (total == 1 && ano == 2022) {
         if (exp == 1) {
@@ -771,26 +781,24 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2){
-            printf("Energia total generada en 2022: %f\n\n", suma);
+        } else if (exp == 2) {
+            printf("Energia total generada en 2022: %f\n", suma);
         }
     } else if (total == 2 && ano == 2022) {
         if (exp == 1) {
             FILE *fp = fopen(fichero2, "w"); 
 
             if (fp != NULL) {
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2022: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2022: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2022: %f\n", desviacion);
                 fclose(fp);
                 printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2){
-            suma = suma / 12.0;
-            printf("Energia media generada en 2022: %f\n\n", suma);
+        } else if (exp == 2) {
+            printf("Energia media generada en 2022: %f\n", media);
+            printf("Desviacion tipica en 2022: %f\n", desviacion);
         }
     } else if (total == 3 && ano == 2022) {
         if (exp == 1) {
@@ -798,18 +806,17 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
 
             if (fp != NULL) {
                 fprintf(fp, "Energia total generada en 2022: %f\n", suma);
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2022: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2022: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2022: %f\n", desviacion);
                 fclose(fp);
-                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2) {
+        } else if (exp == 2) {
             printf("Energia total generada en 2022: %f\n", suma);
-            suma = suma / 12.0;
-            printf("Energia media generada en 2022: %f\n\n", suma);
+            printf("Energia media generada en 2022: %f\n", media);
+            printf("Desviacion tipica en 2022: %f\n", desviacion);
         }
     } else if (total == 1 && ano == 3) {
         if (exp == 1) {
@@ -818,12 +825,11 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             if (fp != NULL) {
                 fprintf(fp, "Energia total generada en 2021 y 2022: %f\n", suma);
                 fclose(fp);
-                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2) {
+        } else if (exp == 2) {
             printf("Energia total generada en 2021 y 2022: %f\n", suma);
         }
     } else if (total == 2 && ano == 3) {
@@ -831,17 +837,16 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             FILE *fp = fopen(fichero2, "w"); 
 
             if (fp != NULL) {
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2021 y 2022: %f\n", desviacion);
                 fclose(fp);
-                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2) {
-            suma = suma / 12.0;
-            printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
+        } else if (exp == 2) {
+            printf("Energia media generada en 2021 y 2022: %f\n", media);
+            printf("Desviacion tipica en 2021 y 2022: %f\n", desviacion);
         }
     } else if (total == 3 && ano == 3) {
         if (exp == 1) {
@@ -849,21 +854,20 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
 
             if (fp != NULL) {
                 fprintf(fp, "Energia total generada en 2021 y 2022: %f\n", suma);
-                suma = suma / 12.0;
-                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", suma);
+                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", media);
+                fprintf(fp, "Desviacion tipica en 2021 y 2022: %f\n", desviacion);
                 fclose(fp);
-                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
             } else {
                 printf("No se pudo abrir el archivo.\n");
             }
-        } 
-		else if (exp == 2) {
+        } else if (exp == 2) {
             printf("Energia total generada en 2021 y 2022: %f\n", suma);
-            suma = suma / 12.0;
-            printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
+            printf("Energia media generada en 2021 y 2022: %f\n", media);
+            printf("Desviacion tipica en 2021 y 2022: %f\n", desviacion);
         }
     } else {
-        printf("Fecha invalida.\n\n");
+        printf("Fecha invalida.\n");
     }
 }
 
@@ -914,6 +918,8 @@ void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, cha
     }
 }
 
+
+// FUNCION BUSCAR DATOS 
 void buscar_datos (float v[24]) {
 	
 	int fecha, a, m, m1, i;
