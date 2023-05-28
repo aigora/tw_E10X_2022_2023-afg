@@ -339,7 +339,7 @@ int main() {
 						imprimir_energia_mes (energias[16].datos, ce.e.mes, ce.e.ano, ce.eleccion2, exp, fichero2);
                 		break;
                 }
-                break; // este
+                break; // ESTE
             case 4:
                 printf ("Ha seleccionado la opcion 4: Busqueda de datos\n\n"); //Busqueda de datos
                 printf ("Elija que dato quiere consultar:\n\n");
