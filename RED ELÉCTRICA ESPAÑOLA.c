@@ -818,7 +818,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             if (fp != NULL) {
                 fprintf (fp, "Energia total generada en 2021: %f\n", suma);
                 fprintf (fp, "Energia media generada en 2021: %f\n", media);
-                fprintf (fp, "Desviacion tipica en 2021: %f\n\n", desviacion);
+                fprintf (fp, "Desviacion tipica en 2021: %f\n", desviacion);
                 fclose (fp);
                 printf ("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
             } else {
@@ -849,7 +849,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
 
             if (fp != NULL) {
                 fprintf (fp, "Energia media generada en 2022: %f\n", media);
-                fprintf (fp, "Desviacion tipica en 2022: %f\n\n", desviacion);
+                fprintf (fp, "Desviacion tipica en 2022: %f\n", desviacion);
                 fclose (fp);
                 printf ("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
             } else {
@@ -866,7 +866,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             if (fp != NULL) {
                 fprintf (fp, "Energia total generada en 2022: %f\n", suma);
                 fprintf (fp, "Energia media generada en 2022: %f\n", media);
-                fprintf (fp, "Desviacion tipica en 2022: %f\n\n", desviacion);
+                fprintf (fp, "Desviacion tipica en 2022: %f\n", desviacion);
                 fclose (fp);
                 printf ("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
             } else {
@@ -882,7 +882,7 @@ void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) 
             FILE *fp = fopen (fichero2, "w"); 
 
             if (fp != NULL) {
-                fprintf (fp, "Energia total generada en 2021 y 2022: %f\n\n", suma);
+                fprintf (fp, "Energia total generada en 2021 y 2022: %f\n", suma);
                 fclose (fp);
                 printf ("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
             } else {
