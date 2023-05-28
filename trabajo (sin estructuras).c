@@ -2,19 +2,20 @@
 
 void vectores_energia(char* fichero, float v[24], int x);
 void informacion_general ();
-void imprimir_vectores(float v[24]);
-void imprimir_energia(float v[24], int ano, int total);
-void imprimir_energia_mes (float v[24], int mes, int ano, int total);
+void imprimir_vectores(float v[24], int exp, char* fichero2);
+void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2);
+void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2);
 void buscar_datos (float v[24]);
 void ordenar_de_menor_a_mayor (float v [24]);
 void ordenar_de_mayor_a_menor (float v [24]);
-void diagrama(float v[24]);
+void diagrama(float v[24], int exp, char* fichero2);
 
 int main() {
 	
     float hidraulica[24], turbinacion[24], nuclear[24], carbon[24], motor[24], turbinag[24], turbinav[24], ciclo[24], hidroelectrica[24];
     float eolica[24], solarfoto[24], solarter[24], renovables[24], cogeneracion[24], residuosnor[24], residuosr[24], generaciontotal[24];
-    char fichero1[] = "c:/Users/Fernanda/OneDrive/Desktop/Trabajo/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    char fichero1[] = "c:/Users/arnol/Downloads/generacion_por_tecnologias_21_22_puntos_simplificado.csv";
+    char fichero2[] = "c:/Users/arnol/Downloads/Exportacion_datos.txt";
     int i;
     
     //Variables busqueda de datos
@@ -24,7 +25,7 @@ int main() {
     int eleccion, orden;
     
     // Variables estadisticas 
-    int ano, mes, energia, total;
+    int ano, mes, energia, total, exp;
     
     // Variables menu
     int opcion;
@@ -83,110 +84,113 @@ int main() {
 				printf("Elegir tipo de energia: ");
 				scanf("%i", &energia);
 				printf("\n");
+				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+				scanf("%i", &exp);
+				printf("\n");
 	
 					switch (energia) {
-								case 1:
-									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
-									break;
-								case 2:
-									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
-									break;
-								case 3:
-									printf ("(3)  ");
-									imprimir_vectores(nuclear);
-									break;
-								case 4:
-									printf ("(4)  ");
-									imprimir_vectores(carbon);
-									break;
-								case 5:
-									printf ("(5)  ");
-									imprimir_vectores(motor);
-									break;
-								case 6:
-									printf ("(6)  ");
-									imprimir_vectores(turbinag);
-									break;
-								case 7:
-									printf ("(7)  ");
-									imprimir_vectores(turbinav);
-									break;
-								case 8:
-									printf ("(8)  ");
-									imprimir_vectores(ciclo);
-									break;
-								case 9:
-									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
-									break;
-								case 10:
-									printf ("(10)  ");
-									imprimir_vectores(eolica);
-									break;
-								case 11:
-									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
-									break;
-								case 12:
-									printf ("(12)  ");
-									imprimir_vectores(solarter);
-									break;
-								case 13:
-									printf ("(13)  ");
-									imprimir_vectores(renovables);
-									break;
-								case 14:
-									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
-									break;
-								case 15:
-									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
-									break;
-								case 16:
-									printf ("(16)  ");
-									imprimir_vectores(residuosr);
-									break;
-								case 17:
-									printf ("(1)  ");
-									imprimir_vectores(hidraulica);
-									printf ("(2)  ");
-									imprimir_vectores(turbinacion);
-									printf ("(3)  ");
-									imprimir_vectores(nuclear);
-									printf ("(4)  ");
-									imprimir_vectores(carbon);
-									printf ("(5)  ");
-									imprimir_vectores(motor);
-									printf ("(6)  ");
-									imprimir_vectores(turbinag);
-									printf ("(7)  ");
-									imprimir_vectores(turbinav);
-									printf ("(8)  ");
-									imprimir_vectores(ciclo);
-									printf ("(9)  ");
-									imprimir_vectores(hidroelectrica);
-									printf ("(10)  ");
-									imprimir_vectores(eolica);
-									printf ("(11)  ");
-									imprimir_vectores(solarfoto);
-									printf ("(12)  ");
-									imprimir_vectores(solarter);
-									printf ("(13)  ");
-									imprimir_vectores(renovables);
-									printf ("(14)  ");
-									imprimir_vectores(cogeneracion);
-									printf ("(15)  ");
-									imprimir_vectores(residuosnor);
-									printf ("(16)  ");
-									imprimir_vectores(residuosr);
-									break;
-								default: 
-									printf("Energia icnorrecta. \n\n");
-									break;
-								}
+						case 1:
+							printf ("(1)  ");
+							imprimir_vectores(hidraulica, exp, fichero2);
+							break;
+						case 2:
+							printf ("(2)  ");
+							imprimir_vectores(turbinacion, exp, fichero2);
+							break;
+						case 3:
+							printf ("(3)  ");
+							imprimir_vectores(nuclear, exp, fichero2);
+							break;
+						case 4:
+							printf ("(4)  ");
+							imprimir_vectores(carbon, exp, fichero2);
+							break;
+						case 5:
+							printf ("(5)  ");
+							imprimir_vectores(motor, exp, fichero2);
+							break;
+						case 6:
+							printf ("(6)  ");
+							imprimir_vectores(turbinag, exp, fichero2);
+							break;
+						case 7:
+							printf ("(7)  ");
+							imprimir_vectores(turbinav, exp, fichero2);
+							break;
+						case 8:
+							printf ("(8)  ");
+							imprimir_vectores(ciclo, exp, fichero2);
+							break;
+						case 9:
+							printf ("(9)  ");
+							imprimir_vectores(hidroelectrica, exp, fichero2);
+							break;
+						case 10:
+							printf ("(10)  ");
+							imprimir_vectores(eolica, exp, fichero2);
+							break;
+						case 11:
+							printf ("(11)  ");
+							imprimir_vectores(solarfoto, exp, fichero2);
+							break;
+						case 12:
+							printf ("(12)  ");
+							imprimir_vectores(solarter, exp, fichero2);
+							break;
+						case 13:
+							printf ("(13)  ");
+							imprimir_vectores(renovables, exp, fichero2);
+							break;
+						case 14:
+							printf ("(14)  ");
+							imprimir_vectores(cogeneracion, exp, fichero2);
+							break;
+						case 15:
+							printf ("(15)  ");
+							imprimir_vectores(residuosnor, exp, fichero2);
+							break;
+						case 16:
+							printf ("(16)  ");
+							imprimir_vectores(residuosr, exp, fichero2);
+							break;
+						case 17:
+							printf ("(1)  ");
+							imprimir_vectores(hidraulica, exp, fichero2);
+							printf ("(2)  ");
+							imprimir_vectores(turbinacion, exp, fichero2);
+							printf ("(3)  ");
+							imprimir_vectores(nuclear, exp, fichero2);
+							printf ("(4)  ");
+							imprimir_vectores(carbon, exp, fichero2);
+							printf ("(5)  ");
+							imprimir_vectores(motor, exp, fichero2);
+							printf ("(6)  ");
+							imprimir_vectores(turbinag, exp, fichero2);
+							printf ("(7)  ");
+							imprimir_vectores(turbinav, exp, fichero2);
+							printf ("(8)  ");
+							imprimir_vectores(ciclo, exp, fichero2);
+							printf ("(9)  ");
+							imprimir_vectores(hidroelectrica, exp, fichero2);
+							printf ("(10)  ");
+							imprimir_vectores(eolica, exp, fichero2);
+							printf ("(11)  ");
+							imprimir_vectores(solarfoto, exp, fichero2);
+							printf ("(12)  ");
+							imprimir_vectores(solarter, exp, fichero2);
+							printf ("(13)  ");
+							imprimir_vectores(renovables, exp, fichero2);
+							printf ("(14)  ");
+							imprimir_vectores(cogeneracion, exp, fichero2);
+							printf ("(15)  ");
+							imprimir_vectores(residuosnor, exp, fichero2);
+							printf ("(16)  ");
+							imprimir_vectores(residuosr, exp, fichero2);
+							break;
+						default:
+							printf("Energia icnorrecta. \n\n");
+							break;
+						}
                 break;
   			case 3:
 				printf("Has seleccionado la opcion 3 (Calculos estadisticos). \n\n"); //cálculos estadísticos
@@ -204,62 +208,64 @@ int main() {
 					printf("Tipo de energia: ");
 					scanf("%i", &energia);
 					printf("\n");
-					printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir 2122): ");
+					printf("Insertar ano (Si se desea calcular el de los anos 2021 y 2022 conjuntamnete introducir '3'): ");
 					scanf("%i", &ano);
 					printf("\n");
-					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
-					printf("Elegir opcion: ");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media   Elegir opcion: ");
 					scanf("%i", &total);
+					printf("\n");
+					printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+					scanf("%i", &exp);
 					printf("\n");
 						
 						switch (energia) {
     						case 1:
-        						imprimir_energia(hidraulica, ano, total);
+        						imprimir_energia(hidraulica, ano, total, exp, fichero2);
         					break;
     						case 2:
-        						imprimir_energia(turbinacion, ano, total);
+        						imprimir_energia(turbinacion, ano, total, exp, fichero2);
        						break;
    							case 3:
-        						imprimir_energia(nuclear, ano, total);
+        						imprimir_energia(nuclear, ano, total, exp, fichero2);
       						break;
    							case 4:
-        						imprimir_energia(carbon, ano, total);
+        						imprimir_energia(carbon, ano, total, exp, fichero2);
         					break;
     						case 5:
-        						imprimir_energia(motor, ano, total);
+        						imprimir_energia(motor, ano, total, exp, fichero2);
         					break;
     						case 6:
-        						imprimir_energia(turbinag, ano, total);
+        						imprimir_energia(turbinag, ano, total, exp, fichero2);
         					break;
     						case 7:
-        						imprimir_energia(turbinav, ano, total);
+        						imprimir_energia(turbinav, ano, total, exp, fichero2);
         					break;
     						case 8:
-        						imprimir_energia(ciclo, ano, total);
+        						imprimir_energia(ciclo, ano, total, exp, fichero2);
         					break;
     						case 9:
-        						imprimir_energia(hidroelectrica, ano, total);
+        						imprimir_energia(hidroelectrica, ano, total, exp, fichero2);
        						break;
     						case 10:
-        						imprimir_energia(eolica, ano, total);
+        						imprimir_energia(eolica, ano, total, exp, fichero2);
         					break;
     						case 11:
-     						   imprimir_energia(solarfoto, ano, total);
+     						   imprimir_energia(solarfoto, ano, total, exp, fichero2);
       						break;
     						case 12:
-        						imprimir_energia(solarter, ano, total);
+        						imprimir_energia(solarter, ano, total, exp, fichero2);
         					break;
     						case 13:
-       							imprimir_energia(renovables, ano, total);
+       							imprimir_energia(renovables, ano, total, exp, fichero2);
         					break;
     						case 14:
-        						imprimir_energia(cogeneracion, ano, total);
+        						imprimir_energia(cogeneracion, ano, total, exp, fichero2);
         					break;
     						case 15:
-        						imprimir_energia(residuosnor, ano, total);
+        						imprimir_energia(residuosnor, ano, total, exp, fichero2);
         					break;
     						case 16:
-        						imprimir_energia(residuosr, ano, total);
+        						imprimir_energia(residuosr, ano, total, exp, fichero2);
         					break;
     						default:
         						printf("Energia incorrecta. \n\n");
@@ -273,13 +279,16 @@ int main() {
 					printf("Insertar ano: ");
 					scanf("%i", &ano);
 					printf("\n");
-					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total y media\n");
-					printf("Elegir opcion: ");
+					printf("1 - Calcular energia total   2 - Calcular energia media   3 - Calcular energia total   Elegir opcion: ");
 					scanf("%i", &total);
 					printf("\n");
-					imprimir_energia_mes(generaciontotal, mes, ano, total);
+					printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+					scanf("%i", &exp);
+					printf("\n");
+					imprimir_energia_mes(generaciontotal, mes, ano, total, exp, fichero2);
                 	break;
                 }
+                break;
             case 4:
                 printf("Has seleccionado la opcion 4: (Busqueda de datos\n"); //Busqueda de datos
                 printf ("Elija que dato quiere consultar:\n");
@@ -550,71 +559,74 @@ int main() {
 				printf("Elegir tipo de energia: ");
 				scanf("%i", &energia);
 				printf("\n");
+				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+				scanf("%i", &exp);
+				printf("\n");
 	
 					switch (energia) {
 						case 1:
 							printf ("Hidraulica (1) \n\n");
-							diagrama(hidraulica);
+							diagrama(hidraulica, exp, fichero2);
 							break;
 						case 2:
 							printf ("Turbinacion Bombeo (2) \n\n");
-							diagrama(turbinacion);
+							diagrama(turbinacion, exp, fichero2);
 							break;
 						case 3:
 							printf ("Nuclear (3) \n\n");
-							diagrama(nuclear);
+							diagrama(nuclear, exp, fichero2);
 							break;
 						case 4:
 							printf ("Carbon (4) \n\n");
-							diagrama(carbon);
+							diagrama(carbon, exp, fichero2);
 							break;
 						case 5:
 							printf ("Motores Diesel (5) \n\n");
-							diagrama(motor);
+							diagrama(motor, exp, fichero2);
 							break;
 						case 6:
 							printf ("Turbina Gas (6) \n\n");
-							diagrama(turbinag);
+							diagrama(turbinag, exp, fichero2);
 							break;
 						case 7:
 							printf ("Turbina Vapor (7) \n\n");
-							diagrama(turbinav);
+							diagrama(turbinav, exp, fichero2);
 							break;
 						case 8:
 							printf ("Ciclo Combinado (8) \n\n");
-							diagrama(ciclo);
+							diagrama(ciclo, exp, fichero2);
 							break;
 						case 9:
 							printf ("Hidroelectrica (9) \n\n");
-							diagrama(hidroelectrica);
+							diagrama(hidroelectrica, exp, fichero2);
 							break;
 						case 10:
 							printf ("Eolica (10) \n\n");
-							diagrama(eolica);
+							diagrama(eolica, exp, fichero2);
 							break;
 						case 11:
 							printf ("Solar Fotovoltaica (11) \n\n");
-							diagrama(solarfoto);
+							diagrama(solarfoto, exp, fichero2);
 							break;
 						case 12:
 							printf ("Solar Termica (12) \n\n");
-							diagrama(solarter);
+							diagrama(solarter, exp, fichero2);
 							break;
 						case 13:
 							printf ("Otras renovables (13) \n\n");
-							diagrama(renovables);
+							diagrama(renovables, exp, fichero2);
 							break;
 						case 14:
 							printf ("Cogeneracion (14) \n\n");
-							diagrama(cogeneracion);
+							diagrama(cogeneracion, exp, fichero2);
 							break;
 						case 15:
 							printf ("Residuos no Renovables (15) \n\n");
-							diagrama(residuosnor);
+							diagrama(residuosnor, exp, fichero2);
 							break;
 						case 16:
 							printf ("Residuos Renovables (16) \n\n");
-							diagrama(residuosr);
+							diagrama(residuosr, exp, fichero2);
 							break;
 						default:
 							printf("Energia icnorrecta. \n\n");
@@ -661,94 +673,244 @@ void informacion_general () {
 	printf("convencionales para satisfacer la demanda\nelectrica y reducir las emisiones de gases de efecto invernadero.\n\n");
 }
 
-void imprimir_vectores(float v[24]) {
-    
+void imprimir_vectores(float v[24], int exp, char* fichero2) {
     int i;
     
-    for (i = 0; i < 24; i++) {
-        printf("%f ", v[i]);
+	if (exp == 1) {
+        FILE* fp = fopen(fichero2, "w");
+        if (fp == NULL) {
+            printf("Error al abrir el archivo.\n");
+            return;
+        }
+        
+        for (i = 0; i < 24; i++) {
+            fprintf(fp, "%f ", v[i]);
+        }
+        fclose(fp);
+        
+        printf("Vector exportado correctamente al archivo: Exportacion_datos\n");
+    } 
+	else if (exp == 2) {
+        for (i = 0; i < 24; i++) {
+            printf("%f ", v[i]);
+        }
+        printf("\n\n");
     }
-    printf("\n\n");
-    
+	else {
+        printf("Opcion invalida.\n");
+    }
 }
 
-void imprimir_energia(float v[24], int ano, int total) {
+void imprimir_energia(float v[24], int ano, int total, int exp, char* fichero2) {
     float suma = 0;
     int i;
 
     for (i = 0; i < 24; i++) {
-        suma += v[i];
+        suma = suma + v[i];
     }
 
     if (total == 1 && ano == 2021) {
-        printf("Energia total generada en 2021: %f\n", suma);
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2021: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2){
+            printf("Energia total generada en 2021: %f\n", suma);
+        }
     } else if (total == 2 && ano == 2021) {
-        suma = suma / 12.0;
-        printf("Energia media generada en 2021: %f\n\n", suma);
-    }
-    else if ( total == 3 && ano == 2021){
-    	printf("Energia totalgenerada en 2021: %f\n", suma);
-    	suma = suma / 12.0;
-        printf("Energia media generada en 2021: %f\n\n", suma);
-	}
-	else if (total == 1 && ano == 2022) {
-        printf("Energia total generada en 2022: %f\n", suma);
-    } 
-	else if (total == 2 && ano == 2022) {
-        suma = suma / 12.0;
-        printf("Energia media generada en 2022: %f\n\n", suma);
-	}
-    else if ( total == 3 && ano == 2022){
-    	printf("Energia total generada en 2021: %f\n", suma);
-    	suma = suma / 12.0;
-        printf("Energia media generada en 2021: %f\n\n", suma);
-	}
-	else if (total == 1 && ano == 2122) {
-        printf("Energia total generada en 2021 y 2022: %f\n", suma);
-    } 
-	else if (total == 2 && ano == 2122) {
-        suma = suma / 12.0;
-        printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
-    }
-    else if ( total == 3 && ano == 2122){
-    	printf("Energia total generada en 2021 y 2022: %f\n", suma);
-    	suma = suma / 12.0;
-        printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
-	}
-	else {
-        printf("Fecha invalida.\n");
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2021: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2){
+            suma = suma / 12.0;
+            printf("Energia media generada en 2021: %f\n\n", suma);
+        }
+    } else if (total == 3 && ano == 2021) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2021: %f\n", suma);
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2021: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2){
+            printf("Energia total generada en 2021: %f\n", suma);
+            suma = suma / 12.0;
+            printf("Energia media generada en 2021: %f\n\n", suma);
+        }
+    } else if (total == 1 && ano == 2022) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2){
+            printf("Energia total generada en 2022: %f\n\n", suma);
+        }
+    } else if (total == 2 && ano == 2022) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2){
+            suma = suma / 12.0;
+            printf("Energia media generada en 2022: %f\n\n", suma);
+        }
+    } else if (total == 3 && ano == 2022) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2022: %f\n", suma);
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2) {
+            printf("Energia total generada en 2022: %f\n", suma);
+            suma = suma / 12.0;
+            printf("Energia media generada en 2022: %f\n\n", suma);
+        }
+    } else if (total == 1 && ano == 3) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2021 y 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2) {
+            printf("Energia total generada en 2021 y 2022: %f\n", suma);
+        }
+    } else if (total == 2 && ano == 3) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2) {
+            suma = suma / 12.0;
+            printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
+        }
+    } else if (total == 3 && ano == 3) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                fprintf(fp, "Energia total generada en 2021 y 2022: %f\n", suma);
+                suma = suma / 12.0;
+                fprintf(fp, "Energia media generada en 2021 y 2022: %f\n", suma);
+                fclose(fp);
+                printf("Datos exportados correctamente al archivo: Exportacion_datos\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2) {
+            printf("Energia total generada en 2021 y 2022: %f\n", suma);
+            suma = suma / 12.0;
+            printf("Energia media generada en 2021 y 2022: %f\n\n", suma);
+        }
+    } else {
+        printf("Fecha invalida.\n\n");
     }
 }
 
-void imprimir_energia_mes (float v[24], int mes, int ano, int total) {
-	
-	float energia_total, energia_media;
-	
-	if (ano == 2021) {
-		ano = 0;
-	}
-	else if (ano == 2022) {
-		ano = 12;
-	}
-	
+void imprimir_energia_mes(float v[24], int mes, int ano, int total, int exp, char* fichero2) {
+    float energia_total, energia_media;
+
+    if (ano == 2021) {
+        ano = 0;
+    } else if (ano == 2022) {
+        ano = 12;
+    }
+
     energia_total = v[mes + ano - 1];
     energia_media = (1.0 / 16.0) * energia_total;
 
-	if (mes>= 1 && mes <= 24) {
-		if (total == 1){
-			printf("Energia total : %f\n", energia_total);
-		}
-		else if (total == 2) {
-			printf("Energia media: %f\n\n", energia_media);
-		}
-		else if (total == 3){
-			printf("Energia total : %f\n", energia_total);
-			printf("Energia media: %f\n\n", energia_media);
-		}
-      
- 	}
-	else {
-        printf("Fecha invalida.\n");
+    if (mes >= 1 && mes <= 24) {
+        if (exp == 1) {
+            FILE *fp = fopen(fichero2, "w"); 
+
+            if (fp != NULL) {
+                if (total == 1) {
+                    fprintf(fp, "Energia total : %f\n", energia_total);
+                } else if (total == 2) {
+                    fprintf(fp, "Energia media: %f\n\n", energia_media);
+                } else if (total == 3) {
+                    fprintf(fp, "Energia total : %f\n", energia_total);
+                    fprintf(fp, "Energia media: %f\n\n", energia_media);
+                }
+
+                fclose(fp); 
+                printf("Datos exportado correctamente al archivo: Exportacion_datos\n\n");
+            } else {
+                printf("No se pudo abrir el archivo.\n");
+            }
+        } 
+		else if (exp == 2) {
+            if (total == 1) {
+                printf("Energia total : %f\n", energia_total);
+            } else if (total == 2) {
+                printf("Energia media: %f\n\n", energia_media);
+            } else if (total == 3) {
+                printf("Energia total : %f\n", energia_total);
+                printf("Energia media: %f\n\n", energia_media);
+            }
+        }
+    } else {
+        printf("Fecha invalida.\n\n");
     }
 }
 
@@ -849,13 +1011,11 @@ void ordenar_de_mayor_a_menor (float v[24]) {
 	printf ("\n\n");
 }
 
-void diagrama(float v[24]) {
+void diagrama(float v[24], int exp, char* fichero2) {
     int i, j;
     float max_v = 0;
-    char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", 
-                        "08/2021", "09/2021", "10/2021", "11/2021", "12/2021", "01/2022", "02/2022", 
-                        "03/2022", "04/2022", "05/2022", "06/2022", "07/2022", "08/2022", "09/2022", 
-                        "10/2022", "11/2022", "12/2022" };
+    char fechas[][8] = { "01/2021", "02/2021", "03/2021", "04/2021", "05/2021", "06/2021", "07/2021", "08/2021", "09/2021", "10/2021", "11/2021", "12/2021", "01/2022", "02/2022", 
+                        "03/2022", "04/2022", "05/2022", "06/2022", "07/2022", "08/2022", "09/2022", "10/2022", "11/2022", "12/2022" };
 
     for (i = 0; i < 24; i++) {
         if (v[i] > max_v) {
@@ -863,12 +1023,34 @@ void diagrama(float v[24]) {
         }
     }
  
-    for (i = 0; i < 24; i++) {
-        printf("%s ", fechas[i]);
-        for (j = 0; j < (v[i] / max_v) * 100; j++) {
-            printf("|");
+	if (exp == 1) {
+        FILE* fp = fopen(fichero2, "w");
+        if (fp == NULL) {
+            printf("Error al abrir el archivo.\n");
+            return;
         }
-        printf("\n");
+        
+        for (i = 0; i < 24; i++) {
+            fprintf(fp, "%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                fprintf(fp, "|");
+            }
+            fprintf(fp, "\n");
+        }
+        fclose(fp);
+        
+        printf("Diagrama exportado correctamente al archivo: Exportacion_datos\n");
+    } 
+	else if (exp == 2) {
+        for (i = 0; i < 24; i++) {
+            printf("%s ", fechas[i]);
+            for (j = 0; j < (v[i] / max_v) * 100; j++) {
+                printf("|");
+            }
+            printf("\n");
+        }
     }
-    printf("\n");
+	else {
+        printf("Opcion invalida.\n");
+    }
 }
