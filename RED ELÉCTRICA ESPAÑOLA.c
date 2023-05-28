@@ -736,6 +736,7 @@ void informacion_general () {
 }
 
 void imprimir_vectores(float v[24], int exp, char* fichero2) {
+	
     int i;
     
 	if (exp == 1) {
