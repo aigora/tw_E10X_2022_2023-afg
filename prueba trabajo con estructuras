@@ -564,6 +564,9 @@ int main() {
 				printf("Elegir tipo de energia: ");
 				scanf("%i", &db.energia);
 				printf("\n");
+				printf("1 - Exportar   2 - Imprimir   Elegir opcion: ");
+				scanf("%i", &exp);
+				printf("\n");
 	
 					switch (db.energia) {
 						case 1:
