@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void vectores_energia (char* fichero, float v[24], int x); //Esta funcion coge los datos del fichero y los guarda vectores.
+void vectores_energia (char* fichero, float v[24], int x, int k); //Esta funcion coge los datos del fichero y los guarda vectores.
 void informacion_general (); //En esta funcion esta el texto de la informacion general, para que no ocupe espacio en el main.
 void imprimir_vectores (float v[24], int exp, char* fichero2); //Hace lo que dice el nombre, imprimir un vector.
 void imprimir_energia (float v[24], int ano, int total, int exp, char* fichero2); //Imprime un calculo estadistico u otro en funcion de lo que haya elegido el usuario.
@@ -50,23 +50,23 @@ int main() {
     int i, exp;
     
     // Vectores  
-    vectores_energia (fichero1, energias[0].datos, 5);
-    vectores_energia (fichero1, energias[1].datos, 6);
-    vectores_energia (fichero1, energias[2].datos, 7);
-    vectores_energia (fichero1, energias[3].datos, 8);
-    vectores_energia (fichero1, energias[4].datos, 9);
-    vectores_energia (fichero1, energias[5].datos, 10);
-    vectores_energia (fichero1, energias[6].datos, 11);
-    vectores_energia (fichero1, energias[7].datos, 12);
-    vectores_energia (fichero1, energias[8].datos, 13);
-    vectores_energia (fichero1, energias[9].datos, 14);
-    vectores_energia (fichero1, energias[10].datos, 15);
-    vectores_energia (fichero1, energias[11].datos, 16);
-    vectores_energia (fichero1, energias[12].datos, 17);
-    vectores_energia (fichero1, energias[13].datos, 18);
-    vectores_energia (fichero1, energias[14].datos, 19);
-    vectores_energia (fichero1, energias[15].datos, 20);
-    vectores_energia (fichero1, energias[16].datos, 21);
+    vectores_energia (fichero1, energias[0].datos, 0, 10);
+    vectores_energia (fichero1, energias[1].datos, 1, 18);
+    vectores_energia (fichero1, energias[2].datos, 2, 7);
+    vectores_energia (fichero1, energias[3].datos, 3, 6);
+    vectores_energia (fichero1, energias[4].datos, 4, 14);
+    vectores_energia (fichero1, energias[5].datos, 5, 14);
+    vectores_energia (fichero1, energias[6].datos, 6, 16);
+    vectores_energia (fichero1, energias[7].datos, 7, 15);
+    vectores_energia (fichero1, energias[8].datos, 8, 11);
+    vectores_energia (fichero1, energias[9].datos, 9, 6);
+    vectores_energia (fichero1, energias[10].datos, 10, 18);
+    vectores_energia (fichero1, energias[11].datos, 11, 13);
+    vectores_energia (fichero1, energias[12].datos, 12, 16);
+    vectores_energia (fichero1, energias[13].datos, 13, 12);
+    vectores_energia (fichero1, energias[14].datos, 14, 22);
+    vectores_energia (fichero1, energias[15].datos, 15, 19);
+    vectores_energia (fichero1, energias[16].datos, 16, 16);
     
     // Menu
     printf("=== Red Electrica Espanola ===\n\n");
@@ -700,27 +700,33 @@ int main() {
     return 0;
 }
 
-void vectores_energia (char* fichero, float v[24], int x) {
-	
+void vectores_energia(char* fichero, float v[24], int x, int k) {
     FILE* fp = fopen(fichero, "r");
     if (fp == NULL) {
-        printf ("No se ha podido abrir el fichero.\n\n");
+        printf("No se ha podido abrir el fichero.\n\n");
         return;
     }
-    
-    int i;
-    for (i = 0; i < x; i++) {
-        fscanf (fp, "%*[^\n]%*c");
-    }
 
-    if (fscanf(fp, "%*[^,],") == 0) {
-        for (i = 0; i < 24; i++) {
-            fscanf (fp, "%f,", &v[i]);
+    int i;
+    char c;
+
+    for (i = 0; i < 5+x; i++) {
+        while (fscanf(fp, "%c", &c) != EOF && c != '\n') {
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == 'á' || c == 'é' || c == 'í' || c == 'ó' || c == 'ú') {
+                c = ',';
+            }
         }
     }
 
-    fclose (fp);
+    for (i = 0; i < k; i++) {
+        fscanf(fp, "%c", &c);
+    }
     
+    for (i = 0; i < 24; i++) {
+        fscanf(fp, ",%f", &v[i]);
+    }
+
+    fclose(fp);
 }
 
 void informacion_general () {
