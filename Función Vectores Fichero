@@ -21,7 +21,7 @@ void vectores_energia(char* fichero, float v[24], int x, int k) {
 
     for (i = 0; i < 5+x; i++) {
         while (fscanf(fp, "%c", &c) != EOF && c != '\n') {
-            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == 'á' || c == 'é' || c == 'í' || c == 'ó' || c == 'ú') {
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == 'Ã¡' || c == 'Ã©' || c == 'Ã­' || c == 'Ã³' || c == 'Ãº') {
                 c = ',';
             }
         }
