@@ -602,6 +602,7 @@ int main() {
 						}
 						break;
 						}
+					break;
 					default:
 						printf("Energia incorrecta. \n\n");
 						break;
