@@ -11,4 +11,4 @@ German Criado de la Morena: germancriado
 
 ## Objetivos del trabajo
 
-Usar con éxito las herramientas aprendidas en clase y llevarlas a la práctica.
+Usar con éxito las herramientas aprendidas en clase, llevarlas a la práctica y conseguir entenderlas con profundidad.
