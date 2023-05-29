@@ -237,7 +237,7 @@ int main() {
   			case 3: 
 				printf ("Has seleccionado la opcion 3: Calculos estadisticos\n\n"); //Cálculos estadísticos
 				
-				printf ("1 - Calcular energia generada en un ano\n2 - Calcular energia generada en un mes\n");
+				printf ("1 - Calcular energia generada en un mes\n2 - Calcular energia generada en un ano\n");
 				printf ("Elegir opcion: ");
 				scanf ("%i", &ce.eleccion);
 				printf ("\n");
