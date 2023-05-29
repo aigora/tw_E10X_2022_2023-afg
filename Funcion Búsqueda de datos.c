@@ -6,7 +6,7 @@ void buscar_datos (float v[24]);
 
 int main () {
 	
-	buscar datos ();
+	buscar_datos ();
 	return 0;
 	
 }
