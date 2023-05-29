@@ -1,4 +1,4 @@
-//Funcion Diagrama de barras
+#include <stdio.h>
 
 void diagrama (float v[24], int exp, char* fichero2);
 
